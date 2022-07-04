@@ -132,7 +132,7 @@ header nav ul li{
   margin-right: 6em;
 }
 
-/* SIGN-UP FORM - CUSTOMER */
+/* SIGN-UP - CUSTOMER */
 
 .main-container h2{
   margin-left: 25%;
@@ -386,6 +386,65 @@ header nav ul li{
   grid-row: 1 / 1;
   grid-column: 2 / 3;
   width: 45%;
+}
+
+/* LOGIN */
+
+.main-container-login{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  margin-top: 10rem;
+  width: 25%;
+  align-content: center;
+}
+
+.login-form-container{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.login-email-container input{
+  width: 100%;
+  border-radius: 25px;
+  padding: .875rem;
+}
+
+.login-password-container{
+  display: flex;
+  flex-direction: column  ;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 100%;
+}
+
+.login-password-container-2{
+  display: flex;
+}
+
+.login-password-container input{
+  width: 100%;
+  border-radius: 25px;
+  padding: .875rem;
+}
+
+.login-password-container i{
+  margin-left: -40px;
+  align-self: center; 
+}
+
+.login-button{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login-form-container p{
+  margin: 0 auto;
 }
 
 /* TATTOO EXPLORER */
