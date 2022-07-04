@@ -222,6 +222,44 @@ header nav ul li{
 
 /* SIGN UP - ARTIST */
 
+.form-container-artist{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: -3rem;
+ 
+}
+
+.artist-bio-container textarea{
+  width: 100%;
+  border-radius: 25px;
+}
+
+.artist-website-url-container input{
+  width: 100%;
+  border-radius: 25px;
+  padding: .875rem;
+}
+
+.artist-instagram-url-container input{
+  width: 100%;
+  border-radius: 25px;
+  padding: .875rem;
+}
+
+
+.artist-upload-images-container{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+
+.artist-signup-button{
+  width: 20%;
+  margin: 0 auto;
+}
 
 /* APPOINTMENT FUNCTION - PLANNING */
 .h1-appointment-planning{
