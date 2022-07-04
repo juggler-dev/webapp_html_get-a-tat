@@ -221,6 +221,8 @@ header nav ul li{
 }
 
 /* SIGN UP - ARTIST */
+
+
 /* APPOINTMENT FUNCTION - PLANNING */
 .h1-appointment-planning{
    margin: 2rem 5%;
@@ -349,8 +351,28 @@ header nav ul li{
 }
 
 /* TATTOO EXPLORER */
+
+
+.tattoo-explorer-main-container{
+  border: 1px solid red;
+  margin: 2rem 5%;
+}
+
 .h1-tattoo-explorer{
-  margin: 2rem 25%;
+  border: 1px solid red;
+  margin-bottom: 2rem;
+}
+
+.tattoo-explorer-search-container{
+  border: 1px solid red;
+}
+
+.tattoo-explorer-search-container i{
+  border: 1px solid red;
+}
+
+.tattoo-explorer-search-container input {
+  border: none;
 }
 
 /* FOOTER */
