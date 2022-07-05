@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Sign Up / Login</title>
+    <script type="module" src="signup.js" defer></script>
 </head>
 <body>
     <header>
@@ -31,10 +32,11 @@
     <div class="main-container">
         <h2>Hey Sparky!</h2>
         <div class="signup_form">
-            <form action="">
+            <!-- <form action=""> -->
+            <div class="form">
                 <div class="form-container">
                     <div class="email-container">
-                        <input type="text" name="user_email" id="user_email" placeholder="Email">
+                        <input type="text" name="user_email" id="emailUser" placeholder="Email">
                     </div>
                     <div class="full-name-container">
                         <input type="text" name="user_full_name" id="user_full_name" placeholder="Full Name">
@@ -44,7 +46,7 @@
                     </div>
                     <div class="password-container">
                         <div class="password-container-2">
-                            <input type="password" name="user_password" id="user_password" placeholder="Password">
+                            <input type="password" name="user_password" id="passwordUser" placeholder="Password">
                             <i  class="far fa-eye" id="togglePassword"></i>
                         </div>
                         <small><a href="#">Forgot your password?</a></small>
@@ -56,8 +58,9 @@
                         <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}" placeholder="Phone Number">
                     </div>
                 </div>
-                <div class="sign-up-button"><button>Sign Up</button></div>
-            </form>
+                <div id="signUpBtn" class="sign-up-button"><button>Sign Up</button></div>
+            <!-- </form>-->
+            </div>
         </div>
     </div>
     <div>
@@ -67,14 +70,14 @@
     </div>
     <div class="alt-login">
         <div>
-            <button class="loginBtn loginBtn_facebook">Login with Facebook</button>
+            <button id="signUpFacebook" class="loginBtn loginBtn_facebook">Login with Facebook</button>
         </div>
         <div>
-            <button class="loginBtn loginBtn_facebook">Sign in with Google</button>
+            <button id="signUpGoogle" class="loginBtn loginBtn_google">Sign in with Google</button>
         </div>
     </div>
     <div class="alt-login-1">
-        <p>Already have an account? <a href="#">Log in</a></p>
+        <p>Already have an account? <a href="login.html">Log in</a></p>
     </div>
     <hr>
     <footer>

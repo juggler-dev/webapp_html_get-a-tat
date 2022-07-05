@@ -7,6 +7,8 @@
     <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Login</title>
+    <script type="module" src="login.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -32,22 +34,32 @@
     <div class="main-container-login">
         <h2>Hey Buddy!</h2>
         <div class="login-form">
-            <form action="">
+            <!-- <form action=""> -->
+            <div class="form">
                 <div class="login-form-container">
                     <div class="login-email-container">
-                        <input type="text" name="user_email" id="user_email" placeholder="Email">
+                        <input type="text" name="user_email" id="emailUser" placeholder="Email">
                     </div>
                     <div class="login-password-container">
                         <div class="login-password-container-2">
-                            <input type="password" name="user_password" id="user_password" placeholder="Password">
+                            <input type="password" name="user_password" id="passwordUser" placeholder="Password">
                             <i class="far fa-eye" id="togglePassword"></i>
                         </div>
                     </div>
-                    <button class="login-button">Log in</button>
+                    <button id="signInBtn" class="login-button">Log in</button>
+                    <div class="alt-login">
+                        <div>
+                            <button id="signUpFacebook" class="loginBtn loginBtn_facebook">Login with Facebook</button>
+                        </div>
+                        <div>
+                            <button id="signUpGoogle" class="loginBtn loginBtn_google">Sign in with Google</button>
+                        </div>
+                    </div>
                     <p><a href="#">Forgot your passowrd?</a></p>
-                    <p>Don't have an account? <a href="#">Sign Up</a></p>
+                    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
                 </div>
-            </form>
+            <!-- </form> -->
+            </div>
         </div>
     </div>
     <hr>
