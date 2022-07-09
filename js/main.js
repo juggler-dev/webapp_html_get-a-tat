@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithRedirect } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
-import { getFirestore, collection, addDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, getDoc  } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 const firebaseConfig = {
@@ -20,5 +20,7 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 const provider = new GoogleAuthProvider();
 const providerTwo = new FacebookAuthProvider();
+const usersCollectionRef = collection(db,'user');
 
-export { auth, db, storage, provider, providerTwo };
+
+export { auth, db, storage, provider, providerTwo, usersCollectionRef };
