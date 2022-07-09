@@ -7,9 +7,13 @@ signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
+    console.log(result.user);
+    window.location.href  = "login-account.html"
+
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -49,9 +53,6 @@ signInWithPopup(auth, providerTwo)
   });
 })
 
-
-
-
 // ============ Sign UP UP UP with email and password ============
 document.getElementById('signUpBtn').addEventListener('click', () => {
 
@@ -59,14 +60,48 @@ document.getElementById('signUpBtn').addEventListener('click', () => {
   const userPassword = document.getElementById('passwordUser').value;
 
   createUserWithEmailAndPassword(auth, userEmail, userPassword)
-    .then((res) => {
+
+  .then((res) => {
       console.log(res.user)
+
+      // window.location.href  = "login-account.html"
+
+      // getUserLog() = res.user;
     })
     .catch((err) => {
       console.log(err.code)
       console.log(err.message)
     })
+    createUser();
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function getUserLog(user) {
+//   if (user !== null) {
+//     console.log('funciona!')
+//     // window.location.href  = "login-account.html"
+
+//   return document.getElementById('userLoggedIn').innerHTML = `${res.user.email}`
+//   } else {
+//     console.log('error')
+//   }
+// }
+
 
 // ============ Sign IN IN IN with email and password ============
 // document.getElementById('signInBtn').addEventListener('click', () => {
