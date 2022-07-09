@@ -20,3 +20,5 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 const provider = new GoogleAuthProvider();
 const providerTwo = new FacebookAuthProvider();
+
+export { auth, db, storage, provider, providerTwo };
