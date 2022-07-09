@@ -24,3 +24,4 @@ const usersCollectionRef = collection(db,'user');
 
 
 export { auth, db, storage, provider, providerTwo, usersCollectionRef };
+
