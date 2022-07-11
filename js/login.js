@@ -9,6 +9,7 @@ onAuthStateChanged(auth, (user) => {
     // const uid = user.uid;
     console.log(user.uid);
     console.log(user.email);
+   
 
     // ...
   } else {
@@ -20,31 +21,20 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// ==================== SIGN IN - EMAIL/PASSWORD =======================
+// ==================== NEW SIGN IN - EMAIL/PASSWORD =======================
 document.getElementById('signInBtn').addEventListener('click', () => {
 
   const userEmail = document.getElementById('emailUser').value;
   const userPassword = document.getElementById('passwordUser').value;
 
-  signInWithEmailAndPassword(auth, userEmail, userPassword)
+  signInWithEmailAndPassword(auth, userEmail, userPassword).then(cred => {
+    console.log(cred.user)
+    window.location.href  = "login-account.html"
 
-    .then((res) => {
-      console.log(res.user)
-      // localStorage.setItem('test', `
-      // UID: ${res.user.uid}
-      // EMAIL: ${res.user.email}`);
-      // console.log(localStorage.getItem('test') );
-      // console.log(`${res.user.email} you're logged in`);
-      window.location.href  = "login-account.html"
-
-      // document.getElementByIdloginOutput.innerHTML = `<h1>hello</h1>`
-      // getUserLog() = user;
-     
     })
     .catch((err) => {
       console.log(err.code)
       console.log(err.message)
-
     })   
 })
 
@@ -99,3 +89,32 @@ signInWithPopup(auth, providerTwo)
   // ...
 });
 })
+
+
+// // ==================== OLD SIGN IN - EMAIL/PASSWORD =======================
+// document.getElementById('signInBtn').addEventListener('click', () => {
+
+//   const userEmail = document.getElementById('emailUser').value;
+//   const userPassword = document.getElementById('passwordUser').value;
+
+//   signInWithEmailAndPassword(auth, userEmail, userPassword)
+
+//     .then((res) => {
+//       console.log(res.user)
+//       // localStorage.setItem('test', `
+//       // UID: ${res.user.uid}
+//       // EMAIL: ${res.user.email}`);
+//       // console.log(localStorage.getItem('test') );
+//       // console.log(`${res.user.email} you're logged in`);
+//       window.location.href  = "login-account.html"
+
+//       // document.getElementByIdloginOutput.innerHTML = `<h1>hello</h1>`
+//       // getUserLog() = user;
+     
+//     })
+//     .catch((err) => {
+//       console.log(err.code)
+//       console.log(err.message)
+
+//     })   
+// })
