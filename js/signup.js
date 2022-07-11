@@ -1,5 +1,7 @@
-import { auth, provider, providerTwo  } from "./main.js";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithRedirect } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+import { auth, db, provider, providerTwo, usersCollectionRef  } from "./main.js";
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider  } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+
 
 // ============ Sign up and sign in with Google ============
 document.getElementById('signUpGoogle').addEventListener('click', () => {
@@ -54,25 +56,31 @@ signInWithPopup(auth, providerTwo)
 })
 
 // ============ Sign UP UP UP with email and password ============
-document.getElementById('signUpBtn').addEventListener('click', () => {
+document.getElementById('signUpBtn').addEventListener('click', (e) => {
+  e.preventDefault();
 
   const userEmail = document.getElementById('emailUser').value;
   const userPassword = document.getElementById('passwordUser').value;
 
-  createUserWithEmailAndPassword(auth, userEmail, userPassword)
+  // createUserWithEmailAndPassword(auth, userEmail, userPassword) 
+  createUserWithEmailAndPassword(auth, userEmail, userPassword).then((cred) => {
+      setDoc(doc(usersCollectionRef, cred.user.uid), {
+        full_name: document.getElementById('fName').value,
+        city: document.getElementById('city').value,
+        postal_code: document.getElementById('postalCode').value,
+        phone_number: document.getElementById('phoneNumber').value,
+        uid: cred.user.uid
+      }).then(() => {
+        console.log('User Created');
+        window.location.href  = "login-account.html"
 
-  .then((res) => {
-      console.log(res.user)
+      });
+  })
 
-      // window.location.href  = "login-account.html"
-
-      // getUserLog() = res.user;
-    })
-    .catch((err) => {
-      console.log(err.code)
-      console.log(err.message)
-    })
-    createUser();
+  .catch((err) => {
+    console.log(err.code)
+    console.log(err.message)
+  })
 })
 
 
@@ -83,110 +91,3 @@ document.getElementById('signUpBtn').addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-
-// function getUserLog(user) {
-//   if (user !== null) {
-//     console.log('funciona!')
-//     // window.location.href  = "login-account.html"
-
-//   return document.getElementById('userLoggedIn').innerHTML = `${res.user.email}`
-//   } else {
-//     console.log('error')
-//   }
-// }
-
-
-// ============ Sign IN IN IN with email and password ============
-// document.getElementById('signInBtn').addEventListener('click', () => {
-
-//   const userEmail = document.getElementById('emailUser').value;
-//   const userPassword = document.getElementById('passwordUser').value;
-
-//   signInWithEmailAndPassword(auth, userEmail, userPassword)
-//     .then((res) => {
-//       console.log(res.user)
-//     })
-//     .catch((err) => {
-//       console.log(err.code)
-//       console.log(err.message)
-//     })   
-// })
-
-// ============ Logout ============
-// const logout = async () => {
-//   await signOut(auth);
-// }
-
-// signOutBtn.addEventListener('click', logout);
-
-// signOut(auth).then(() => {
-//   // Sign-out successful.
-// }).catch((error) => {
-//   // An error happened.
-// });
-
-// const logout = document.getElementById('signOutBtn');
-// logout.addEventListener('click',(e) => {
-//   e.preventDefault();
-//   auth.signOut()
-//   console.log(logout);
-// })
-
-
-
-// const monitorAuthState = async ()  => {
-//   onAuthStateChanged(auth, user => {
-//     if (user) {
-//       console.log(user);
-//       showApp();
-//       showLoginState(user);
-
-//       hideLoginError();
-//     }
-//     else {
-//       showLoginForm();
-//       output1.innerHTML = "You're not logged in."
-//     }
-//   });
-// }
-
-// monitorAuthState();
-
-
-
-
-// document.getElementById('addData').addEventListener('click', async () => {
-
-//   const userEmail = document.getElementById('userInputEmail').value;
-//   const userPassword = document.getElementById('userInputPassword').value;
-
-//   const docRef = await addDoc(collection(db, "artist"), {
-//     email: userEmail,
-//     password: userPassword
-//   });
-//   console.log("Document written with ID: ", docRef.id);
-// })
-
-// document.getElementById('getData').addEventListener('click', async () => {
-
-//   const userEmail = document.getElementById('userInputEmail').value;
-//   const userPassword = document.getElementById('userInputPassword').value;
-//   const userDocId = document.getElementById('userInputDocId').value;
-
-//   const docRef = doc(db, "artist", userDocId);
-//   const docSnap = await getDoc(docRef);
-
-//   if (docSnap.exists()) {
-//     console.log("Document data:", docSnap.data());
-//   } else {
-//     // doc.data() will be undefined in this case
-//     console.log("No such document!");
-//   }
-// })
