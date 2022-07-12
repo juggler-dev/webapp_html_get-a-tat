@@ -7,14 +7,16 @@
   let map;
   let infoWindow;
   let marker;
+  let geocoder;
   
   function initMap(){
   
       // Map Options: set to Vacnouver Location
   
       let options = {
-          zoom: 12,
+          zoom: 10,
           center: {lat: 49.2827, lng: -123.1207}, 
+          gestureHandling: "greedy",
       }
   
       // New Map
