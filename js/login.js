@@ -7,8 +7,9 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     // const uid = user.uid;
-    console.log(user.uid);
-    console.log(user.email);
+    console.log('user logged in', user)
+    // console.log(user.uid);
+    // console.log(user.email);
    
 
     // ...
@@ -16,7 +17,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed out
     // ...
 
-    console.log('user logout');
+    console.log('user logged out');
 
   }
 });
