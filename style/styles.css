@@ -76,6 +76,22 @@ select {
   }
 }
 
+/* VARIABLES */
+:root {
+  --font-title: 'Righteous', cursive;
+  --font-body: 'Poppins', sans-serif;
+  --primary-red: #FF0000;
+  --primary-red-shade: #F9CCC5;
+  --primary-yellow-shade: #F9E8C5;
+  --eco-friendly-dark-green: #00B5B2;
+  --eco-friendly-green-shade: #0ACC92;
+  --neutral-light-orange: #DBBAAD;
+  --neutral-white: #FFF;
+  --neutral-light-grey: #E2E2E2;
+  --warning: #FF9E81; 
+}
+
+
 /* HEADER */
 
 header{ 
@@ -83,6 +99,7 @@ header{
     grid-template-columns: .5fr 1fr .5fr;
     margin: 0;
     padding: 0;
+    border-bottom: 1px solid black;
 }
 
 header nav{
@@ -103,6 +120,13 @@ header nav ul{
 
 header nav ul li{
     align-self: center;
+    font-family: var(--font-title);
+}
+
+header nav ul li a{
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
 }
 
 .header-container1{
@@ -130,6 +154,16 @@ header nav ul li{
 .header-container2 a{
   align-self: center;
   margin-right: 6em;
+}
+
+.login-container a{
+  border: 1px solid var(--warning);
+  border-radius: 25px;
+  font-size: 18px;
+  padding: .75rem 2rem;
+  text-decoration: none;
+  color: black;
+  font-family: var(--font-body);
 }
 
 /* SIGN-UP - CUSTOMER */
@@ -220,6 +254,7 @@ header nav ul li{
   margin-bottom: 5rem;
 }
 
+
 /* SIGN UP - ARTIST */
 
 .form-container-artist{
@@ -263,35 +298,53 @@ header nav ul li{
 
 /* APPOINTMENT FUNCTION - PLANNING */
 .h1-appointment-planning{
-   margin: 2rem 5%;
+   margin: 2rem 13%;
+   font-family: var(--font-title);
+   font-size: 46px;
+}
+
+.appointment-planning-cover-image{
+  background: url(images/appointment-cover.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 100%;
+  height: 440px;
+}
+
+.main-container-appointment-planning{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.appointment-planning-form-container{
+  margin: 2rem 10%;
 }
 
 .appointment-planning-form-container form{
   display: grid;
-  margin: 2rem 5%;
   grid-template-columns: 1fr 1fr;
+  justify-content: space-between; 
 }
 
 .appointment-planning-form-container form label{
-  font-size: 1.5rem;
+  font-family: var(--font-title);
+  font-size: 32px;
+  margin-bottom: .5rem;
 }
 
 .appointment-planning-container-1{
-
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   align-content: space-between;
   gap: 1rem;
-  margin-right: 1rem;
+  margin-left: 10%;
+  border-right: 1px solid var(--warning);
 }
 
 .appointment-planning-container-2{
-
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  align-content: space-between;
+  display: flex;
+  flex-flow: column nowrap;
   gap: 1rem;
-  margin-left: 1rem;
 
 }
 
@@ -299,12 +352,14 @@ header nav ul li{
   display: flex;
   flex-flow: column nowrap; 
 
+
 }
 
 .placement-container select {
   border-radius: 25px;
   padding: .875rem;
   width: 90%;
+  font-family: var(--font-body);
 }
 
 
@@ -319,6 +374,7 @@ header nav ul li{
   border-radius: 25px;
   padding: .875rem;
   width: 90%;
+  font-family: var(--font-body);
 }
 
 .allergies-health-container{
@@ -331,34 +387,56 @@ header nav ul li{
   border-radius: 25px;
   padding: .875rem;
   width: 90%;
+  font-family: var(--font-body);
 }
 
 .short-description-textarea-container{
   display: flex;
   flex-flow: column nowrap;
+  margin-left: 10%;
 }
 
 .short-description-textarea-container textarea{
-  border-radius: 25px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
   width: 90%;
+  font-family: var(--font-body);
+  font-size: 15px;
 }
 
 .color-tattoo-container{
   display: flex;
   flex-flow: row nowrap;
+  margin-left: 10%;
+  margin-bottom: 1rem;
+}
+
+.color-tattoo-container p{
+  font-family: var(--font-body);
+}
+
+#color-tattoo-radio-label{
+  font-family: var(--font-body);
+  font-size: 16px;
 }
 
 .color-tattoo-radio{
   margin-left: 1rem;  
 }
 
+.upload-image-container{
+  margin-left: 10%;
+}
+
 .upload-image-container p{
-  font-size: 1.5rem;
+  font-size: 32px;
+  font-family: var(--font-title);
 }
 
 .choose-date-time-container{
   display: flex;
   flex-flow: column nowrap;
+  margin-left: 10%;
 }
 
 .choose-date-time-container input{
@@ -472,7 +550,30 @@ header nav ul li{
   border: none;
 }
 
+
+/* GET A TAT LOCATOR  */
+.tattoo-locator-form{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;  
+  margin: 2rem 13%
+}
+
+.tattoo-locator-filter-container{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#map{
+  width: 50%;
+  height: 440px;
+}
+
 /* FOOTER */
+
+footer{
+  margin-top: 1px solid black;
+}
 
 .footer-info-container{
   display: grid;

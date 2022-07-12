@@ -27,3 +27,5 @@ const artistsCollectionRef = collection(db, 'artists');
 
 export { auth, db, storage, provider, providerTwo, usersCollectionRef, artistsCollectionRef };
 
+
+

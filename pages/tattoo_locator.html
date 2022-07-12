@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../style/styles.css">
-    <title>Tattoo Explorer</title>
+    <script src="../js/tattoo_geolocator.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAihM5t6gqLS3N42HPjZdQJW5p11WTgyu8&callback=initMap&v=weekly" defer></script>
+    <title>Tattoo Locator</title>
 </head>
+
 <body>
     <header>
         <div class="header-container1">
-            <form  action="action_page.php">
+            <form action="action_page.php">
                 <button type="submit"><i class="fa fa-search"></i></button>
-                <input type="text" placeholder="Search.." name="search"> <!--Toggle w/ js-->
+                <input type="text" placeholder="Search.." name="search">
+                <!--Toggle w/ js-->
             </form>
         </div>
         <nav>
@@ -28,17 +36,31 @@
         </nav>
         <div class="header-container2"><a class="header-login" href="#">Login</a></div>
     </header>
-    <hr>
 
-    <section class="tattoo-explorer-main-container">
-        <h1 class="h1-tattoo-explorer">Tattoo Explorer</h1>
-        <div class="tattoo-explorer-form-container">
-            <form action="">
-                <div class="tattoo-explorer-search-container">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search.." name="search">
+
+    <section class="tattoo-locator-main-container">
+        <h1 class="h1-tattoo-locator">Get a Tat Locator</h1>
+        <div class="tattoo-locator-form-container">
+
+                <div>
+                    <p>Just type your address or select the city</p>
                 </div>
-            </form>
+                <div class="tattoo-locator-search-container">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button id="myFindButton">Find artists</button>
+                </div>
+                <!-- <div class="tattoo-locator-filter-container">
+                    <p>Filter</p>
+                    <button>Artists</button>
+                    <button>Studios</button>
+                </div> -->
+
+        </div>
+        <div class="tattoo-locator-results-container">
+            <button id="getPositionBtn">Get my position on the map</button>
+
+            <div id="map"></div>
         </div>
     </section>
 
@@ -66,10 +88,11 @@
                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
             </nav>
-            
+
         </div>
         <p>&copy; 2022 - Get a Tat</p>
     </footer>
-    
+
 </body>
+
 </html>
