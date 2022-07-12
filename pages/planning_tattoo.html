@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/styles.css">
+    <script type="module" src="../js/planning_tattoo.js" defer></script>
     <title>Appointment Planning</title>
 </head>
 <body>
@@ -36,26 +37,38 @@
     <section>
         <h1 class="h1-appointment-planning">My Planning Tattoo</h1> <!--I'm not sure if we should use h1 or h2-->
         <div class="appointment-planning-form-container">
-            <form action="">
+            <form id="appointment_planner" action="post" onsubmit="allowSubmit" >
                 <div class="appointment-planning-container-1">
                     <div class="placement-container"> 
                         <label for="placement">Placement</label>
                         <select name="placement" id="placement">
                             <option value="front-arm-right">Front Arm - Right</option>
+                            <option value="Placement 2">Placement 2</option>
+                            <option value="Placement 3">Placement 3</option>
+                            <option value="Placement 4">Placement 4</option>
+                            <option value="Placement 5">Placement 5</option>
+
+
                         </select>
                     </div>
                     <div class="size-container">
                         <label for="size">Size</label>
                         <select name="size" id="size">
                             <option value="2-3-inches">2-3 inches</option>
+                            <option value="Size 2">Size 2</option>
+                            <option value="Size 3">Size 3</option>
+                            <option value="Size 4">Size 4</option>
+                            <option value="Size 5">Size 5</option>
                         </select>
                     </div>
                     <div class="allergies-health-container">
                         <label for="allergies-health">Allergies/Health</label>
                         <select name="allergies-health" id="allergies-health">
-                            <option value="test">test</option>
-                            <option value="test">test</option>
-                            <option value="test">test</option>
+                            <option value="Allergy 1">Allergy 1</option>
+                            <option value="Allergy 2">Allergy 2</option>
+                            <option value="Allergy 3">Allergy 3</option>
+                            <option value="Allergy 4">Allergy 4</option>
+                            <option value="Allergy 5">Allergy 5</option>
                         </select>
                     </div>
                 </div>
@@ -65,15 +78,27 @@
                             <label for="short-description">Short description of your tattoo</label>
                             <textarea name="short-description" id="short-description" cols="20" rows="3" placeholder=" Army with a bag of potatoes Tattoo on your upper arm "></textarea>
                         </div>
+
                         <div class="color-tattoo-container">
-                            <p>Color Tattoo:</p>
-                            <div class="color-tattoo-radio">
-                                <label for="yes">Yes</label>
-                                <input type="radio" id="yes" name="color">
-                                <label for="no">No</label>
-                                <input type="radio" name="no" id="color">
-                            </div>
+                            <label for="color">Color</label>
+                            <select name="color" id="color">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="Not sure">Not sure</option>
+                            </select>
                         </div>
+
+
+
+                        <!-- <div class="color-tattoo-container">
+                            <p>Color Tattoo:</p>
+                            <div id="colorOrNot" class="color-tattoo-radio">
+                                <label for="yes">Yes</label>
+                                <input type="radio" id="color_yes" name="color">
+                                <label for="no">No</label>
+                                <input type="radio" name="no" id="no_color">
+                            </div>
+                        </div> -->
                     </div>
                     <div class="upload-image-container">
                         <p>Upload an image for reference</p>
@@ -81,18 +106,18 @@
                         <button><i class="fa-solid fa-camera"></i></button> <!--camera icon-->
                     </div>
                     <div>
-                        <div class="choose-date-time-container">
+                        <div id="chooseDate" class="choose-date-time-container">
                             <!--I still need to do some research on how to do the time slot buttons-->
                             <label for="start">Choose date and time</label>
-                            <input type="date" id="start" name="trip-start" value="2022-07-03" min="2022-07-03" max="2022-09-30">
+                            <input class="datePicker" type="date" id="datePicker" name="datePicker" min="">
                         </div>
                         <p><a href="#">Suggest another day</a></p>
                     </div>
                 </div>
         </div>
             <div class="cancel-update-buttons-container">
-                <button class="cancel-button">Cancel</button> 
-                <button class="update-button">Update</button>
+                <button type="reset" id="cancelBtn" class="cancel-button">Cancel</button> 
+                <button type="submit" id="requestBtn" class="update-button">Update</button>
             </div>
         </form>
     </section>
