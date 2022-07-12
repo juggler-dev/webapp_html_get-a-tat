@@ -22,6 +22,7 @@ onAuthStateChanged(auth, (user) => {
 });
 
 // ==================== NEW SIGN IN - EMAIL/PASSWORD =======================
+
 document.getElementById('signInBtn').addEventListener('click', () => {
 
   const userEmail = document.getElementById('emailUser').value;
@@ -29,7 +30,7 @@ document.getElementById('signInBtn').addEventListener('click', () => {
 
   signInWithEmailAndPassword(auth, userEmail, userPassword).then(cred => {
     console.log(cred.user)
-    window.location.href  = "login-account.html"
+    window.location.href  = "home-user.html"
 
     })
     .catch((err) => {
