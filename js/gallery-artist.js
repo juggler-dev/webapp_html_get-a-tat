@@ -75,6 +75,6 @@ document.getElementById('addImageToGallery').addEventListener('click', async () 
         img_name: filename
     });
 
-// refreshGalleryList("artist_img_uploads");
+    updateTable("artist_img_uploads");
 
 })
