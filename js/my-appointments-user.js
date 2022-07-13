@@ -28,7 +28,10 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 
+  document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
 
+    window.location.href  = "../pages/planning_tattoo.html";
+});
 
 
 

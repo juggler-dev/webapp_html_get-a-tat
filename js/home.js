@@ -1,11 +1,11 @@
 // USER ===================================
 
-if ( window.location.pathname == "/integrated_project_team4_summer_2022/home-user.html"){
+if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-user.html"){
 
-    document.getElementById('myProfileUserBtn').addEventListener('click', () => {
+    // document.getElementById('myProfileUserBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/profile-user.html";
-    });
+    //     window.location.href  = "../pages/profile-user.html";
+    // });
 
     document.getElementById('exploreTatBtn').addEventListener('click', () => {
 
@@ -28,10 +28,10 @@ if ( window.location.pathname == "/integrated_project_team4_summer_2022/home-use
 
 if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-artist.html"){
 
-    document.getElementById('myProfileArtistBtn').addEventListener('click', () => {
+    // document.getElementById('myProfileArtistBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/profile-artist.html";
-    });
+    //     window.location.href  = "../pages/profile-artist.html";
+    // });
 
     document.getElementById('myGalleryBtn').addEventListener('click', () => {
 
