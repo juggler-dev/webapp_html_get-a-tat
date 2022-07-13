@@ -529,26 +529,27 @@ header nav ul li a{
 
 
 .tattoo-explorer-main-container{
-  border: 1px solid red;
+
   margin: 2rem 5%;
 }
 
 .h1-tattoo-explorer{
-  border: 1px solid red;
+
   margin-bottom: 2rem;
 }
 
 .tattoo-explorer-search-container{
-  border: 1px solid red;
+
 }
 
 .tattoo-explorer-search-container i{
-  border: 1px solid red;
+  
 }
 
 .tattoo-explorer-search-container input {
   border: none;
 }
+
 
 
 /* GET A TAT LOCATOR  */
@@ -572,7 +573,7 @@ header nav ul li a{
 /* FOOTER */
 
 footer{
-  margin-top: 1px solid black;
+  border  -top: 1px solid black;
 }
 
 .footer-info-container{

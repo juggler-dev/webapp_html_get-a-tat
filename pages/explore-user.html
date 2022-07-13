@@ -7,6 +7,8 @@
     <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/styles.css">
+    <script type="module" src="../js/explore-user.js"></script>
+    <script type="module" src="../js/main.js"></script>
     <title>Tattoo Explorer</title>
 </head>
 <body>
@@ -28,10 +30,11 @@
         </nav>
         <div class="header-container2"><a class="header-login" href="../index.html">Login</a></div>
     </header>
-    <hr>
+
 
     <section class="tattoo-explorer-main-container">
         <h1 class="h1-tattoo-explorer">Tattoo Explorer</h1>
+        <!-- <button id="displayGallery">Display Gallery</button> -->
         <div class="tattoo-explorer-form-container">
             <form action="">
                 <div class="tattoo-explorer-search-container">
@@ -40,9 +43,13 @@
                 </div>
             </form>
         </div>
+        <div class="display-gallery-container" id="displayGallery">
+            <div class="imageDisplay" id="imageDisplay">
+                <img src="" alt="" id="myImg">
+            </div>
+        </div>
     </section>
 
-    <hr>
     <footer>
         <div class="footer-info-container">
             <div class="footer-container-child">

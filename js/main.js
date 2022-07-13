@@ -26,7 +26,8 @@ const requestAppointment = collection(db, 'request_appointment');
 
 
 
-export { auth, db, storage, provider, providerTwo, usersCollectionRef, artistsCollectionRef, requestAppointment };
 
+
+export { auth, db, storage, provider, providerTwo, usersCollectionRef, artistsCollectionRef, requestAppointment };
 
 
