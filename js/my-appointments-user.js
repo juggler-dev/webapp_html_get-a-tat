@@ -18,6 +18,8 @@ onAuthStateChanged(auth, (user) => {
     //     console.log('hello')
     // })
 
+    
+
 
 
 
@@ -28,31 +30,40 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 
-  document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
-
-    window.location.href  = "../pages/planning_tattoo.html";
-});
 
 
 
+// let userUID = "";
+
+// function drawNewTableRow(){
+//   let artistName = row.insertCell(0);
+//   let appointmentDate = row.insertCell(1);
+
+//   myAppointmentsUser.innerHTML += artistName, appointmentDate
+// }
 
 
 // get all appointments requested
 const querySnapshot = await getDocs(collection(db, "request_appointment"));
 querySnapshot.forEach((doc) => {
-    
+
     console.log(doc.id, " => ", doc.data());
 
     const appointments = doc.data();
     console.log(appointments.artist)
     //   console.log(appointments.(user.name))
 
-    myUserAppointments.innerHTML += 
+  
+    
+
+  myAppoinmentsUser.innerHTML += 
     `
-    <li>Artist: ${appointments.artist} Date: ${appointments.date} Time: ${appointments.time} Location: </li>
+    Artist: ${appointments.artist} Date: ${appointments.date}
     `
 
 })
+
+
 
 
 
