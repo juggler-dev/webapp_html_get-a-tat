@@ -6,13 +6,15 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstati
 // Variables
 let userUID = "";
 
-function drawNewTableRow(artistName, appoinmentDate, row){
+function drawNewTableRow(artistName, appoinmentDate, appoinmentTime, row){
   let artist = row.insertCell(0);
   let date = row.insertCell(1);
+  let time = row.insertCell(2);
 
 // table info
   artist.innerHTML = `<p>${artistName}</p>`;
-  date.innerHTML = `<p>${appoinmentDate}</p>`; 
+  date.innerHTML = `<p>${appoinmentDate}</p>`;
+  time.innerHTML = `<p>${appoinmentTime}</p>`;  
 }
 
 async function updateTable(collectionName) {
@@ -25,7 +27,7 @@ async function updateTable(collectionName) {
 
   const userAppointments = await getDocs(appointmentsUserQuery);
   userAppointments.forEach((doc) => {
-    drawNewTableRow(doc.data().artist, doc.data().date, myAppointmentUser.insertRow(0))
+    drawNewTableRow(doc.data().artist, doc.data().date, doc.data().time, myAppointmentUser.insertRow(0))
   });
 }
 

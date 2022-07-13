@@ -35,6 +35,7 @@ onAuthStateChanged(auth, (user) => {
             description: document.getElementById('short-description').value,
             color: document.getElementById('color').value,
             date: document.getElementById('datePicker').value,
+            time: document.getElementById('timePicker').value,
             photo_name: userFile.name,
             uid: user.uid
     
