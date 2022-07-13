@@ -30,7 +30,7 @@ async function updateTable(collectionName) {
     appointmentTable.innerHTML = "";
 
     //Query
-    const appointmentQuery = query(collection(db, collectionName), where("artist", "==", "Monkey D Luffy"));
+    const appointmentQuery = query(collection(db, collectionName), where("artist_id", "==", "0QZE1DOE8LXDg9P50VcBoBzkNo32"));
     const artistAppointments = await getDocs(appointmentQuery);
     artistAppointments.forEach((doc) => {
         drawNewTableRow(doc.data().uid, doc.data().description, doc.data().date, appointmentTable.insertRow(0))
