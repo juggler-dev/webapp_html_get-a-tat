@@ -4,14 +4,14 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, si
 import { collection, doc, getDoc, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 
 // Variables =====================
-let userUID = "";
+let userUID;
 
 function drawNewTableRow(imgName, row){
     let thumbnail = row.insertCell(0);
     let name = row.insertCell(1);
 
     //Thumbnail calling
-    const imageRef = ref(storage, userUID+ '/' +imgName);
+    const imageRef = ref(storage, "0QZE1DOE8LXDg9P50VcBoBzkNo32" + '/' + imgName);
 
     getDownloadURL(imageRef)
     .then((url) => {
@@ -26,9 +26,12 @@ async function updateTable(collectionName) {
     //Table Name
     galleryTable.innerHTML = "";
 
-    const artistCollection = await getDocs(collection(db, collectionName));
+    const artistCollectionQuery = query(collection(db, collectionName), where("artist_id", "==", "0QZE1DOE8LXDg9P50VcBoBzkNo32"));
+    const artistCollection = await getDocs(artistCollectionQuery);
+    // const artistCollection = await getDocs(collection(db, collectionName));
     artistCollection.forEach((doc) => {
         drawNewTableRow(doc.data().img_name, galleryTable.insertRow(0))
+        // console.log(doc.data());
     });
 }
 
