@@ -76,7 +76,7 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
 
       }).then(() => {
         console.log('User Created');
-        window.location.href  = "login-account.html"
+        window.location.href  = "home-artist.html"
 
       });
   })
