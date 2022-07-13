@@ -1,131 +1,99 @@
 import { auth, storage, db, provider, providerTwo, requestAppointment, usersCollectionRef, artistsCollectionRef  } from "./main.js";
 import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, onAuthStateChanged   } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
-import { addDoc, doc, setDoc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
-// ===================== GET CURRENT USER =======================
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log('user logged in', user)
+// Variables
+let userUID = "";
 
-    //  document.getElementById('myAppoinmentsUserBtn').addEventListener('click', () => {
+function drawNewTableRow(artistName, appoinmentDate, row){
+  let artist = row.insertCell(0);
+  let date = row.insertCell(1);
 
-    //     window.location.href  = "my-appoinments-user.html"
+// table info
+  artist.innerHTML = `<p>${artistName}</p>`;
+  date.innerHTML = `<p>${appoinmentDate}</p>`; 
+}
 
-    
+async function updateTable(collectionName) {
+  // Table name
+  myAppointmentUser.innerHTML = "";
 
-    // }).then(() => {
-    //     console.log('hello')
-    // })
+  // Query
+  const appointmentsUserQuery = query(collection(db, "request_appointment"), where("uid", "==", "50QeZJOwCoc4e4lwKfeUjOyv9CD3"));
+  
 
-    
-
-
-
-
-
-       
-    } else {
-      console.log('user logged out');
-    }
+  const userAppointments = await getDocs(appointmentsUserQuery);
+  userAppointments.forEach((doc) => {
+    drawNewTableRow(doc.data().artist, doc.data().date, myAppointmentUser.insertRow(0))
   });
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log(user.uid);
+    userUID = user.uid;
+  } else {
+    console.log('user logged out');
+  }
+});
+
+updateTable("request_appointment");
 
 
 
 
-// let userUID = "";
-
-// function drawNewTableRow(){
-//   let artistName = row.insertCell(0);
-//   let appointmentDate = row.insertCell(1);
-
-//   myAppointmentsUser.innerHTML += artistName, appointmentDate
-// }
+// OLD CODE SHOWING ALL USERS APPOINTMENTS
 
 
-// get all appointments requested
-const querySnapshot = await getDocs(collection(db, "request_appointment"));
-querySnapshot.forEach((doc) => {
+// // ===================== GET CURRENT USER =======================
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       console.log('user logged in', user)
 
-    console.log(doc.id, " => ", doc.data());
+//     //  document.getElementById('myAppoinmentsUserBtn').addEventListener('click', () => {
 
-    const appointments = doc.data();
-    console.log(appointments.artist)
-    //   console.log(appointments.(user.name))
+//     //     window.location.href  = "my-appoinments-user.html"
 
-  
-    
-
-    myAppointmentUser.innerHTML += 
-    `
-    Artist: ${appointments.artist} Date: ${appointments.date}
-    `
-
-})
+//     // }).then(() => {
+//     //     console.log('hello')
+//     // })
+       
+//     } else {
+//       console.log('user logged out');
+//     }
+//   });
 
 
+// // get all appointments requested
+// const querySnapshot = await getDocs(collection(db, "request_appointment"));
+// querySnapshot.forEach((doc) => {
 
+//     console.log(doc.id, " => ", doc.data());
 
+//     const appointments = doc.data();
+//     console.log(appointments.artist)
+//     //   console.log(appointments.(user.name))
 
+//     myAppointmentUser.innerHTML += 
+//     `
+//     Artist: ${appointments.artist} Date: ${appointments.date}
+//     `
+// })
 
-  
-
-// // get all artists names
-// const artistsQuerySnapshot = await getDocs(collection(db, "artists"));
-//   artistsQuerySnapshot.forEach((doc) => {
+// // // get all artists names
+// // const artistsQuerySnapshot = await getDocs(collection(db, "artists"));
+// //   artistsQuerySnapshot.forEach((doc) => {
       
-//   console.log(doc.id, " => ", doc.data());
+// //   console.log(doc.id, " => ", doc.data());
 
-//   const artists = doc.data();
-//   console.log(artists.full_name)
+// //   const artists = doc.data();
+// //   console.log(artists.full_name)
 
-// })
-
-
+// // })
 
 
 
 
-// class Person {
-//     constructor (name, age, height, description) {
-//         this.name = name;
-//         this.age = age;
-//         this.height = height;
-//         this.description = description
-//     }
-// }
 
-// const personForm = document.getElementById("personForm")
-// const personArray = [];
 
-// personForm.addEventListener('submit', (event) => {
-//     event.preventDefault();
-
-//     const name = document.getElementById("name").value;
-//     const age = parseInt(document.getElementById("age").value);
-//     const height = document.getElementById("height").value;
-//     const description = document.getElementById("description").value;
-
-//     const person = new Person (name, age, height, description);
-
-//     personArray.push(person);
-//     console.log(person);
-
-//     document.getElementById("name").value= "";
-//     document.getElementById("age").value= "";
-//     document.getElementById("height").value= "";
-//     document.getElementById("description").value= "";
-
-//     let data = printToScreen(personArray);
-
-//     personList.innerHTML = data;
-// })
-
-// function printToScreen(arr) {
-//     let listPersonInfo = "";
-//     for (let i=0; i < arr.length; i++){
-//         console.log(arr[i].name);
-//         listPersonInfo += `<li>Name: ${arr[i].name} Age: ${arr[i].age} Height: ${arr[i].height} Description: ${arr[i].description}</li>`;
-//     }
-//     return listPersonInfo;
-// }
