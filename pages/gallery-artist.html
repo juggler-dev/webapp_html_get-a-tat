@@ -8,7 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/gallery-artist.css">
     <script type="module" src="../js/home.js" defer></script>
+    <script type="module" src="../js/gallery-artist.js" defer></script>
     <title>Login</title>
 
 </head>
@@ -33,6 +35,25 @@
         <div class="header-container2"><a class="header-login" href="../index.html">Login</a></div>
     </header>
     <hr>
+    <div class="content">
+            <div class="gallery-list">
+                <table class="gallery-table" id="galleryTable">
+                    <tr>
+                      <th>Thumbnail</th>
+                      <th>Name</th>
+                    </tr>
+                    <tr>
+                      <td><img>Alfreds Futterkiste</img></td>
+                      <td><p>Gioconda</p></td>
+                    </tr>
+                  </table>
+            </div>
+
+        <addButtons>
+            <input type="file" id="addImageArtist">
+            <button id="addImageToGallery">Add Image</button>
+        </addButtons>
+    </div>
     <hr>
     <footer>
         <div class="footer-info-container">
