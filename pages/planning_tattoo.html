@@ -36,9 +36,15 @@
     </div>
     <section>
         <h1 class="h1-appointment-planning">My Planning Tattoo</h1> <!--I'm not sure if we should use h1 or h2-->
+       
         <div class="appointment-planning-form-container">
             <form id="appointment_planner" action="post" onsubmit="allowSubmit" >
-                <div class="appointment-planning-container-1">
+                <div class="artists-options">
+                    <label for="artists">Artist</label>
+                    <br>
+                    <select id="artistsListOutput"></select>
+                </div>
+                <div class="appointment-planning-container">
                     <div class="placement-container"> 
                         <label for="placement">Placement</label>
                         <select name="placement" id="placement">
@@ -47,8 +53,6 @@
                             <option value="Placement 3">Placement 3</option>
                             <option value="Placement 4">Placement 4</option>
                             <option value="Placement 5">Placement 5</option>
-
-
                         </select>
                     </div>
                     <div class="size-container">
@@ -102,7 +106,8 @@
                     </div>
                     <div class="upload-image-container">
                         <p>Upload an image for reference</p>
-                        <button><i class="fa-solid fa-plus"></i></button> <!--plus icon-->
+                        <input type="file" id="choosePicture">
+                        <button id="uploadPicture"><i class="fa-solid fa-plus"></i></button> <!--plus icon-->
                         <button><i class="fa-solid fa-camera"></i></button> <!--camera icon-->
                     </div>
                     <div>

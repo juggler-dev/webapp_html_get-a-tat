@@ -604,3 +604,8 @@ footer p{
   font-size: .75rem;
   margin-top: 2rem; 
 }
+
+.artists-options {
+  grid-column: span 2;
+  padding-bottom: 0.5rem;
+}
