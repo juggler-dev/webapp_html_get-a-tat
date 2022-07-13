@@ -56,7 +56,7 @@ querySnapshot.forEach((doc) => {
   
     
 
-  myAppoinmentsUser.innerHTML += 
+    myAppointmentUser.innerHTML += 
     `
     Artist: ${appointments.artist} Date: ${appointments.date}
     `
