@@ -6,15 +6,15 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstati
 // Variables
 let userUID = "";
 
-function drawNewTableRow(artistName, appoinmentDate, appoinmentTime, row){
+function drawNewTableRow(artistName, appoinmentDate, row){
   let artist = row.insertCell(0);
   let date = row.insertCell(1);
-  let time = row.insertCell(2);
+  // let time = row.insertCell(2);
 
 // table info
   artist.innerHTML = `<p>${artistName}</p>`;
   date.innerHTML = `<p>${appoinmentDate}</p>`;
-  time.innerHTML = `<p>${appoinmentTime}</p>`;  
+  // time.innerHTML = `<p>${appoinmentTime}</p>`;  
 }
 
 async function updateTable(collectionName) {
@@ -22,14 +22,16 @@ async function updateTable(collectionName) {
   myAppointmentUser.innerHTML = "";
 
   // Query
-  const appointmentsUserQuery = query(collection(db, "request_appointment"), where("uid", "==", "50QeZJOwCoc4e4lwKfeUjOyv9CD3"));
+  const appointmentsUserQuery = query(collection(db, "request_appointment"), where("uid", "==", "ftD6R9xz7qXeRUbAdIoF9pThBIl2"));
   
 
   const userAppointments = await getDocs(appointmentsUserQuery);
   userAppointments.forEach((doc) => {
-    drawNewTableRow(doc.data().artist, doc.data().date, doc.data().time, myAppointmentUser.insertRow(0))
+    drawNewTableRow(doc.data().artist, doc.data().date, myAppointmentUser.insertRow(0))
   });
 }
+
+//Events
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -42,7 +44,10 @@ onAuthStateChanged(auth, (user) => {
 
 updateTable("request_appointment");
 
+document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
 
+  window.location.href  = "../pages/planning_tattoo.html";
+});
 
 
 // OLD CODE SHOWING ALL USERS APPOINTMENTS
