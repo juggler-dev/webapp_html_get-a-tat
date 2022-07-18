@@ -1,0 +1,27 @@
+/* form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+} */
+
+.btns-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.visually-hidden {
+clip: rect(0 0 0 0);
+clip-path: inset(50%);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+width: 1px;
+}
+
+/* img {
+    display: none;
+} */

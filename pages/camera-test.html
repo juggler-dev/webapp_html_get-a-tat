@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+    <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../style/styles.css"> -->
+    <link rel="stylesheet" href="../style/camera.css">
+    <script type="module" src="../js/camera-test.js" defer></script>
+</head>
+<body>
+    <form id="sendIt" class="file-camera-container">
+
+
+        <div class="upload-image-container">
+            <h3>Upload an image for reference</h3>
+            <p>Choose a file or take a picture from your device</p>
+            <input type="file" id="choosePicture">
+            <!-- <button type="button" id="uploadPicture"><i class="fa-solid fa-plus"></i></button>  -->
+            <button type="button" id="startCam"><i class="fa-solid fa-camera"></i></a> <!--camera icon-->
+        </div>
+        
+        <div class="camera-wrapper">
+            <video id="video" width="320" height="240" autoplay style="display: none;"></video>
+            <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+        </div>
+
+        <div class="btns-wrapper">
+            <button type="button" id="takePhoto"  style="display: none;"    >1) Take photo</button>
+            <!-- <button type="button" id="uploadPhoto" style="display: none;"   >2) Upload photo</button> -->
+            <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
+        </div>
+
+        <input type="url" size="40" id="image">
+        <input type="text" id="name" placeholder="name" required>
+        <input type="number" id="age" placeholder="age" required>
+
+        <button type="submit" >Send</button>
+
+        <div id="back">
+
+        </div>
+
+    </form>
+</body>
+</html>
