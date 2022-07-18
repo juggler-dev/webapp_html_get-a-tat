@@ -1,6 +1,6 @@
 // USER ===================================
 
-if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-user.html"){
+if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-client.html"){
 
     // document.getElementById('myProfileUserBtn').addEventListener('click', () => {
 
@@ -17,9 +17,9 @@ if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/ho
         window.location.href  = "../pages/locator-user.html";
     });
 
-    document.getElementById('myAppoinmentsUserBtn').addEventListener('click', () => {
-
-        window.location.href  = "../pages/my-appoinments-user.html";
+    document.getElementById('myAppoinmentsClientBtn').addEventListener('click', () => {
+        console.log("hello!");
+        window.location.href  = "../pages/appointment-management-client.html";
     });
 
 }
@@ -40,7 +40,7 @@ if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/ho
 
     document.getElementById('myAppoinmentsArtistBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/my-appoinments-artist.html";
+        window.location.href  = "../pages/appointment-management-client.html";
     });
 
 }

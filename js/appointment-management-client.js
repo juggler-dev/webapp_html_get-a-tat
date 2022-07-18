@@ -1,6 +1,6 @@
 ////////////////// IMPORTS //////////////////
-import { auth, storage, db, provider, providerTwo, requestAppointment, usersCollectionRef, artistsCollectionRef } from "./main.js";
-import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+import { db, storage } from "./firebase-init.js";
+import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE } from "./firestore-references.js";
 import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
@@ -50,7 +50,7 @@ updateTable(COLLECTION_NAME, sessionObject.uid);
 //Move to Create Appointments page
 document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
 
-  window.location.href = "../pages/planning_tattoo.html";
+  window.location.href = "../pages/book-appointment.html";
 });
 
 
