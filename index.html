@@ -4,61 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/styles.css">
-    <script type="module" src="js/home.js" defer></script>
-    <title>Login</title>
-
+    <title>Home Page</title>
 </head>
 <body>
     <header>
-        <div class="header-container1">
-            <!-- <form action="action_page.php">
-                <button type="submit"><i class="fa fa-search"></i></button>
-                <input type="text" placeholder="Search.." name="search">
-            </form> -->
-        </div>
+        <form class="example" action="action_page.php">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <input type="text" placeholder="Search.." name="search"> <!--Toggle w/ js-->
+        </form>
         <nav>
             <ul>
                 <li><a href="#">Discover</a></li>
                 <li><a href="#">Tattoos</a></li>
-                <li><a href="home"><img src="images/GAT-LOGO FINAL-01.png" alt=""></a></li>
+                <li><a href="#">Logo</a></li>
                 <li><a href="#">Artists</a></li>
                 <li><a href="#">Articles</a></li>
             </ul>
         </nav>
-        <div class="header-container2"><a class="header-login" href="pages/login-user.html">Login</a></div>
+        <button>Login</button>
     </header>
     <hr>
-    <hr>
-    <footer>
-        <div class="footer-info-container">
-            <div class="footer-container-child">
-                <h3>Company</h3>
-                <p><a href="#">About</a></p>
-            </div>
-            <div class="footer-container-child">
-                <h3>Help Center</h3>
-                <p><a href="#">FAQ</a></p>
-            </div>
-            <div class="footer-container-child">
-                <h3>Legal</h3>
-                <p><a href="#">Terms & Conditions</a></p>
+     <!-- Big background image -->
+    <section>
+        <div>
+            <h2>Get a Tat</h2>
+            <p>Let your skin bold</p>
+        </div>
+        <div>
+            <p>Find studios and Artists</p>
+            <div>
+                <!--Search bar with dropdown-->
             </div>
         </div>
+        <div>
+            <p>Discover</p>
+            <button>Icon here</button>
+        </div>
+    </section>
 
-        <div id="loginOutput"></div>
-        <div class="footer-nav-container">
-            <nav class="footer-nav">
+    <!--Search bar with dropdown-->
+    <section> 
+        <div>
+            <h2>Feature Artists</h2>
+            <h3>Top Vancouver</h3>
+        </div>
+        <div>
+            <!-- Feature Artists Gallery-->
+        </div>
+    </section>
+
+    <!--Styles Section-->
+
+    <section>
+        <h2>Styles</h2>
+        <div>   
+            <div><a href="#">Classic Americana</a></div>
+            <div><a href="#">Asian</a></div>
+            <div><a href="#">Blackwork</a></div>
+            <div><a href="#">Black and Grey</a></div>
+            <div><a href="#">Lettering</a></div>
+            <div><a href="#">New School</a></div>
+        </div>
+    </section>
+
+    <button><!--Go Up Icon Here--></button>
+
+    <hr>
+
+    <!-- Articles Section -->
+
+    <section>
+        <h2>Articles</h2>
+        <div>
+            <div>
+                <img src="" alt="">
+                <h3>Basic Tattoo Designers</h3>
+                <p>Tribal Tattooing originated thousands of years ago, and it is still being used by various cultures throughout...</p>
+            </div>
+            <button>Read more</button>
+        </div>
+        <div>
+            <div>
+                <img src="" alt="">
+                <h3>Post Care For a New Tattoo</h3>
+                <p>You just got tattooed and want to take all the right precautions to make sure it does not get infected, keeps... </p>
+            </div>
+            <button>Read more</button>
+        </div>
+        <div>
+            <div>
+                <img src="" alt="">
+                <h3>The Tattoo Artist Profession</h3>
+                <p>As tattoos slowly enter the mainstream and the fashionable, and the image of tattooed people...</p>
+            </div>
+            <button>Read more</button>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <!--Advertisement-->
+        </div>
+        <div>
+            <h2>Top Ranked Tattoos</h2>
+            <p>Check the most liked tattoos and meet the artists who created them.</p>
+            <button>View All</button>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <h3>Company</h3>
+            <p><a href="#">About</a></p>
+        </div>
+        <div>
+            <h3>Help Center</h3>
+            <p><a href="#">FAQ</a></p>
+        </div>
+        <div>
+            <h3>Legal</h3>
+            <p><a href="#">Terms & Conditions</a></p>
+        </div>
+        <div>
+            <nav>
                 <ul>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
                 </ul>
             </nav>
-
         </div>
         <p>&copy; 2022 - Get a Tat</p>
     </footer>
