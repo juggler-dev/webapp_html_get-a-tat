@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
 </head>
 <body>
     <header>
-        <form class="example" action="action_page.php">
-            <button type="submit"><i class="fa fa-search"></i></button>
-            <input type="text" placeholder="Search.." name="search"> <!--Toggle w/ js-->
-        </form>
-        <nav>
-            <ul>
-                <li><a href="#">Discover</a></li>
-                <li><a href="#">Tattoos</a></li>
-                <li><a href="#">Logo</a></li>
-                <li><a href="#">Artists</a></li>
-                <li><a href="#">Articles</a></li>
-            </ul>
-        </nav>
-        <button>Login</button>
+        <div class="header-search-container">
+            <form action="action_page.php">
+                <button type="submit"><img src="./icons/search-icon.png" alt="search-icon"></button>
+                <input type="text" placeholder="Search.." name="search">
+                <!--Toggle w/ js-->
+            </form>
+        </div>
+        <div class="header-navigation-container">
+            <nav>
+                <ul>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="#">Tattoos</a></li>
+                    <li><a href="#"><img src="images/logo.png" alt=""></a></li>
+                    <li><a href="#">Artists</a></li>
+                    <li><a href="#">Articles</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-login-button-container">
+            <a class="header-login" href="login-account.html">Login</a>
+        </div>
     </header>
-    <hr>
      <!-- Big background image -->
     <section>
         <div>
@@ -114,28 +120,30 @@
     </section>
 
     <footer>
-        <div>
-            <h3>Company</h3>
-            <p><a href="#">About</a></p>
+        <div class="footer-info-container">
+            <div class="footer-info-container-child">
+                <h3>Company</h3>
+                <p><a href="./about-us.html">About</a></p>
+            </div>
+            <div class="footer-info-container-child">
+                <h3>Help Center</h3>
+                <p><a href="./help-centre.html">FAQ</a></p>
+            </div>
+            <div class="footer-info-container-child">
+                <h3>Legal</h3>
+                <p><a href="#">Terms & Conditions</a></p>
+            </div>
         </div>
-        <div>
-            <h3>Help Center</h3>
-            <p><a href="#">FAQ</a></p>
-        </div>
-        <div>
-            <h3>Legal</h3>
-            <p><a href="#">Terms & Conditions</a></p>
-        </div>
-        <div>
-            <nav>
+        <div class="footer-nav-container">
+            <nav class="footer-nav">
                 <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#"><img src="./icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                    <li><a href="#"><img src="./icons/twitter-icon.png" alt="twitter icon"></a></li>
+                    <li><a href="#"><img src="./icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
                 </ul>
             </nav>
+            <p>&copy; 2022 - Get a Tat</p>
         </div>
-        <p>&copy; 2022 - Get a Tat</p>
     </footer>
 
 

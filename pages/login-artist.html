@@ -13,7 +13,7 @@
     <header>
         <div class="header-search-container">
             <form action="action_page.php">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <button type="submit"><img src="../icons/search-icon.png" alt="search icon"></button>
                 <input type="text" placeholder="Search.." name="search">
             </form>
         </div>
@@ -32,19 +32,20 @@
             <a class="header-login" href="login-client.html">Login</a>
         </div>
     </header>
+
     <div class="main-container-login">
         <h2>Hey Buddy!</h2>
-        <div class="login-form">
+        
             <!-- <form action=""> -->
-            <div class="form">
+          
                 <div class="login-form-container">
                     <div class="login-email-container">
                         <input type="text" name="user_email" id="emailUser" placeholder="Email">
                     </div>
                     <div class="login-password-container">
-                        <div class="login-password-container-2">
+                        <div class="login-password-container-child">
                             <input type="password" name="user_password" id="passwordUser" placeholder="Password">
-                            <i class="far fa-eye" id="togglePassword"></i>
+                            <span class='icon'></span>
                         </div>
                     </div>
                     <button id="signInBtn" class="login-button">Log in</button>
@@ -58,43 +59,44 @@
                             <button id="signUpGoogle" class="loginBtn loginBtn_google">Sign in with Google</button>
                         </div>
                     </div> -->
+<<<<<<< Updated upstream:pages/login-artist.html
                     <!-- <p><a href="#">Forgot your passowrd?</a></p> -->
                     <p>Client? <a href="login-client.html">Sign In</a></p>
                     <p>Don't have an account? <a href="signup-user.html">Sign Up</a></p>
+=======
+                    <p class="forgot-password-text"><a href="./reset-password.html">Forgot your passowrd?</a></p>
+                    <p class="sign-up-text">Don't have an account? <a href="./signup-user.html">Sign Up</a></p>
+>>>>>>> Stashed changes:pages/login.html
                 </div>
             <!-- </form> -->
-            </div>
-        </div>
+    
     </div>
-    <hr>
+
     <footer>
         <div class="footer-info-container">
-            <div class="footer-container-child">
+            <div class="footer-info-container-child">
                 <h3>Company</h3>
-                <p><a href="#">About</a></p>
+                <p><a href="./about-us.html">About</a></p>
             </div>
-            <div class="footer-container-child">
+            <div class="footer-info-container-child">
                 <h3>Help Center</h3>
-                <p><a href="#">FAQ</a></p>
+                <p><a href="./help-centre.html">FAQ</a></p>
             </div>
-            <div class="footer-container-child">
+            <div class="footer-info-container-child">
                 <h3>Legal</h3>
                 <p><a href="#">Terms & Conditions</a></p>
             </div>
         </div>
-
-        <div id="loginOutput"></div>
         <div class="footer-nav-container">
             <nav class="footer-nav">
                 <ul>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                    <li><a href="#"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
+                    <li><a href="#"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
                 </ul>
             </nav>
-
+            <p>&copy; 2022 - Get a Tat</p>
         </div>
-        <p>&copy; 2022 - Get a Tat</p>
     </footer>
 
 

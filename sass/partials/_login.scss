@@ -3,6 +3,7 @@
     flex-flow: column nowrap;
     gap: 1rem;
     margin: 0 auto;
+<<<<<<< Updated upstream
     margin-bottom: 10rem;
     margin-top: 10rem;
     width: 25%;
@@ -54,3 +55,88 @@
   .login-form-container p{
     margin: 0 auto;
   }
+=======
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+    width: 33.3vw;
+    align-content: center;
+    // border: 1px solid red;
+
+    h2{
+        font-family: $font-righteous;
+        color: $primary-red;
+        margin-bottom: 1rem;
+    }
+    
+    .login-form-container{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+
+
+        .login-email-container{
+            input{
+                width: 100%;
+                border-radius: 25px;
+                padding: .675rem;
+                border-color: $primary-red-shade;
+                font-family: $font-poppins;
+            }
+        }
+
+        .login-password-container{
+            display: flex;
+            flex-direction: column;
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            width: 100%;
+
+            .login-password-container-child{
+                display: flex;
+            }
+
+            input{
+                width: 100%;
+                border-radius: 25px;
+                padding: .675rem;
+                border-color: $primary-red-shade;
+                font-family: $font-poppins;
+            }
+        }
+
+        .login-button{
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 1rem;
+            border-radius: 25px;
+            padding: .5rem 1.875rem;
+            background-color: $primary-red;
+            border: 1px solid $primary-red;
+            color: $neutral-white;
+            font-family: $font-poppins;
+        }
+
+        .forgot-password-text{
+            text-align: center;
+            font-family: $font-poppins;
+            font-weight: 600;
+            margin-top: 1rem;
+            
+            a{
+                color: $warning;
+            }
+        }
+
+        .sign-up-text{
+            text-align: center;
+            font-family: $font-poppins;
+
+            a{
+                font-weight: 600;
+                color: $warning;
+            }
+        }
+    }
+
+}
+>>>>>>> Stashed changes
