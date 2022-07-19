@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="../js/tattoo_geolocator.js" defer></script>
+    <script src="../js/tattoo-locator.js" defer></script>
+    <script src="../js/map.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAihM5t6gqLS3N42HPjZdQJW5p11WTgyu8&callback=initMap&v=weekly" defer></script>
+    
     <title>Tattoo Locator Main</title>
 </head>
 
@@ -40,7 +42,9 @@
             <button id="getPositionBtn">My position</button>
             <!-- <input type="textbox" id="address"> -->
             <!-- <input type="button" name="button" id="button" value="encode"> -->
-            <div id="map"></div>
+            <div id="map" style="height: 440px;
+            width: 80%;
+            margin: auto 0;"></div>
         </div>
     </section>
 

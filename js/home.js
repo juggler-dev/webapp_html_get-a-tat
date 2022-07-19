@@ -14,7 +14,7 @@ if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/ho
 
     document.getElementById('artistNearBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/locator-user.html";
+        window.location.href  = "../pages/tattoo-locator-main.html";
     });
 
     document.getElementById('myAppoinmentsClientBtn').addEventListener('click', () => {
