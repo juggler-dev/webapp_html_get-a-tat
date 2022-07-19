@@ -20,18 +20,13 @@ TABLE OF CONTENTS
 @import "partials/variables.scss";
 
 /* RESET =================================================== */
-@import "partials/reset";
+@import "partials/reset.scss";
 
-<<<<<<< Updated upstream
-/* HEADER-FOOTER ====================== ===================== */
-@import "partials/header-footer";
+/* HEADER-FOOTER ============================================ */
+@import "partials/header-footer.scss";
 
+/* LOGIN ============================================ */
 @import "partials/login.scss";
-=======
-/* HEADER-FOOTER =========================================== */
-@import "partials/header-footer";
 
-/* LOGIN --------=========================================== */
-@import "partials/login";
-
->>>>>>> Stashed changes
+/* APPOINTMENT MANAGEMENT CLIENT ============================================ */
+@import "partials/appointment-management-client.scss";

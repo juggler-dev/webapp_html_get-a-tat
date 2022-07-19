@@ -1,0 +1,24 @@
+table, th, td {
+    border-collapse: collapse;
+  }
+
+.appointment-table{
+    width: 100%;
+    border-radius: 8px;
+    background-color: grey;
+    color: white;
+}
+
+.appointment-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid silver;
+}
+
+.appointment-table tr td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    min-height: 100px;
+}

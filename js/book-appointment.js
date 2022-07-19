@@ -24,7 +24,6 @@ class Appointment {
       this.color = color,
       this.date = date,
       this.time = time,
-      // this.photo_name = photo_name,
       this.uid = uid
   }
 
@@ -94,62 +93,6 @@ requestBtn.addEventListener('click', async (e) => {
       console.log(snapshot);
     });
 
-  ////////////////////////////////==========================================IN REVISION
-  // const appointmentDocRef = doc(db, "request-appointment", appointmentDoc.id)
-  // const updatedPhotoName = await updateDoc(appointmentDocRef, {
-  //   photo_name: appointmentDoc.id
-  // });
-  ////////////////////////////////==========================================IN REVISION
-
   console.log("Added appointment" + " " + appointmentDoc.id)
 
 });
-
-
-
-// // ============ Current user request an appointment ==============
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-
-//     requestBtn.addEventListener('click', (e) => {
-//       e.preventDefault();
-
-//       const userFile = document.getElementById('choosePicture').files[0];
-
-//       // Create a reference to 'images/mountains.jpg'
-//       // const storegeRef = ref(storage, 'appointments-img/' + user.email + user.uid);
-
-
-//       // send appoint data request
-//       setDoc(doc(requestAppointment), {
-//         artist: document.getElementById('artistsListOutput').value,
-//         placement: document.getElementById('placement').value,
-//         size: document.getElementById('size').value,
-//         allergies: document.getElementById('allergies-health').value,
-//         description: document.getElementById('short-description').value,
-//         color: document.getElementById('color').value,
-//         date: document.getElementById('datePicker').value,
-//         time: document.getElementById('timePicker').value,
-//         // photo_name: userFile.name,
-//         uid: user.uid
-
-//       }).then((docRef) => {
-//         // uploadBytes(storegeRef, userFile).then((snapshot) => {
-//         //   console.log(snapshot);
-//         // });
-
-//         console.log(docRef.id)
-//       })
-//     })
-//   }
-//   // else {
-//   //   console.log('User logged out. Need to be logged in to request an appointment');
-
-//   // }
-// });
-
-
-
-
-
-
