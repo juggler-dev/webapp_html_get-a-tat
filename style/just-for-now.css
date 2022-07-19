@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+.appointment-planning-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.appointment-planning-container-2 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+input#allergies-health, .timePicker {
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding: 0.875rem;
+    width: 90%;
+    font-family: var(--font-body);
+}
+
+select#artistsListOutput, select#color {
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding: 0.875rem;
+    width: 20%;
+    font-family: var(--font-body);
+}
+
+
+select#color {
+    margin-left: 1rem;
+}
+
+button#requestBtn {
+    border: 1px solid gray;
+    border-radius: 25px;
+    padding: 0.875rem;
+    width: 30%;
+    font-family: var(--font-body);
+    background-color: #FF0000;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 9rem;
+}
+
+input#image {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+}
+
+.camera-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+

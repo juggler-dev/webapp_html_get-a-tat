@@ -1,18 +1,20 @@
 // USER ===================================
 
-if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-client.html"){
+if ( document.title == "Login - Client"){
 
     // document.getElementById('myProfileUserBtn').addEventListener('click', () => {
-
+        console.log("if");
     //     window.location.href  = "../pages/profile-user.html";
     // });
 
     document.getElementById('exploreTatBtn').addEventListener('click', () => {
+        
 
         window.location.href  = "../pages/explore-user.html";
     });
 
     document.getElementById('artistNearBtn').addEventListener('click', () => {
+        
 
         window.location.href  = "../pages/locator-user.html";
     });

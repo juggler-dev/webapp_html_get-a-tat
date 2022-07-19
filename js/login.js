@@ -13,7 +13,6 @@ import {
 import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 
 ////////////////// GLOBAL VARIABLES //////////////////
-
 const USER_TYPE_CLIENT = "client";
 const USER_TYPE_ARTIST = "artist";
 

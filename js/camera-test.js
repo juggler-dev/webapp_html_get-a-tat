@@ -1,48 +1,26 @@
-import { auth, storage, db, provider, providerTwo, requestAppointment, usersCollectionRef, artistsCollectionRef, storageRef  } from "./main.js";
-import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, onAuthStateChanged   } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
-import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL , uploadString} from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
+import { auth, db, storage } from "./firebase-init.js";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithRedirect } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+import { getFirestore, collection, addDoc, doc, getDoc, getDocs, setDoc, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
-onAuthStateChanged(auth, (user) => {
-  console.log(user.uid)
-})
+// references
+const CLIENTS_COLLECTION_REFERENCE = collection(db,'clients');
+const ARTISTS_COLLECTION_REFERENCE = collection(db, 'artists');
+const REQUEST_APPOINTMENTS_COLLECTION_REFERENCE = collection(db, 'request_appointment');
+const CAM_APPOINTMENT_REFERENCE = collection(db, 'cam_appointment');
+
+
 
 // class
 class AppoIMG {
-  constructor (image, name, age) {
+  constructor (image, name, age, uid) {
     this.image = image;
     this.name = name;
     this.age = age;
     this.uid = uid;
+    // this.artistUID = artistUID;
   }
 }
-
-
-// function renderImgAsHTML( appoImage ) {
-//   if ((!appoImage instanceof AppoIMG)) { 
-//       return "<div>Not a Valid Dog Object</div>";
-//   }
-//   let htmlBlock = `<div>
-//           <p>Name: ${appoImage.name} </p>        
-//           <p>Age: ${appoImage.age} </p>
-//           </div>
-//           <hr>`;
-//           console.log(htmlBlock);
-
-//   if (appoImage.image){
-//       htmlBlock += `<div><img src="${appoImage.image}" width="400" ></div>`;
-//   } else {
-//       htmlBlock += `<div>No Image Provided</div>`;
-//   }
-//   return htmlBlock;
-// }
-
-
-
-
-
-
-
 
 // variables
 const sendForm = document.getElementById('sendIt');
@@ -50,6 +28,68 @@ const appoArray = [];
 let camBtn = document.getElementById('startCam');
 let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');
+
+// book with current user
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('user logged in', user)
+
+    sendForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const image = document.getElementById('image').value;
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const uid = user.uid;
+      // const artistUID = artists.uid;
+    
+      const appoImage = new AppoIMG (image, name, age, uid)
+    
+      appoArray.push(appoImage);
+      console.log(appoImage);
+      console.info(appoImage.toString());
+    
+      const back = document.getElementById("back");
+      back.innerHTML = renderImgAsHTML(appoImage);
+    
+    
+    const requestAppointment = collection(db, 'cam_appointment');
+    
+      setDoc(doc(requestAppointment), {
+        image: document.getElementById('image').value,
+        name: document.getElementById('name').value,
+        age: document.getElementById('age').value,
+        uid: user.uid,
+        // artistUID: artists.uid
+      })
+    })
+} else {
+console.log('User logged out. Need to be logged in to request an appointment');
+
+}
+});
+
+// display photo in html
+function renderImgAsHTML( appoImage ) {
+  if ((!appoImage instanceof AppoIMG)) { 
+      return "<div>Not Valid</div>";
+  }
+  let htmlBlock = `<div>
+          <p>Name: ${appoImage.name} </p>        
+          <p>Age: ${appoImage.age} </p>
+          <p>uid: ${appoImage.uid} </p>
+          </div>
+          <hr>`;
+          console.log(htmlBlock);
+
+  if (appoImage.image){
+      htmlBlock += `<div><img src="${appoImage.image}" width="400" ></div>`;
+  } else {
+      htmlBlock += `<div>No Image Provided</div>`;
+  }
+  return htmlBlock;
+}
+
+
 
 // start camera
 camBtn.addEventListener('click', async function() {
@@ -63,6 +103,9 @@ camBtn.addEventListener('click', async function() {
 document.getElementById('stopCam').addEventListener('click', () => {
   const tracks = video.srcObject.getTracks();
   tracks.forEach((track) => track.stop());
+
+  videoFlame.style.display = "none";
+
 
   showCamera(false);
 });
@@ -116,32 +159,96 @@ function showCamera(taker) {
   }
 }
 
+// get artists information
+const artistsQuerySnapshot = await getDocs(ARTISTS_COLLECTION_REFERENCE);
+    artistsQuerySnapshot.forEach((doc) => {
+        
+        console.log(doc.id, " => ", doc.data());
+
+        const artists = doc.data();
+        console.log(artists.full_name)
+
+        artistsListOutput.innerHTML += 
+        `
+            
+                <select>
+                  <option>
+                    ${artists.uid}
+                  </option>
+                </select>
+            
+        `
+    })
+
+  // get pictures information
+
+  const artistsPicturesAppo = await getDocs(CAM_APPOINTMENT_REFERENCE);
+    artistsPicturesAppo.forEach((doc) => {
+        
+        console.log(doc.id, " => ", doc.data());
+
+        const camImg = doc.data();
+        console.log(camImg.image)
+
+        photosAppo.innerHTML += 
+        ` 
+        <img src="${camImg.image}">
+        `
+    })
+
+
+// 
+
+// const artistsQuerySnapshot = await getDocs(ARTISTS_COLLECTION_REFERENCE);
+//     artistsQuerySnapshot.forEach((doc) => {
+        
+//         console.log(doc.id, " => ", doc.data());
+
+//         const artists = doc.data();
+//         console.log(artists.full_name)
+
+//         artistsListOutput.innerHTML += 
+//         `
+            
+//                 <select>
+//                   <option>
+//                     ${artists.uid}
+//                   </option>
+//                 </select>
+            
+//         `
+//     })
+
+
+
+
 // send form
-sendForm.addEventListener('submit', function(e){
-  e.preventDefault();
-  const image = document.getElementById('image').value;
-  const name = document.getElementById('name').value;
-  const age = document.getElementById('age').value;
 
-  const appoImage = new AppoIMG (image, name, age)
+// sendForm.addEventListener('submit', function(e){
+//   e.preventDefault();
+//   const image = document.getElementById('image').value;
+//   const name = document.getElementById('name').value;
+//   const age = document.getElementById('age').value;
+//   const uid = user.uid;
 
-  appoArray.push(appoImage);
-  console.log(appoImage);
-  console.info(appoImage.toString());
+//   const appoImage = new AppoIMG (image, name, age)
 
-  const back = document.getElementById("back");
-  back.innerHTML = renderImgAsHTML(appoImage);
+//   appoArray.push(appoImage);
+//   console.log(appoImage);
+//   console.info(appoImage.toString());
+
+//   const back = document.getElementById("back");
+//   back.innerHTML = renderImgAsHTML(appoImage);
 
 
 
 
-  setDoc(doc(requestAppointment), {
-    image: document.getElementById('image').value,
-    name: document.getElementById('name').value,
-    age: document.getElementById('age').value,
-  })
-})
-
+//   setDoc(doc(requestAppointment), {
+//     image: document.getElementById('image').value,
+//     name: document.getElementById('name').value,
+//     age: document.getElementById('age').value,
+//   })
+// })
 
 
 

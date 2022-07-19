@@ -13,6 +13,10 @@
     <script type="module" src="../js/camera-test.js" defer></script>
 </head>
 <body>
+    <select id="artistsListOutput">
+
+    </select>
+
     <form id="sendIt" class="file-camera-container">
 
 
@@ -38,12 +42,18 @@
         <input type="url" size="40" id="image">
         <input type="text" id="name" placeholder="name" required>
         <input type="number" id="age" placeholder="age" required>
-
+        <!-- <div id="artistUID"></div> -->
+        <!-- <input type="text" placeholder="Aritist ID"> -->
+        
         <button type="submit" >Send</button>
+
+        
 
         <div id="back">
 
         </div>
+
+        <div id="photosAppo" ></div>
 
     </form>
 </body>

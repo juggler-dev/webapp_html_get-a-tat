@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/just-for-now.css">
     <script type="module" src="../js/book_appointment.js" defer></script>
     <title>Appointment Planning</title>
 </head>
@@ -47,32 +48,43 @@
                     <div class="placement-container"> 
                         <label for="placement">Placement</label>
                         <select name="placement" id="placement">
-                            <option value="front-arm-right">Front Arm - Right</option>
-                            <option value="Placement 2">Placement 2</option>
-                            <option value="Placement 3">Placement 3</option>
-                            <option value="Placement 4">Placement 4</option>
-                            <option value="Placement 5">Placement 5</option>
+                            <option value="chest">Chest</option>
+                            <option value="back">Back</option>
+                            <option value="biceps">Biceps</option>
+                            <option value="upper-arm">Upper arm</option>
+                            <option value="forearm">Forearm</option>
+                            <option value="ankle">Ankle</option>
+                            <option value="upper back">Upper back</option>
+                            <option value="wrist">Wrist</option>
+                            <option value="behind ear">Behind the ear</option>
+                            <option value="back neck">Back of the neck</option>
                         </select>
                     </div>
                     <div class="size-container">
                         <label for="size">Size</label>
                         <select name="size" id="size">
-                            <option value="2-3-inches">2-3 inches</option>
-                            <option value="Size 2">Size 2</option>
-                            <option value="Size 3">Size 3</option>
-                            <option value="Size 4">Size 4</option>
-                            <option value="Size 5">Size 5</option>
+                            <option value="less 1 inch">Less than 1 inch</option>
+                            <option value="1-2 inches">1-2 inches</option>
+                            <option value="2-3 inches">2-3 inches</option>
+                            <option value="3-4 inches">3-4 inches</option>
+                            <option value="4-5 inches">4-5 inches</option>
+                            <option value="5-7 inches">5-7 inches</option>
+                            <option value="7-10 inches">7-10 inches</option>
+                            <option value="10-15 inches">10-15 inches</option>
+                            <option value="more 15 inches">More than 15 inches</option>
+
                         </select>
                     </div>
                     <div class="allergies-health-container">
                         <label for="allergies-health">Allergies/Health</label>
-                        <select name="allergies-health" id="allergies-health">
+                        <input type="text" name="allergies-health" id="allergies-health" placeholder="Pigment red">
+                        <!-- <select name="allergies-health" id="allergies-health">
                             <option value="Allergy 1">Allergy 1</option>
                             <option value="Allergy 2">Allergy 2</option>
                             <option value="Allergy 3">Allergy 3</option>
                             <option value="Allergy 4">Allergy 4</option>
                             <option value="Allergy 5">Allergy 5</option>
-                        </select>
+                        </select> -->
                     </div>
                 </div>
                 <div class="appointment-planning-container-2">
@@ -105,9 +117,19 @@
                     </div>
                     <div class="upload-image-container">
                         <p>Upload an image for reference</p>
+                      
+
                         <input type="file" id="choosePicture">
-                        <button type="button" id="uploadPicture"><i class="fa-solid fa-plus"></i></button> <!--plus icon-->
-                        <button type="button" id="startCam"><i class="fa-solid fa-camera"></i></a> <!--camera icon-->
+                        <!-- <button type="button" id="uploadPicture"><i class="fa-solid fa-plus"></i></button>  -->
+                        <!--plus icon-->
+
+                        <button type="button" id="camBtn"><i class="fa-solid fa-camera"></i></a> <!--camera icon-->
+
+                        <!-- <div class="btns-wrapper"> -->
+                            <button type="button" id="takePhoto"  style="display: none;"    >1) Take photo</button>
+                            <!-- <button type="button" id="uploadPhoto" style="display: none;"   >2) Upload photo</button> -->
+                            <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
+                        <!-- </div> -->
                         
 
                     </div>
@@ -127,8 +149,7 @@
                         <!-- <button type="button" id="uploadPhoto" style="display: none;"   >2) Upload photo</button> -->
                         <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
                         <input type="url" size="40" id="image">
-
-                    <!-- </div> -->
+                    </div>
                     <!-- <div>
                         <div id="chooseDate" class="choose-date-time-container"> -->
                             <!--I still need to do some research on how to do the time slot buttons-->
@@ -147,7 +168,7 @@
                             <!-- <input class="timePicker" type="time" id="timePicker" name="timePicker" min=""> -->
 
                             <!-- date and time. need to be adjusted -->
-                            <label for="timePicker">Choose time</label>
+                            <label for="timePicker">Choose Date and Time</label>
                             <input class="timePicker" type="datetime-local" id="timePicker" name="timePicker" min="">
                         </div>
                         <!-- <p><a href="#">Suggest another day</a></p> -->
@@ -155,8 +176,8 @@
                 </div>
         </div>
             <div class="cancel-update-buttons-container">
-                <button type="reset" id="cancelBtn" class="cancel-button">Cancel</button> 
-                <button type="submit" id="requestBtn" class="update-button">Update</button>
+                <!-- <button type="reset" id="cancelBtn" class="cancel-button">Cancel</button>  -->
+                <button type="submit" id="requestBtn" class="update-button">Confirm</button>
             </div>
         </form>
     </section>
