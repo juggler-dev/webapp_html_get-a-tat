@@ -160,6 +160,9 @@ sendForm.addEventListener('submit', function(e){
       console.log(clientReso);
       console.info(clientReso.toString());
 
+      const storegeRef = ref(storage, 'appointments-img/' + Date());
+
+
       // send appoint data request  
       setDoc(doc(REQUEST_APPOINTMENTS_COLLECTION_REFERENCE), {
         artist_name: document.getElementById('artistsListOutput').value,
@@ -178,7 +181,7 @@ sendForm.addEventListener('submit', function(e){
           console.log(snapshot);
         });
 
-        // console.log(docRef.id)
+        console.log(docRef.id)
       })
     })
 //   } 
