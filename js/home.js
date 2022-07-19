@@ -1,6 +1,6 @@
 // USER ===================================
 
-if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-client.html"){
+if ( window.location.href.indexOf("home-client.html") > -1){
 
     // document.getElementById('myProfileUserBtn').addEventListener('click', () => {
 
