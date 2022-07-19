@@ -12,7 +12,11 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 
+import { storeSessionUserData, readSessionUserData } from "./session-storage.js";
+
 ////////////////// GLOBAL VARIABLES //////////////////
+
+const SESSION_USER_KEY_VALUE = "sessionUser";
 
 const USER_TYPE_CLIENT = "client";
 const USER_TYPE_ARTIST = "artist";
@@ -43,26 +47,24 @@ function createNewSessionUser(userType, full_name, email, phoneNumber, city, pos
   return new SessionUser(userType, full_name, email, phoneNumber, city, postalCode, uid);
 }
 
-async function saveSessionUserData(collection, sessionUserUid) {
+async function saveSessionUserDataOnSessionStorage(collection, sessionUserUid) {
 
   //Firestore Query
   const docRef = doc(db, collection, sessionUserUid);
   const docSnap = await getDoc(docRef);
 
-  //Object Stringification
-  const sessionUserData = JSON.stringify(
-    createNewSessionUser(docSnap.data().user_type,
-      docSnap.data().full_name,
-      docSnap.data().email,
-      docSnap.data().phoneNumber,
-      docSnap.data().city,
-      docSnap.data().postalCode,
-      docSnap.data().uid));
+  //Object creation
+  const sessionUserObject = createNewSessionUser(
+    docSnap.data().user_type,
+    docSnap.data().full_name,
+    docSnap.data().email,
+    docSnap.data().phoneNumber,
+    docSnap.data().city,
+    docSnap.data().postalCode,
+    docSnap.data().uid);
 
-  // console.log(sessionUserData);
-
-  //Data Saved on SessionStorage
-  sessionStorage.setItem("sessionUser", sessionUserData);
+  //Data stored on SessionStorage
+  storeSessionUserData(SESSION_USER_KEY_VALUE, sessionUserObject)
 
   //Moving to next window
   if (docSnap.data().user_type == USER_TYPE_CLIENT) {
@@ -90,12 +92,12 @@ document.getElementById('signInBtn').addEventListener('click', () => {
     .then(reponse => {
 
       onAuthStateChanged(auth, (user) => {
-        if (document.title == LOGIN_CLIENT_PAGE_NAME ) {
+        if (document.title == LOGIN_CLIENT_PAGE_NAME) {
           console.log("happening!");
-          saveSessionUserData("clients", user.uid);
+          saveSessionUserDataOnSessionStorage("clients", user.uid);
         };
-        if (document.title == LOGIN_ARTIST_PAGE_NAME ) {
-          saveSessionUserData("artists", user.uid);
+        if (document.title == LOGIN_ARTIST_PAGE_NAME) {
+          saveSessionUserDataOnSessionStorage("artists", user.uid);
         };
       });
     })

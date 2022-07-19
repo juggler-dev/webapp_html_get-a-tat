@@ -1,7 +1,5 @@
-import { auth, storage, db, provider, providerTwo, requestAppointment, usersCollectionRef, artistsCollectionRef } from "./main.js";
-import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+import { storage, db, } from "./firebase-init.js";
 import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 
 // VARIABLES ================================

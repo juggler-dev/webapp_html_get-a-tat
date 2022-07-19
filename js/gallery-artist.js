@@ -6,7 +6,7 @@ import { collection, doc, getDoc, addDoc, query, where, getDocs } from "https://
 // Variables =====================
 let userUID;
 
-function drawNewTableRow(imgName, row){
+function drawNewTableRow(imgName, row) {
     let thumbnail = row.insertCell(0);
     let name = row.insertCell(1);
 
@@ -14,9 +14,9 @@ function drawNewTableRow(imgName, row){
     const imageRef = ref(storage, "0QZE1DOE8LXDg9P50VcBoBzkNo32" + '/' + imgName);
 
     getDownloadURL(imageRef)
-    .then((url) => {
-        thumbnail.innerHTML += `<img src='${url}' class="thumbnail-image"></img>`
-    })
+        .then((url) => {
+            thumbnail.innerHTML += `<img src='${url}' class="thumbnail-image"></img>`
+        })
 
     //Name
     name.innerHTML = `<p>${imgName}</p>`;
@@ -65,9 +65,10 @@ document.getElementById('addImageToGallery').addEventListener('click', async () 
     const filename = Date() + '.png';
     const storegeRef = ref(storage, userUID + '/' + filename);
 
-    uploadBytes(storegeRef, userFile).then((snapshot) => {
-        console.log(snapshot);
-    });
+    uploadBytes(storegeRef, userFile)
+        .then((snapshot) => {
+            console.log(snapshot);
+        });
 
     console.log("Added");
 
