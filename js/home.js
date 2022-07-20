@@ -26,7 +26,7 @@ if ( window.location.href.indexOf("home-client.html") > -1){
 
 // ARTIST ==============================
 
-if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/home-artist.html"){
+if ( window.location.href.indexOf("home-artist.html") > -1){
 
     // document.getElementById('myProfileArtistBtn').addEventListener('click', () => {
 
@@ -35,7 +35,7 @@ if ( window.location.pathname == "/integrated_project_team4_summer_2022/pages/ho
 
     document.getElementById('myGalleryBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/gallery-artist.html";
+        window.location.href  = "../pages/gallery-artist-main.html";
     });
 
     document.getElementById('myAppoinmentsArtistBtn').addEventListener('click', () => {
