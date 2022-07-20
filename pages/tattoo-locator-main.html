@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <script src="../js/tattoo-locator.js" defer></script>
     <script src="../js/map.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAihM5t6gqLS3N42HPjZdQJW5p11WTgyu8&callback=initMap&v=weekly" defer></script>
     
+=======
+    <script src="../js/tattoo_geolocator.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAihM5t6gqLS3N42HPjZdQJW5p11WTgyu8&callback=initMap&v=weekly"></script>
+>>>>>>> Stashed changes
     <title>Tattoo Locator Main</title>
 </head>
 
@@ -32,23 +37,30 @@
         </nav>
         <div class="header-container2"><a class="header-login" href="login-user.html">Login</a></div>
     </header>
-    <hr>
-
-
     <section class="tattoo-locator-main-container">
         <h1 class="h1-tattoo-locator">Get a Tat Locator</h1>
 
         <div class="tattoo-locator-results-container">
+<<<<<<< Updated upstream
             <button id="getPositionBtn">My position</button>
             <!-- <input type="textbox" id="address"> -->
             <!-- <input type="button" name="button" id="button" value="encode"> -->
             <div id="map" style="height: 440px;
             width: 80%;
             margin: auto 0;"></div>
+=======
+            <button id="getPositionBtn">Find Artists</button>
+            <br>
+            <form action="|">
+                <label for="address">Type your address and we will mark it on the map</label>
+                <br>
+                <input type="textbox" id="address">
+                <input type="submit">
+            </form>
+            <div id="map"></div>
+>>>>>>> Stashed changes
         </div>
     </section>
-
-    <hr>
     <footer>
         <div class="footer-info-container">
             <div class="footer-container-child">

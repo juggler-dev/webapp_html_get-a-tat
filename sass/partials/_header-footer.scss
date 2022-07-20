@@ -6,6 +6,8 @@ header{
     grid-template-columns: .5fr 1fr .5fr;
     margin: 0;
     padding:0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid black;
 
     nav{
@@ -23,8 +25,8 @@ header{
             margin: 0;
 
             img{
-                min-width: 140px;
-                min-height: 140px;
+                max-width: 140px;
+                max-height: 140px;
         
             }
 
@@ -126,7 +128,7 @@ footer{
         gap: 2rem;
         margin-left: 5%;
         margin-right: 5%;
-        margin-top: 2rem;
+        margin-top: 1rem;
         margin-bottom: 1rem;
         padding: 0;
 

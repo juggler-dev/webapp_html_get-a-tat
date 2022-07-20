@@ -1,4 +1,5 @@
 .main-container-login{
+<<<<<<< Updated upstream
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
@@ -13,76 +14,110 @@
         font-family: $font-righteous;
         color: $primary-red;
         margin-bottom: 1rem;
+=======
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+  margin-top: 8rem;
+  width: 33%;
+  align-content: center;
+
+  h2{
+    font-family: $font-righteous;
+    color: $primary-red;
+  }
+
+  .login-form-container{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+
+    .login-email-container{
+
+      input{
+        width: 100%;
+        border-radius: 25px;
+        padding: .675rem;
+        font-family: $font-poppins;
+        border-color: $primary-red-shade;
+      }
+>>>>>>> Stashed changes
     }
-    
-    .login-form-container{
+
+    .login-password-container{
+      display: flex;
+      flex-flow: column nowrap;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      width: 100%;
+
+      .login-password-container-child{
         display: flex;
-        flex-flow: column nowrap;
-        gap: 1rem;
 
-
-        .login-email-container{
-            input{
-                width: 100%;
-                border-radius: 25px;
-                padding: .675rem;
-                border-color: $primary-red-shade;
-                font-family: $font-poppins;
-            }
+        input{
+          width: 100%;
+          border-radius: 25px;
+          padding: .675rem;
+          font-family: $font-poppins;
+          border-color: $primary-red-shade;
         }
-
-        .login-password-container{
-            display: flex;
-            flex-direction: column;
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            width: 100%;
-
-            .login-password-container-child{
-                display: flex;
-            }
-
-            input{
-                width: 100%;
-                border-radius: 25px;
-                padding: .675rem;
-                border-color: $primary-red-shade;
-                font-family: $font-poppins;
-            }
-        }
-
-        .login-button{
-            width: 60%;
-            margin: 0 auto;
-            margin-top: 1rem;
-            border-radius: 25px;
-            padding: .5rem 1.875rem;
-            background-color: $primary-red;
-            border: 1px solid $primary-red;
-            color: $neutral-white;
-            font-family: $font-poppins;
-        }
-
-        .forgot-password-text{
-            text-align: center;
-            font-family: $font-poppins;
-            font-weight: 600;
-            margin-top: 1rem;
-            
-            a{
-                color: $warning;
-            }
-        }
-
-        .sign-up-text{
-            text-align: center;
-            font-family: $font-poppins;
-
-            a{
-                font-weight: 600;
-                color: $warning;
-            }
-        }
+      }
     }
 
+    .login-button{
+      width: 50%;
+      border-radius: 25px;
+      margin: 0 auto;
+      padding: .675rem;
+      font-family: $font-poppins;
+      color: $neutral-white;
+      background-color: $primary-red;
+      border: 1px solid $primary-red;
+
+    }
+
+<<<<<<< Updated upstream
 }
+=======
+  }
+
+  .forgot-password-p{
+    font-family: $font-poppins;
+    margin: 0 auto;
+    font-weight: 500;
+    margin-top: .5rem;
+      
+      a{
+        color: $warning;
+      }
+  }
+
+  .artist-sign-in-p{
+    font-family: $font-poppins;
+    margin: 0 auto;
+    font-weight: 500;
+    margin-top: .5rem;
+    color: $primary-red-shade;
+    font-size: 14px;
+
+      a{
+        color: $warning;
+      }
+  }
+
+  .sign-up-p{
+    font-family: $font-poppins;
+    margin: 0 auto;
+    font-weight: 500;
+
+    color: $primary-red-shade;
+    font-size: 14px;
+
+    a{
+      color: $warning;
+    }
+  }
+}
+>>>>>>> Stashed changes
