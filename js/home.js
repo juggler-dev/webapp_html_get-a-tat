@@ -40,7 +40,7 @@ if ( window.location.href.indexOf("home-artist.html") > -1){
 
     document.getElementById('myAppoinmentsArtistBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/appointment-management-client.html";
+        window.location.href  = "../pages/appointment-management-artist.html";
     });
 
 }

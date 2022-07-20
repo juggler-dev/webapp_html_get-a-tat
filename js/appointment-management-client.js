@@ -17,6 +17,10 @@ const STORAGE_FOLDER = "/appointments-img"
 
 ////////////////// FUNCTIONS //////////////////
 
+function heeello() {
+  console.log("hello hello");
+}
+
 //Function to draw Rows in the table with the data from Firestore
 function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, container) {
   // let thumbnail = row.insertCell(0);
@@ -29,11 +33,7 @@ function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, c
   let artistDateGrouping;
   let cardElement;
 
-  //Making it a button
-  // row.innerHTML = `<button></button>`
-
   if (photoName !== ""){
-    // console.log('hello!');
     thumbnailElement = `<img src='${photoName}' class="thumbnail-image"></img>`;
 
     artistElement = `<p>Appointment with: ${artistName}</p>`;
@@ -41,7 +41,7 @@ function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, c
 
     artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
 
-    cardElement = `<button class="appointment-card-btn">${thumbnailElement + artistDateGrouping}</button>`;
+    cardElement = `<button class="appointment-card-btn" onclick="heeello()">${thumbnailElement + artistDateGrouping}</button>`;
 
     container.innerHTML += cardElement;
 
@@ -60,17 +60,11 @@ function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, c
 
       artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
 
-      cardElement = `<button class="appointment-card-btn">${thumbnailElement + artistDateGrouping}</button>`;
+      cardElement = `<button class="appointment-card-btn" onclick="heeello()">${thumbnailElement + artistDateGrouping}</button>`;
 
       container.innerHTML += cardElement;
     })
   }
-
-
-
-  // table info
-  // artist.innerHTML += `<p>${artistName}</p>`;
-  // date.innerHTML += `<p>${appoinmentDate}</p>`;
 
 }
 
@@ -91,7 +85,6 @@ const sessionObject = readSessionUserData(SESSION_USER_KEY_VALUE);
 
 //Update table with content
 updateAppointmentList(COLLECTION_NAME, sessionObject.uid);
-
 
 //Move to Create Appointments page
 document.getElementById('createAppoinmentBtn').addEventListener('click', () => {

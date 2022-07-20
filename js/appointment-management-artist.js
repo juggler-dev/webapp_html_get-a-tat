@@ -3,60 +3,82 @@ import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE } from "./fi
 import { collection, doc, getDoc, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
-// Variables =====================
-let userUID = "";
+import { readSessionUserData } from "./session-storage.js";
 
-function drawNewTableRow(clientName, appoinmentDescription, appointmentDate, row){
-    let name = row.insertCell(0);
-    let description = row.insertCell(1);
-    let date = row.insertCell(2);
+////////////////// VARIABLES AND CONSTANTS //////////////////
 
-    // //Thumbnail calling
-    // const imageRef = ref(storage, userUID+ '/' +imgName);
+const COLLECTION_NAME = "request_appointment";
+const SESSION_USER_KEY_VALUE = "sessionUser";
 
-    // getDownloadURL(imageRef)
-    // .then((url) => {
-    //     thumbnail.innerHTML += `<img src='${url}' class="thumbnail-image"></img>`
-    // })
+const ARTIST_FIELD = "artist";
 
-    //Name
-    name.innerHTML = `<p>${clientName}</p>`;
-    description.innerHTML = `<p>${appoinmentDescription}</p>`;
-    date.innerHTML = `<p>${appointmentDate}</p>`;
+const STORAGE_FOLDER = "/appointments-img"
+
+
+////////////////// FUNCTIONS //////////////////
+
+//Function to draw Rows in the table with the data from Firestore
+function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, container) {
+  // let thumbnail = row.insertCell(0);
+  // let artist = row.insertCell(1);
+  // let date = row.insertCell(2);
+
+  let thumbnailElement;
+  let artistElement;
+  let dateElement;
+  let artistDateGrouping;
+  let cardElement;
+
+  if (photoName !== ""){
+    thumbnailElement = `<img src='${photoName}' class="thumbnail-image"></img>`;
+
+    artistElement = `<p>Appointment with: ${artistName}</p>`;
+    dateElement = `<p>Date: ${appoinmentDate}</p>`;
+
+    artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
+
+    cardElement = `<button class="appointment-card-btn" onclick="heeello()">${thumbnailElement + artistDateGrouping}</button>`;
+
+    container.innerHTML += cardElement;
+
+  }
+
+  else {
+      //Thumbnail call
+  const thumbnailRef = ref(storage, STORAGE_FOLDER + '/' + imageName);
+  getDownloadURL(thumbnailRef)
+    .then((url) => {
+      // thumbnail.innerHTML += `<img src='${url}' class="thumbnail-image"></img>`;
+      thumbnailElement = `<img src='${url}' class="thumbnail-image"></img>`;
+
+      artistElement = `<p>Appointment with: ${artistName}</p>`;
+      dateElement = `<p>Date: ${appoinmentDate}</p>`;
+
+      artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
+
+      cardElement = `<button class="appointment-card-btn" onclick="heeello()">${thumbnailElement + artistDateGrouping}</button>`;
+
+      container.innerHTML += cardElement;
+    })
+  }
+
 }
 
-async function updateTable(collectionName) {
-    //Table Name
-    appointmentTable.innerHTML = "";
+async function updateAppointmentList(collectionName, sessionUserUID) {
 
-    //Query
-    const appointmentQuery = query(collection(db, collectionName), where("artist_id", "==", "0QZE1DOE8LXDg9P50VcBoBzkNo32"));
-    const artistAppointments = await getDocs(appointmentQuery);
-    artistAppointments.forEach((doc) => {
-        drawNewTableRow(doc.data().uid, doc.data().description, doc.data().date, appointmentTable.insertRow(0))
-    });
+  // Query
+  const artistAppointmentsQuery = query(collection(db, collectionName), where(ARTIST_FIELD, "==", sessionUserUID));
+  const artistAppointments = await getDocs(artistAppointmentsQuery);
+  artistAppointments.forEach((doc) => {
+    drawAppointmentCard(doc.data().image, doc.id, doc.data().artist, doc.data().date, document.getElementById('appointmentContainer'))
+  });
 }
 
-// Events
+////////////////// EVENTS //////////////////
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // const uid = user.uid;
-        // console.log('user logged in', user)
-        console.log(user.uid);
-        // console.log(user.email);
-        userUID = user.uid;
+//Read Session Object
+const sessionObject = readSessionUserData(SESSION_USER_KEY_VALUE);
 
-        // ...
-    } else {
-        // User is signed out
-        // ...
-
-        console.log('user logged out');
-    }
-});
-
-updateTable("request_appointment");
+//Update table with content
+updateAppointmentList(COLLECTION_NAME, sessionObject.full_name);
 
