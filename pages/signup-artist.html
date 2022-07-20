@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <title>Sign Up - Artist</title>
     <script type="module" src="../js/firebase-init.js" defer></script>
     <script type="module" src="../js/signup.js" defer></script>
     <!-- <script src="../js/tattoo_geolocator.js" defer></script> -->
 </head>
-
 <body>
     <header>
         <div class="header-search-container">
@@ -40,111 +36,112 @@
         </div>
     </header>
 
-    <div class="main-container">
+    <div class="sign-up-artist-main-container">
+
         <h2>Hey Artist!</h2>
-        <div class="signup_form">
-            <!-- <form action=""> -->
-            <div class="fomr">
-                <div class="form-container">
-                    <div class="email-container">
-                        <input type="text" name="user_email" id="emailUser" placeholder="Email">
-                    </div>
-                    <div class="full-name-container">
-                        <input type="text" name="user_full_name" id="artist_full_name" placeholder="Full Name">
-                    </div>
-                    <div class="postal-code-container">
-                        <input type="text" name="user_postal_code" id="artist_postal_code" placeholder="Postal Code">
-                    </div>
-                    <div class="password-container">
-                        <div class="password-container-2">
-                            <input type="password" name="user_password" id="passwordUser" placeholder="Password">
-                            <i class="far fa-eye" id="togglePassword"></i>
-                        </div>
-                        <!-- <small><a href="#">Forgot your password?</a></small> -->
-                    </div>
-                    <div class="city-container">
-                        <input type="text" name="user_city" id="artist_city" placeholder="City Of Residence">
-                    </div>
-                    <div class="phone-number-container">
-                        <input type="tel" id="artist_phone_number" name="artist_phone_number" pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}"
+       
+        <div class="sign-up-artist-form-container">
+
+            <div class="sign-up-artist-email-container">
+                <input type="text" name="user_email" id="emailUser" placeholder="Email">
+            </div>
+
+            <div class="sign-up-artist-full-name-container">
+                 <input type="text" name="user_full_name" id="artist_full_name" placeholder="Full Name">
+            </div>
+
+            <div class="sign-up-artist-postal-code-container">
+                <input type="text" name="user_postal_code" id="artist_postal_code" placeholder="Postal Code">
+            </div>
+
+            <div class="sign-up-artist-password-container">
+                <div class="password-container-2">
+
+                    <input type="password" name="user_password" id="passwordUser" placeholder="Password">
+                    <i class="far fa-eye" id="togglePassword"></i>
+
+                </div>
+            </div>
+
+            <div class="sign-up-artist-city-container">
+                <input type="text" name="user_city" id="artist_city" placeholder="City Of Residence">
+            </div>
+
+            <div class="sign-up-artist-phone-number-container">
+                <input type="tel" id="artist_phone_number" name="artist_phone_number" pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}"
                             placeholder="Phone Number">
-                    </div>
-                </div>
-                <div class="form-container-artist">
-                    <div class="artist-bio-container">
-                        <textarea id="artist_bio" name="artist_bio" rows="4" cols="50"
-                            placeholder="Write a little bio about yourself"></textarea>
-                    </div>
-                    <div class="artist-website-url-container">
-                        <input type="url" name="website_url" id="website_url"
-                            placeholder="Paste your website link here">
-                    </div>
-                    <div class="artist-instagram-url-container">
-                        <input type="url" name="instagram_url" id="instagram_url"
-                            placeholder="Paste your instagram link here">
-                    </div>
-                    <!-- <div class="artist-upload-images-container">
-                        <p>Upload your masterpieces</p>
-                        <button><i class="fa-solid fa-plus"></i></button>
+            </div>
 
-                        <button><i class="fa-solid fa-camera"></i></button>
+            <div class="sign-up-artist-bio-container">
+                <textarea id="artist_bio" name="artist_bio" rows="4" cols="50"
+                    placeholder="   Write a little bio about yourself"></textarea>
+            </div>
 
-                    </div> -->
-                    <div>
-                        <!-- gallery -->
-                    </div>
-                    <button id="signUpBtn" class="artist-signup-button">Sign Up</button>
-                    <div class="alt-login-1">
-                        <p>Are you a client look for tattoos? <a href="signup-user.html">Sign up here!</a></p>
-                    </div>
-                </div>
-            </div> 
-            <!-- </form> -->
+            <div class="sign-up-artist-website-url-container">
+                <input type="url" name="website_url" id="website_url"
+                    placeholder="Paste your website link here">
+            </div>
+
+            <div class="sign-up-artist-instagram-url-container">
+                <input type="url" name="instagram_url" id="instagram_url"
+                    placeholder="Paste your instagram link here">
+            </div>
+
+            <div class="sign-up-artist-upload-images-container">
+                <p>Upload your masterpieces</p>
+
+                <button class="sign-up-artist-upload-image-button"><img src="../icons/plus-sign-icon.png" alt="Plus Sign Icon"></button>
+
+                <button><img src="../icons/camera-icon.png" alt="Camera Icon"></button>
+            </div>
+
             <div>
-                <p class="horizontal-line">
-                    <span>Or</span>
-                </p>
+                <!-- gallery -->
             </div>
 
-            <div class="alt-login">
-                <div>
-                    <button id="signUpFacebook" class="loginBtn loginBtn_facebook">Login with Facebook</button>
-                </div>
-                <div>
-                    <button id="signUpGoogle" class="loginBtn loginBtn_google">Sign in with Google</button>
-                </div>
-            </div>
+        </div>
 
-            <div class="alt-login-1">
-                <p>Already have an account? <a href="login.html">Log in</a></p>
-            </div>
-            <footer>
-                <div class="footer-info-container">
-                    <div class="footer-container-child">
-                        <h3>Company</h3>
-                        <p><a href="#">About</a></p>
-                    </div>
-                    <div class="footer-container-child">
-                        <h3>Help Center</h3>
-                        <p><a href="#">FAQ</a></p>
-                    </div>
-                    <div class="footer-container-child">
-                        <h3>Legal</h3>
-                        <p><a href="#">Terms & Conditions</a></p>
-                    </div>
-                </div>
-                <div class="footer-nav-container">
-                    <nav class="footer-nav">
-                        <ul>
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        </ul>
-                    </nav>
+        <div class="sign-up-artist-sign-up-button-container">
+            <button id="signUpBtn" class="artist-signup-button">Sign Up</button>
+        </div>
 
-                </div>
-                <p>&copy; 2022 - Get a Tat</p>
-            </footer>
+        <div class="sign-up-artist-alternative-sign-in">
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+
+        <div class="sign-up-client-alt-client">
+            <p>Are you a client look for tattoos? <a href="signup-user.html">Sign up here!</a></p>
+        </div>
+
+    </div>    
+
+    <footer>
+        <div class="footer-info-container">
+            <div class="footer-info-container-child">
+                <h3>Company</h3>
+                <p><a href="./about-us.html">About</a></p>
+            </div>
+            <div class="footer-info-container-child">
+                <h3>Help Center</h3>
+                <p><a href="./help-centre.html">FAQ</a></p>
+            </div>
+            <div class="footer-info-container-child">
+                <h3>Legal</h3>
+                <p><a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+        <div class="footer-nav-container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                    <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
+                    <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2022 - Get a Tat</p>
+        </div>
+    </footer>
+
 
 </body>
 
