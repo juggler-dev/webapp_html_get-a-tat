@@ -1,9 +1,18 @@
 ////////////////// IMPORTS //////////////////
 
-import { auth } from "./firebase-init.js";
-import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE } from "./firestore-references.js";
-import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { auth, db } from "./firebase-init.js";
+import { 
+  CLIENTS_COLLECTION_REFERENCE,
+  ARTISTS_COLLECTION_REFERENCE } from "./firestore-references.js";
+import { 
+  createUserWithEmailAndPassword,
+  signInWithPopup, 
+  GoogleAuthProvider, 
+  FacebookAuthProvider, 
+  onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+  import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+
+import { storeSessionUserData, readSessionUserData } from "./session-storage.js";
 
 ////////////////// GLOBAL VARIABLES //////////////////
 
@@ -13,6 +22,63 @@ const SIGN_UP_CLIENT = "Sign Up - Client";
 const SIGN_UP_ARTIST = "Sign Up - Artist";
 const HOME_CLIENT = "home-client.html";
 const HOME_ARTIST = "home-artist.html";
+
+const SESSION_USER_KEY_VALUE = "sessionUser";
+
+const SIGN_UP_CLIENT_PAGE_NAME = "Sign Up - Client";
+const SIGN_UP_ARTIST_PAGE_NAME = "Sign Up - Artist";
+
+
+////////////////// CLASSES //////////////////
+
+class SessionUser {
+  constructor(user_type, full_name, email, phoneNumber, city, postalCode, uid) {
+    this.user_type = user_type;
+    this.full_name = full_name;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.city = city;
+    this.postalCode = postalCode;
+    this.uid = uid;
+  }
+}
+
+////////////////// FUNCTIONS //////////////////
+
+function createNewSessionUser(userType, full_name, email, phoneNumber, city, postalCode, uid) {
+  return new SessionUser(userType, full_name, email, phoneNumber, city, postalCode, uid);
+}
+
+async function saveSessionUserDataOnSessionStorage(collection, sessionUserUid) {
+
+  //Firestore Query
+  const docRef = doc(db, collection, sessionUserUid);
+  const docSnap = await getDoc(docRef);
+
+  //Object creation
+  const sessionUserObject = createNewSessionUser(
+    docSnap.data().user_type,
+    docSnap.data().full_name,
+    docSnap.data().email,
+    docSnap.data().phoneNumber,
+    docSnap.data().city,
+    docSnap.data().postalCode,
+    docSnap.data().uid);
+
+  //Data stored on SessionStorage
+  storeSessionUserData(SESSION_USER_KEY_VALUE, sessionUserObject)
+
+  //Moving to next window
+  if (docSnap.data().user_type == USER_TYPE_CLIENT) {
+    console.log("happening! Again");
+    window.location.href = HOME_CLIENT;
+  }
+
+  if (docSnap.data().user_type == USER_TYPE_ARTIST) {
+    window.location.href = HOME_ARTIST;
+  }
+
+}
 
 
 // ============ SIGN UP EMAIL & PASSWORD ============
@@ -38,7 +104,17 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
           uid: newClient.user.uid,
 
         }).then(() => {
-          window.location.href = HOME_CLIENT;
+
+          onAuthStateChanged(auth, (user) => {
+            if (document.title == SIGN_UP_CLIENT_PAGE_NAME) {
+              console.log("Pull");
+              saveSessionUserDataOnSessionStorage("clients", user.uid);
+            };
+            if (document.title == SIGN_UP_ARTIST_PAGE_NAME) {
+              saveSessionUserDataOnSessionStorage("artists", user.uid);
+            };
+          });
+
         });
       })
       .catch((err) => {
@@ -66,7 +142,17 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
           uid: newArtist.user.uid
 
         }).then(() => {
-          window.location.href = HOME_ARTIST;
+
+          onAuthStateChanged(auth, (user) => {
+            if (document.title == SIGN_UP_CLIENT_PAGE_NAME) {
+              console.log("happening!");
+              saveSessionUserDataOnSessionStorage("clients", user.uid);
+            };
+            if (document.title == SIGN_UP_ARTIST_PAGE_NAME) {
+              saveSessionUserDataOnSessionStorage("artists", user.uid);
+            };
+          });
+
         });
       })
       .catch((err) => {
