@@ -9,7 +9,7 @@ if ( window.location.href.indexOf("home-client.html") > -1){
 
     document.getElementById('exploreTatBtn').addEventListener('click', () => {
 
-        window.location.href  = "../pages/explore-user.html";
+        window.location.href  = "../pages/tattoo-explorer-main.html";
     });
 
     document.getElementById('artistNearBtn').addEventListener('click', () => {
