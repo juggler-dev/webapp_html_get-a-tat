@@ -36,50 +36,42 @@
         </div>
     </header>
 
-    <div class="main-container">
+    <div class="sign-up-client-main-container">
         <h2>Hey Sparky!</h2>
-        <div class="signup_form">
-            <!-- <form action=""> -->
-            <div class="form">
-                <div class="form-container">
-                    <div class="email-container">
+            <div class="sign-up-client-form-container">
+                    <div class="sign-up-client-email-container">
                         <input type="text" name="user_email" id="emailUser" placeholder="Email">
                     </div>
-                    <div class="full-name-container">
+                    <div class="sign-up-client-full-name-container">
                         <input type="text" name="user_full_name" id="fName" placeholder="Full Name">
                     </div>
-                    <div class="postal-code-container">
+                    <div class="sign-up-client-postal-code-container">
                         <input type="text" name="user_postal_code" id="postalCode" placeholder="Postal Code">
                     </div>
-                    <div class="password-container">
-                        <div class="password-container-2">
+                    <div class="sign-up-client-password-container">
+                        <div class="sign-up-client-password-container-child">
                             <input type="password" name="user_password" id="passwordUser" placeholder="Password">
                             <i class="far fa-eye" id="togglePassword"></i>
                         </div>
-                        <!-- <small><a href="#">Forgot your password?</a></small> -->
                     </div>
-                    <div class="city-container">
+                    <div class="sign-up-client-city-container">
                         <input type="text" name="user_city" id="city" placeholder="City Of Residence">
                     </div>
-                    <div class="phone-number-container">
+                    <div class="sign-up-client-phone-number-container">
                         <input type="tel" id="phoneNumber" name="phone_number" pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}"
                             placeholder="Phone Number">
                     </div>
-                </div>
-                <div id="signUpBtn" class="sign-up-button"><button>Sign Up</button></div>
-                <div class="alt-login-1">
-                    <p>Are you a tattoo artist? <a href="signup-artist.html">Sign up here!</a></p>
-                </div>
-                <!-- </form>-->
             </div>
-        </div>
+            <div id="signUpBtn" class="sign-up-client-button-container">
+                <button>Sign Up</button>
+            </div>
     </div>
-    <div>
+    <div class="sign-up-client-hr-container">
         <p class="horizontal-line">
             <span>Or</span>
         </p>
     </div>
-    <div class="alt-login">
+    <div class="sign-up-client-alternative-login">
         <div>
             <button id="signUpFacebook" class="loginBtn loginBtn_facebook">Login with Facebook</button>
         </div>
@@ -87,21 +79,23 @@
             <button id="signUpGoogle" class="loginBtn loginBtn_google">Sign in with Google</button>
         </div>
     </div>
-    <div class="alt-login-1">
+    <div class="sign-up-cliente-alternative-sign-in">
         <p>Already have an account? <a href="login.html">Log in</a></p>
     </div>
-    <hr>
+    <div class="sign-up-client-alt-artist">
+        <p>Are you a tattoo artist? <a href="signup-artist.html">Sign up here!</a></p>                
+   </div>
     <footer>
         <div class="footer-info-container">
-            <div class="footer-container-child">
+            <div class="footer-info-container-child">
                 <h3>Company</h3>
-                <p><a href="#">About</a></p>
+                <p><a href="./about-us.html">About</a></p>
             </div>
-            <div class="footer-container-child">
+            <div class="footer-info-container-child">
                 <h3>Help Center</h3>
-                <p><a href="#">FAQ</a></p>
+                <p><a href="./help-centre.html">FAQ</a></p>
             </div>
-            <div class="footer-container-child">
+            <div class="footer-info-container-child">
                 <h3>Legal</h3>
                 <p><a href="#">Terms & Conditions</a></p>
             </div>
@@ -109,14 +103,13 @@
         <div class="footer-nav-container">
             <nav class="footer-nav">
                 <ul>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                    <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
+                    <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
                 </ul>
             </nav>
-
+            <p>&copy; 2022 - Get a Tat</p>
         </div>
-        <p>&copy; 2022 - Get a Tat</p>
     </footer>
 </body>
 

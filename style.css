@@ -330,6 +330,130 @@ footer .footer-nav-container p {
   color: #FF9E81;
 }
 
+/* SIGN UP ================================================= */
+.sign-up-client-main-container h2 {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-family: "Righteous", cursive;
+  color: #FF0000;
+}
+.sign-up-client-main-container .sign-up-client-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2rem;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-email-container input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+  padding: 0.675rem;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-password-container {
+  display: flex;
+  flex-flow: column nowrap;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 100%;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-password-container .sign-up-client-password-container-child input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+  padding: 0.675rem;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-full-name-container input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+  padding: 0.675rem;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-city-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-city-container input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+  padding: 0.675rem;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-postal-code-container input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+  padding: 0.675rem;
+}
+.sign-up-client-main-container .sign-up-client-form-container .sign-up-client-phone-number-container input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+  padding: 0.675rem;
+}
+.sign-up-client-main-container .sign-up-client-button-container {
+  display: flex;
+  justify-content: center;
+}
+.sign-up-client-main-container .sign-up-client-button-container button {
+  width: 20%;
+  border-radius: 25px;
+  padding: 0.675rem;
+  font-family: "Poppins", sans-serif;
+  color: #FFF;
+  background-color: #FF0000;
+  border: 1px solid #FF0000;
+}
+
+.sign-up-client-hr-container .horizontal-line {
+  width: 30%;
+  text-align: center;
+  border-bottom: 1px solid #372019;
+  line-height: 0.1em;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+.sign-up-client-hr-container .horizontal-line span {
+  background-color: #FFF;
+  padding: 0 10px;
+}
+
+.sign-up-client-alternative-login {
+  margin: 1rem 25%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sign-up-cliente-alternative-sign-in p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #372019;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+.sign-up-cliente-alternative-sign-in p a {
+  color: #FF9E81;
+}
+
+.sign-up-client-alt-artist p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #372019;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+.sign-up-client-alt-artist p a {
+  color: #FF9E81;
+}
+
 /* APPOINTMENTS ============================================ */
 .book-appointment-main-container {
   background-color: #F1DBCB;
