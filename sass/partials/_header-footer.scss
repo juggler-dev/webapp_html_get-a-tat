@@ -6,8 +6,8 @@ header{
     grid-template-columns: .5fr 1fr .5fr;
     margin: 0;
     padding:0;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: .5 rem;
+    padding-bottom: .5rem;
     border-bottom: 1px solid black;
 
     nav{
@@ -33,6 +33,7 @@ header{
             li{
                 align-self: center;
                 font-family: $font-righteous;
+                font-size: 20px;
 
                 a{
                     text-decoration: none;

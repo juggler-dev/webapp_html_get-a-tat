@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Sign Up - Artist</title>
     <script type="module" src="../js/firebase-init.js" defer></script>
     <script type="module" src="../js/signup.js" defer></script>
@@ -16,29 +16,29 @@
 </head>
 
 <body>
-        <header>
-            <div class="header-search-container">
-                <form action="action_page.php">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                    <input type="text" placeholder="Search.." name="search">
-                    <!--Toggle w/ js-->
-                </form>
-            </div>
-            <div class="header-navigation-container">
-                <nav>
-                    <ul>
-                        <li><a href="#">Discover</a></li>
-                        <li><a href="#">Tattoos</a></li>
-                        <li><a href="#"><img src="../images/logo.png" alt=""></a></li>
-                        <li><a href="#">Artists</a></li>
-                        <li><a href="#">Articles</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="header-login-button-container">
-                <a class="header-login" href="login-account.html">Login</a>
-            </div>
-        </header>
+    <header>
+        <div class="header-search-container">
+            <form action="action_page.php">
+                <button type="submit"><img src="../icons/search-icon.png" alt="search-icon"></button>
+                <input type="text" placeholder="Search.." name="search">
+                <!--Toggle w/ js-->
+            </form>
+        </div>
+        <div class="header-navigation-container">
+            <nav>
+                <ul>
+                    <li><a href="../pages/tattoo-explorer-main.html">Discover</a></li>
+                    <li><a href="../pages/book-appointment-main.html">Tattoos</a></li>
+                    <li><a href="#"><img src="../images/logo.png" alt=""></a></li>
+                    <li><a href="../pages/gallery-artist-main.html">Artists</a></li>
+                    <li><a href="../pages/article-main.html">Articles</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-login-button-container">
+            <a class="header-login" href="login-account.html">Login</a>
+        </div>
+    </header>
 
     <div class="main-container">
         <h2>Hey Artist!</h2>

@@ -1,22 +1,6 @@
-.main-container-login{
-<<<<<<< Updated upstream
+.main-container-login {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
-    margin: 0 auto;
-    margin-bottom: 8rem;
-    margin-top: 8rem;
-    width: 33.3vw;
-    align-content: center;
-    // border: 1px solid red;
-
-    h2{
-        font-family: $font-righteous;
-        color: $primary-red;
-        margin-bottom: 1rem;
-=======
-  display: flex;
-  flex-flow: column nowrap;
   gap: 1rem;
   margin: 0 auto;
   margin-bottom: 8rem;
@@ -42,10 +26,11 @@
         padding: .675rem;
         font-family: $font-poppins;
         border-color: $primary-red-shade;
+   
       }
->>>>>>> Stashed changes
-    }
 
+    }
+  
     .login-password-container{
       display: flex;
       flex-flow: column nowrap;
@@ -78,11 +63,7 @@
 
     }
 
-<<<<<<< Updated upstream
-}
-=======
-  }
-
+  
   .forgot-password-p{
     font-family: $font-poppins;
     margin: 0 auto;
@@ -120,4 +101,4 @@
     }
   }
 }
->>>>>>> Stashed changes
+}

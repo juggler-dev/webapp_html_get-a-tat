@@ -1,0 +1,43 @@
+.home-page-background-cover{
+    // background-color: red;
+    // background-image: url("/integrated_project_team4_summer_2022/images/hero-image.jpeg");
+    // background-size: cover;
+    // background-position: 3% 42%;
+    // background-repeat: no-repeat;
+    // height: 85vh;
+    background: url(/integrated_project_team4_summer_2022/images/hero-image.jpeg) no-repeat center 45%;
+    -webkit-background-size: cover; 
+    background-size: cover;
+    height: 85vh;
+
+    .home-page-container{
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        height: inherit;
+        display: flex;
+
+        .home-page-content-container{
+            // border: 1px solid red;
+            align-self: center;
+            width: 80vw;
+            margin: 0 auto;
+
+            .hero-content{
+                display: flex;
+                flex-flow: column nowrap;
+
+                h2{
+                    color: $neutral-white;
+                    font-family: $font-poppins;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                }
+
+                p{
+                    color: $neutral-white;
+                    font-family: $font-righteous;
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+}

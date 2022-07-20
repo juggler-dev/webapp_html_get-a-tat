@@ -22,16 +22,14 @@ TABLE OF CONTENTS
 /* RESET =================================================== */
 @import "partials/reset";
 
-
-/* HEADER-FOOTER ====================== ===================== */
-@import "partials/header-footer";
-
-@import "partials/login.scss";
+/* INDEX =================================================== */
+@import "partials/index";
 
 /* HEADER-FOOTER =========================================== */
 @import "partials/header-footer";
 
-/* LOGIN --------=========================================== */
+/* LOGIN =================================================== */
 @import "partials/login";
 
-
+/* APPOINTMENTS ============================================ */
+@import "partials/book-appointment-main";
