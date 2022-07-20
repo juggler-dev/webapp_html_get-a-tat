@@ -41,12 +41,11 @@ class AppoIMG {
 
 
 
-
+const appoArray = [];
 
 
 // variables
 const sendForm = document.getElementById('sendIt');
-const appoArray = [];
 let camBtn = document.getElementById('startCam');
 let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');

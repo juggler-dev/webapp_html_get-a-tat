@@ -2,7 +2,7 @@
 
 import { db, storage } from "./firebase-init.js";
 import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE, REQUEST_APPOINTMENTS_COLLECTION_REFERENCE } from "./firestore-references.js";
-import { doc, addDoc, setDoc, getDoc, getDocs, updateDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { doc, addDoc, setDoc, getDoc, getDocs, updateDoc, query, collection, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 import { readSessionUserData } from "./session-storage.js";
@@ -84,7 +84,8 @@ requestBtn.addEventListener('click', async (e) => {
     date: document.getElementById('datePicker').value,
     time: document.getElementById('timePicker').value,
     // photo_name: "testeo",
-    uid: readSessionUserData(SESSION_USER_KEY_VALUE).uid
+    uid: readSessionUserData(SESSION_USER_KEY_VALUE).uid,
+    image: document.getElementById('image').value,
   })
 
   const appointmentStoregeRef = ref(storage, 'appointments-img' + '/' + appointmentDoc.id);
@@ -96,3 +97,75 @@ requestBtn.addEventListener('click', async (e) => {
   console.log("Added appointment" + " " + appointmentDoc.id)
 
 });
+
+///////////////////////////////// CAMERA /////////////////////////////////////////////
+
+// variables
+let camBtn = document.getElementById('startCam');
+let video = document.getElementById('video');
+let canvas = document.getElementById('canvas');
+
+// start camera
+camBtn.addEventListener('click', async function() {
+  let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false});
+  video.srcObject = stream;
+
+  showCamera(true)
+});
+
+// stop camera
+document.getElementById('stopCam').addEventListener('click', () => {
+  const tracks = video.srcObject.getTracks();
+  tracks.forEach((track) => track.stop());
+
+  showCamera(false);
+});
+
+// take photo
+takePhoto.addEventListener('click', function(){
+  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  const appointmentPhoto = ref(storage, 'appointment-request-photo/images' + Date());
+
+  const imageBlob = canvas.toBlob(handleBlob, "image/jpeg");
+
+  uploadBytes(appointmentPhoto, imageBlob).then((snapshot) => {
+      console.log('uploaded a blob');
+   })
+});
+
+// blob function
+function handleBlob(blob) {
+
+  const objectURL = window.URL.createObjectURL(blob);
+  console.log('ObjectURL:', objectURL);
+  const reader = new FileReader();
+  reader.addEventListener('load', () => {
+    console.log('Base64:', reader.result);
+    document.getElementById('image').value = reader.result;
+  });
+  reader.readAsDataURL(blob);
+}
+
+// show and hide camera function
+let taker = true
+function showCamera(taker) {
+  if (taker==true) {
+    document.getElementById('takePhoto').style.display = "block";
+    document.getElementById('video').style.display = "block";
+    document.getElementById('canvas').style.display = "block";
+    document.getElementById('stopCam').style.display = "block";
+    // document.getElementById('uploadPhoto').style.display = "block";
+
+    console.log('show camera')
+  }
+  else {
+    document.getElementById('takePhoto').style.display = "none";
+    document.getElementById('video').style.display = "none";
+    document.getElementById('canvas').style.display = "none";
+    document.getElementById('stopCam').style.display = "none";
+    // document.getElementById('uploadPhoto').style.display = "none";
+
+    console.log('close and hide camera')
+  }
+}
