@@ -11,53 +11,86 @@ import { readSessionUserData } from "./session-storage.js";
 const COLLECTION_NAME = "request_appointment";
 const SESSION_USER_KEY_VALUE = "sessionUser";
 
+const UID_FIELD = "uid";
+
 const STORAGE_FOLDER = "/appointments-img"
 
 ////////////////// FUNCTIONS //////////////////
 
-
-
-
-
-
-
 //Function to draw Rows in the table with the data from Firestore
-function drawNewTableRow(imageName, artistName, appoinmentDate, row) {
-  let thumbnail = row.insertCell(0);
-  let artist = row.insertCell(1);
-  let date = row.insertCell(2);
+function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, container) {
+  // let thumbnail = row.insertCell(0);
+  // let artist = row.insertCell(1);
+  // let date = row.insertCell(2);
 
-  //Thumbnail calling
+  let thumbnailElement;
+  let artistElement;
+  let dateElement;
+  let artistDateGrouping;
+  let cardElement;
+
+  //Making it a button
+  // row.innerHTML = `<button></button>`
+
+  if (photoName !== ""){
+    // console.log('hello!');
+    thumbnailElement = `<img src='${photoName}' class="thumbnail-image"></img>`;
+
+    artistElement = `<p>Appointment with: ${artistName}</p>`;
+    dateElement = `<p>Date: ${appoinmentDate}</p>`;
+
+    artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
+
+    cardElement = `<button class="appointment-card-btn">${thumbnailElement + artistDateGrouping}</button>`;
+
+    container.innerHTML += cardElement;
+
+  }
+
+  else {
+      //Thumbnail call
   const thumbnailRef = ref(storage, STORAGE_FOLDER + '/' + imageName);
   getDownloadURL(thumbnailRef)
     .then((url) => {
-      thumbnail.innerHTML += `<img src='${url}' class="thumbnail-image"></img>`
+      // thumbnail.innerHTML += `<img src='${url}' class="thumbnail-image"></img>`;
+      thumbnailElement = `<img src='${url}' class="thumbnail-image"></img>`;
+
+      artistElement = `<p>Appointment with: ${artistName}</p>`;
+      dateElement = `<p>Date: ${appoinmentDate}</p>`;
+
+      artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
+
+      cardElement = `<button class="appointment-card-btn">${thumbnailElement + artistDateGrouping}</button>`;
+
+      container.innerHTML += cardElement;
     })
+  }
+
+
 
   // table info
-  artist.innerHTML += `<p>${artistName}</p>`;
-  date.innerHTML += `<p>${appoinmentDate}</p>`;
+  // artist.innerHTML += `<p>${artistName}</p>`;
+  // date.innerHTML += `<p>${appoinmentDate}</p>`;
+
 }
 
-async function updateTable(collectionName, sessionUserUID) {
-  // Table name
-  myAppointmentUser.innerHTML = "";
+async function updateAppointmentList(collectionName, sessionUserUID) {
 
   // Query
-  const appointmentsUserQuery = query(collection(db, collectionName), where("uid", "==", sessionUserUID));
+  const appointmentsUserQuery = query(collection(db, collectionName), where(UID_FIELD, "==", sessionUserUID));
   const userAppointments = await getDocs(appointmentsUserQuery);
   userAppointments.forEach((doc) => {
-    drawNewTableRow(doc.id, doc.data().artist, doc.data().date, myAppointmentUser.insertRow(0))
+    drawAppointmentCard(doc.data().image, doc.id, doc.data().artist, doc.data().date, document.getElementById('appointmentContainer'))
   });
 }
 
 ////////////////// EVENTS //////////////////
 
-//Create Session Object
+//Read Session Object
 const sessionObject = readSessionUserData(SESSION_USER_KEY_VALUE);
 
-//Pull information from Session Storage 
-updateTable(COLLECTION_NAME, sessionObject.uid);
+//Update table with content
+updateAppointmentList(COLLECTION_NAME, sessionObject.uid);
 
 
 //Move to Create Appointments page
