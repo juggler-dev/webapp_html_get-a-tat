@@ -1,0 +1,80 @@
+.book-appointment-single-form-container{
+    width: 100%;
+
+    .book-appointment-single-artist-options-container{
+        height: 20vh;
+        background-color: $primary-orange-shade;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        position: relative;
+    
+        .left-arrow-icon-container{
+            position: absolute;
+            left:0;
+            top: 0;
+    
+            img{
+                height: 50px;
+                width: 50px;
+                margin-bottom: .875rem;
+            }
+        }
+    
+        label{
+            font-family: $font-righteous;
+            font-size: 29px;
+            align-self: center;
+        }
+    
+        select{
+            border: 2px solid $primary-red-shade;
+            align-self: center;
+            font-family: $font-poppins;
+            font-size: small;
+            border-radius: 25px;
+            width: 25%;
+            height: 45px;
+        }
+    }
+
+    hr{
+        margin: 0;
+        padding: 0;
+        width: 90%;
+        margin: 0 auto;
+        border: .5px solid $warning;
+    }
+
+    h1{
+        margin-left: 7%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-family: $font-righteous;
+    }
+
+    .book-appointment-single-grid-container{
+        display: grid;
+        grid-gap: 1rem;
+        margin-right: 7%;
+        margin-left: 7%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        .book-appointment-single-placement-container{
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .book-appointment-single-size-container{
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+    }
+}
+
+
