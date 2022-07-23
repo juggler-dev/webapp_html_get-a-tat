@@ -1,22 +1,49 @@
-.main-container-login {
-    display: flex;
-    flex-flow: column nowrap;
-  gap: 1rem;
-  margin: 0 auto;
-  margin-bottom: 8rem;
-  margin-top: 8rem;
-  width: 33%;
-  align-content: center;
 
+.main-container-login{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  margin: 2rem 12%;
+  
+
+  @media screen and (min-width: 600px){
+    margin: 2rem 15%;
+  }
+
+  @media screen and (min-width: 700px){
+    margin: 2rem 18%;
+  }
+
+  @media screen and (min-width: 760px){
+    margin: 2rem 21%;
+  }
+
+  @media screen and (min-width: 800px){
+    margin: 2rem 24%;
+  }
+
+  @media screen and(min-width: 900px){
+    margin: 0 auto;
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+    width: 33%;
+    align-content: center;
+  }
+  
   h2{
     font-family: $font-righteous;
     color: $primary-red;
+    margin-bottom: 1.875rem;
   }
 
   .login-form-container{
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+    gap: 1.875rem;
+
+    @media screen and(min-width: 900px){
+      gap: 1rem;
+    }
 
     .login-email-container{
 
@@ -25,80 +52,200 @@
         border-radius: 25px;
         padding: .675rem;
         font-family: $font-poppins;
-        border-color: $primary-red-shade;
-   
+        font-size: small;
+        font-weight: 600;
+        outline: $primary-red-shade;
+        
       }
 
     }
-  
+
     .login-password-container{
       display: flex;
       flex-flow: column nowrap;
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
-      width: 100%;
 
-      .login-password-container-child{
-        display: flex;
+      input{
+        width: 100%;
+        border-radius: 25px;
+        padding: .675rem;
+        font-family: $font-poppins;
+        border-color: $primary-red-shade;
+        font-size: small;
+        font-weight: 600;
+        outline: $primary-red-shade;
+      }
 
-        input{
-          width: 100%;
-          border-radius: 25px;
-          padding: .675rem;
-          font-family: $font-poppins;
-          border-color: $primary-red-shade;
+      small{
+        text-align: right;
+        margin-top: .5rem;
+        margin-right: 1rem;
+        font-family: $font-righteous;
+        color: grey;
+
+        @media screen and(min-width: 900px){
+          display: none;
         }
+        
       }
     }
 
     .login-button{
-      width: 50%;
+      width: 40%;
       border-radius: 25px;
       margin: 0 auto;
       padding: .675rem;
       font-family: $font-poppins;
+      font-weight: 600;
       color: $neutral-white;
       background-color: $primary-red;
       border: 1px solid $primary-red;
 
     }
+  }
 
-  
   .forgot-password-p{
-    font-family: $font-poppins;
-    margin: 0 auto;
-    font-weight: 500;
-    margin-top: .5rem;
-      
-      a{
-        color: $warning;
-      }
+    display: none;
+
+    @media screen and(min-width: 900px){
+      display: block;
+      font-family: $font-poppins;
+      margin: 0 auto;
+      font-weight: 500;
+      margin-top: 2rem;
+        
+        a{
+          color: $warning;
+        }
+    }
   }
 
   .artist-sign-in-p{
-    font-family: $font-poppins;
-    margin: 0 auto;
-    font-weight: 500;
-    margin-top: .5rem;
-    color: $primary-red-shade;
-    font-size: 14px;
-
-      a{
-        color: $warning;
-      }
+    display: none;
   }
 
   .sign-up-p{
+    margin-top: 8rem;
+    text-align: center;
     font-family: $font-poppins;
-    margin: 0 auto;
     font-weight: 500;
-
     color: $primary-red-shade;
     font-size: 14px;
+
+    @media screen and(min-width: 900px){
+      margin-top: 2rem;
+    }
 
     a{
       color: $warning;
     }
   }
 }
-}
+
+
+
+
+
+// .main-container-login {
+  // display: flex;
+  // flex-flow: column nowrap;
+  // gap: 1rem;
+  // margin: 0 auto;
+  // margin-bottom: 8rem;
+  // margin-top: 8rem;
+  // width: 33%;
+  // align-content: center;
+
+//   h2{
+//     font-family: $font-righteous;
+//     color: $primary-red;
+//   }
+
+//   .login-form-container{
+//     display: flex;
+//     flex-flow: column nowrap;
+//     gap: 1rem;
+
+//     .login-email-container{
+
+//       input{
+        // width: 100%;
+        // border-radius: 25px;
+        // padding: .675rem;
+        // font-family: $font-poppins;
+        // border-color: $primary-red-shade;
+   
+//       }
+
+//     }
+  
+//     .login-password-container{
+//       display: flex;
+//       flex-flow: column nowrap;
+//       grid-column: 2 / 3;
+//       grid-row: 1 / 2;
+//       width: 100%;
+
+//       .login-password-container-child{
+//         display: flex;
+
+//         input{
+//           width: 100%;
+//           border-radius: 25px;
+//           padding: .675rem;
+//           font-family: $font-poppins;
+//           border-color: $primary-red-shade;
+//         }
+//       }
+//     }
+
+    // .login-button{
+    //   width: 50%;
+    //   border-radius: 25px;
+    //   margin: 0 auto;
+    //   padding: .675rem;
+    //   font-family: $font-poppins;
+    //   color: $neutral-white;
+    //   background-color: $primary-red;
+    //   border: 1px solid $primary-red;
+
+    // }
+
+  
+//   .forgot-password-p{
+    // font-family: $font-poppins;
+    // margin: 0 auto;
+    // font-weight: 500;
+    // margin-top: .5rem;
+      
+    //   a{
+    //     color: $warning;
+    //   }
+//   }
+
+//   .artist-sign-in-p{
+//     font-family: $font-poppins;
+//     margin: 0 auto;
+//     font-weight: 500;
+//     margin-top: .5rem;
+//     color: $primary-red-shade;
+//     font-size: 14px;
+
+//       a{
+//         color: $warning;
+//       }
+//   }
+
+//   .sign-up-p{
+//     font-family: $font-poppins;
+//     margin: 0 auto;
+    // font-weight: 500;
+
+    // color: $primary-red-shade;
+    // font-size: 14px;
+
+    // a{
+    //   color: $warning;
+    // }
+//   }
+// }
+// }

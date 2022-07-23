@@ -1,74 +1,78 @@
 
-// HEADER
 
-header{
-    display: grid;
-    grid-template-columns: .5fr 1fr .5fr;
-    margin: 0;
-    padding:0;
-    padding-top: .5 rem;
-    padding-bottom: .5rem;
+.header-desktop{
+    display: none;
+
+    @media screen and (min-width: 900px){
+    //    display: grid;
+    //    grid-template-columns: .5fr 1fr .5fr;
+    //    margin: 0;
+    //    padding:0;
+    //    padding-top: .5 rem;
+    //    padding-bottom: .5rem;
+    //    border-bottom: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     border-bottom: 1px solid black;
 
-    nav{
+       nav{
         padding: 0;
-        margin: 0;
 
 
-        ul{
-            list-style-type: none;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            gap: 1.5rem;
-            padding: 0 3rem;
-            margin: 0;
+            ul{
+                list-style-type: none;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                gap: 2.5rem;
+                padding: 0 3rem;
+                margin: 0;
 
-            img{
-                max-width: 140px;
-                max-height: 140px;
-        
-            }
+                img{
+                    max-width: 140px;
+                    max-height: 140px;
+                }
 
-            li{
-                align-self: center;
-                font-family: $font-righteous;
-                font-size: 20px;
+                li{
+                    align-self: center;
+                    font-family: $font-righteous;
+                    font-size: 20px;
 
-                a{
-                    text-decoration: none;
-                    color: $primary-red-shade;
-                    //font-size: add variab;e
+                    a{
+                        text-decoration: none;
+                        color: $primary-red-shade;
+                        //font-size: add variab;e
+                    }
                 }
             }
-        }
-    }
+       }
 
-    .header-search-container{
-        display: flex;
-        flex-flow: row nowrap;
+       .header-search-container{
+            display: flex;
+            flex-flow: row nowrap;
 
-        form{
-            align-self: center;
-        }
-
-        button{
-            margin-left: 4em;
-            border: none;
-            background-color: white;
-
-            img{
-                max-width: 33px;
-                max-height: 33px;
+            form{
+                align-self: center;
             }
-        }
 
-        input{
-            display: none;
-        }
-    }
+            button{
+                margin-left: 4em;
+                border: none;
+                background-color: white;
 
-    .header-login-button-container{
+                img{
+                    max-width: 33px;
+                    max-height: 33px;
+                }
+            }
+
+            input{
+                display: none;
+            }
+       }
+
+       .header-login-button-container{
         display: flex;
         justify-content: end;
 
@@ -84,9 +88,54 @@ header{
             font-family: $font-poppins;
         }
     }
+    }
+
 }
 
-// FOOTER
+.header-mobile{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid $primary-red-shade;
+    // padding-bottom: 1rem;
+    // padding-top: 1rem;
+    padding: 1rem 2rem;
+
+
+    img{
+        height: 70px;
+        width: 70px;
+    }
+
+    button{
+        background-color: $neutral-white;
+        border: none;
+
+        img{
+            height: 60px;
+            width: 60px;
+        }
+    }
+
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+}
+
+/* FOOTER */
+
+.footer-login{
+    @media screen and (max-width: 900px){
+        display: none;
+    }
+}
+
+.footer-book-appointment-main{
+    @media screen and (max-width: 900px) {
+        display: none;
+    }
+}
+
 
 footer{
     border-top: 1px solid black;

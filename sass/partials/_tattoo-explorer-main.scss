@@ -1,0 +1,68 @@
+.tattoo-explorer-main-container{
+
+    h1{
+        font-family: $font-righteous;
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .tattoo-explorer-search-details-container{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+        width: 80vw;
+        margin: 0 auto; 
+        margin-bottom: 2rem;
+
+        .tattoo-explorer-search-container{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 0 .675rem;
+            border: 1px solid $primary-red-shade;
+            border-radius: 25px;
+
+            img{
+                height: 40px;
+                width: 40px;
+            }
+
+            input{
+                border: none;
+            }
+        }
+
+        .tattoo-explorer-choose-city-container{
+
+            select{
+                border: 1px solid $primary-red-shade;
+                padding: .675rem;
+                border-radius: 25px;
+                font-family: $font-poppins;
+                color: $neutral-dark-grey;
+                width: 100%;
+            }
+        }
+    }
+
+    .tattoo-explorer-filter-buttons{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+
+        button{
+            color: $primary-red-shade;
+            border: 2px solid $primary-red-shade;
+            background-color: $neutral-white;
+            padding: .675rem;
+            border-radius: 25px;
+            font-family: $font-poppins;
+            font-size: small;
+            font-weight: 300;
+        }
+
+    }
+}
