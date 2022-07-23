@@ -1,4 +1,4 @@
-import { auth, storage, db } from "./main.js";
+import { auth, storage, db } from "./firebase-init.js";
 import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithRedirect, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 import { collection, doc, getDoc, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
@@ -63,7 +63,7 @@ document.getElementById('addImageToGallery').addEventListener('click', async () 
     //Store in Storage
     const userFile = document.getElementById('addImageArtist').files[0];
     const filename = Date() + '.png';
-    const storegeRef = ref(storage, userUID + '/' + filename);
+    const storegeRef = ref(storage, 'artist-img-uploads' + '/' + userUID + '/' + filename);
 
     uploadBytes(storegeRef, userFile)
         .then((snapshot) => {
