@@ -45,6 +45,5 @@ const myButton = document.getElementById("getPositionBtn");
           } else {
               handleLocationError(false, infoWindow, map.getCenter());
           }
-      })
-
-  }
+        });
+      }
