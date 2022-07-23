@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="../js/appointment-management-client.js" defer></script>
     <!-- <script type="module" src="../js/login.js" defer></script> -->
     <title>Login</title>
 
 </head>
+
 <body>
     <header>
         <div class="header-container1">
@@ -34,13 +38,23 @@
         <div class="header-container2"><a class="header-login" href="login-client.html">Login</a></div>
     </header>
     <hr>
-    <main>
+    <main class="page-content">
         <div class="content-container">
             <div class="appointments-container" id="appointmentContainer">
                 <h3>My Appointments</h3>
 
             </div>
             <button id="createAppoinmentBtn">Create New Appointment</button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" id="closingX">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
         </div>
     </main>
     <hr>
@@ -77,4 +91,5 @@
 
 
 </body>
+
 </html>

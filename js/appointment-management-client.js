@@ -8,6 +8,14 @@ import { readSessionUserData } from "./session-storage.js";
 
 ////////////////// VARIABLES AND CONSTANTS //////////////////
 
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
 const COLLECTION_NAME = "request_appointment";
 const SESSION_USER_KEY_VALUE = "sessionUser";
 
@@ -17,7 +25,8 @@ const STORAGE_FOLDER = "/appointments-img"
 
 ////////////////// FUNCTIONS //////////////////
 
-function heeello() {
+
+function myName() {
   console.log("hello hello");
 }
 
@@ -27,6 +36,7 @@ function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, c
   // let artist = row.insertCell(1);
   // let date = row.insertCell(2);
 
+  
   let thumbnailElement;
   let artistElement;
   let dateElement;
@@ -41,7 +51,7 @@ function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, c
 
     artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
 
-    cardElement = `<button class="appointment-card-btn" onclick="heeello()">${thumbnailElement + artistDateGrouping}</button>`;
+    cardElement = `<button class="appointment-card-btn" >${thumbnailElement + artistDateGrouping}</button>`;
 
     container.innerHTML += cardElement;
 
@@ -60,7 +70,7 @@ function drawAppointmentCard(photoName, imageName, artistName, appoinmentDate, c
 
       artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
 
-      cardElement = `<button class="appointment-card-btn" onclick="heeello()">${thumbnailElement + artistDateGrouping}</button>`;
+      cardElement = `<button class="appointment-card-btn">${thumbnailElement + artistDateGrouping}</button>`;
 
       container.innerHTML += cardElement;
     })
@@ -80,17 +90,44 @@ async function updateAppointmentList(collectionName, sessionUserUID) {
 
 ////////////////// EVENTS //////////////////
 
+// console.log(document.querySelectorAll(".buttonToTest"));
+
 //Read Session Object
 const sessionObject = readSessionUserData(SESSION_USER_KEY_VALUE);
 
 //Update table with content
-updateAppointmentList(COLLECTION_NAME, sessionObject.uid);
+await updateAppointmentList(COLLECTION_NAME, sessionObject.uid);
+
+document.querySelectorAll(".appointment-card-btn").forEach((button) => {
+
+  button.addEventListener('click', () => {
+    modal.style.visibility = "visible";
+  })
+})
+
+////MODAL EVENTS
+
+document.getElementById('closingX').addEventListener('click', () => {
+  modal.style.visibility = "hidden";
+})
+
+// When the user clicks on <span> (x), close the modal
+window.addEventListener('click', (event) => {
+  if (event.target == modal) {
+    modal.style.visibility = "hidden";
+  }
+})
+
 
 //Move to Create Appointments page
 document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
 
   window.location.href = "../pages/book-appointment.html";
 });
+
+
+
+
 
 
 
