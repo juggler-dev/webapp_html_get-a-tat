@@ -216,72 +216,209 @@ select {
 }
 
 /* FOOTER */
-@media screen and (max-width: 900px) {
-  .footer-login {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .footer-book-appointment-main {
-    display: none;
-  }
-}
-
 footer {
-  border-top: 1px solid black;
-}
-footer .footer-info-container {
+  border-top: 2px solid #FF9E81;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
+}
+footer .footer-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 80vw;
+  margin: 0 auto;
   margin-top: 2rem;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-bottom: 2rem;
+  padding-right: 2.2rem;
 }
-footer .footer-info-container h3 {
-  font-family: "Literata", serif;
-  font-weight: 500;
-  text-align: start;
+@media screen and (min-width: 900px) {
+  footer .footer-main-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    width: 95vw;
+  }
 }
-footer .footer-info-container p {
-  font-family: "Literata", serif;
-  text-align: start;
-  margin-top: 1rem;
+footer .footer-main-container .footer-company-container {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 80%;
+  justify-self: center;
+  margin-bottom: 2rem;
 }
-footer .footer-info-container p a {
-  text-decoration: none;
-  text-align: start;
-  color: black;
+@media screen and (min-width: 900px) {
+  footer .footer-main-container .footer-company-container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
 }
-footer .footer-nav-container {
+footer .footer-main-container .footer-company-container .footer-company-content-container {
   display: flex;
-  flex-flow: row nowrap;
-  gap: 2rem;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 0;
+  flex-flow: column nowrap;
 }
-footer .footer-nav-container nav ul {
+footer .footer-main-container .footer-company-container .footer-company-content-container h3 {
+  align-self: flex-end;
+  font-family: "Righteous", cursive;
+  width: 70%;
+}
+footer .footer-main-container .footer-company-container .footer-company-content-container p {
+  width: 70%;
+  align-self: flex-end;
+  font-family: "Poppins", sans-serif;
+}
+footer .footer-main-container .footer-company-container .footer-company-content-container p a {
+  text-decoration: none;
+  font-size: small;
+  color: #372019;
+}
+footer .footer-main-container .footer-help-centre-container {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: start;
+  width: 80%;
+  justify-self: center;
+}
+@media screen and (min-width: 900px) {
+  footer .footer-main-container .footer-help-centre-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+footer .footer-main-container .footer-help-centre-container .footer-help-centre-content-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+footer .footer-main-container .footer-help-centre-container .footer-help-centre-content-container h3 {
+  align-self: flex-end;
+  font-family: "Righteous", cursive;
+  width: 70%;
+}
+footer .footer-main-container .footer-help-centre-container .footer-help-centre-content-container p {
+  width: 70%;
+  align-self: flex-end;
+  font-family: "Poppins", sans-serif;
+}
+footer .footer-main-container .footer-help-centre-container .footer-help-centre-content-container p a {
+  text-decoration: none;
+  font-size: small;
+  color: #372019;
+}
+footer .footer-main-container .footer-legal-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: start;
+  width: 80%;
+  justify-self: center;
+}
+@media screen and (min-width: 900px) {
+  footer .footer-main-container .footer-legal-container {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+}
+footer .footer-main-container .footer-legal-container .footer-legal-content-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+footer .footer-main-container .footer-legal-container .footer-legal-content-container h3 {
+  align-self: flex-end;
+  font-family: "Righteous", cursive;
+  width: 70%;
+}
+footer .footer-main-container .footer-legal-container .footer-legal-content-container p {
+  width: 70%;
+  align-self: flex-end;
+  font-family: "Poppins", sans-serif;
+}
+footer .footer-main-container .footer-legal-container .footer-legal-content-container p a {
+  text-decoration: none;
+  font-size: small;
+  color: #372019;
+}
+footer .footer-main-container .footer-nav-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  width: 80%;
+}
+@media screen and (min-width: 900px) {
+  footer .footer-main-container .footer-nav-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+footer .footer-main-container .footer-nav-container .footer-nav-content {
+  display: flex;
+  flex-flow: column nowrap;
+}
+footer .footer-main-container .footer-nav-container .footer-nav-content nav {
+  align-self: end;
+  width: 70%;
+}
+footer .footer-main-container .footer-nav-container .footer-nav-content nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  flex-flow: row nowrap;
+  justify-content: start;
 }
-footer .footer-nav-container nav ul li {
-  max-width: 30px;
-  max-height: 30px;
+footer .footer-main-container .footer-nav-container .footer-nav-content nav ul li {
+  justify-self: end;
 }
-footer .footer-nav-container p {
+footer .footer-main-container .footer-nav-container .footer-nav-content nav ul li img {
+  height: 30px;
+  width: 30px;
+}
+@media screen and (min-width: 900px) {
+  footer .footer-main-container .footer-nav-container .footer-nav-content nav ul li img {
+    height: 40px;
+    width: 40px;
+  }
+}
+footer .footer-main-container .copyright-container {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  footer .footer-main-container .copyright-container {
+    display: block;
+    align-self: center;
+    font-family: "Poppins", sans-serif;
+    font-size: small;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+footer button {
+  border: 1px solid red;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 1px solid #DBBAAD;
+  background-color: #DBBAAD;
+}
+footer button img {
+  height: 50px;
+  width: 50px;
+}
+@media screen and (min-width: 900px) {
+  footer button {
+    display: none;
+  }
+}
+footer .copyright {
   text-align: center;
-  font-family: "Literata", serif;
-  color: #505050;
-  font-size: 11px;
-  align-self: flex-end;
+  margin: 2rem 0;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+@media screen and (min-width: 900px) {
+  footer .copyright {
+    display: none;
+  }
 }
 
 /* LOGIN =================================================== */
@@ -1237,6 +1374,7 @@ footer .footer-nav-container p {
   width: 400px;
   border-radius: 8px;
   column-gap: 1rem;
+  cursor: pointer;
 }
 
 .appointment-card-btn .appointment-info {
@@ -1259,6 +1397,53 @@ footer .footer-nav-container p {
   border: 1px solid #FF0000;
   color: #FFF;
   font-family: "Poppins", sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+  visibility: hidden; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0%;
+  top: 0%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  border-radius: 0.5rem;
+  width: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.page-content {
+  display: grid;
 }
 
 /* APPOINTMENTS MANAGEMENT ARTIST ============================================ */
