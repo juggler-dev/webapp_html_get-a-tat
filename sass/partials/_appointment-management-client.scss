@@ -52,6 +52,10 @@
     font-family: $font-poppins;
 }
 
+
+
+
+
 /* The Modal (background) */
 .modal {
     visibility: hidden; /* Hidden by default */
@@ -78,13 +82,46 @@
     padding: 2rem;
     border: 1px solid #888;
     border-radius: .5rem;
-    width: 50%;
+    width: 30%;
+  }
+
+  .modal-content__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 1rem;
+  }
+
+  .appointment-detail-input-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 1rem;
+
+  
+    label {
+      font-weight: bold;
+    }
+  
+    select {
+      appearance: none;
+      border-radius: 12px;
+      padding: 0 .5rem;
+    }
+  
+    select:disabled {
+      color: black;
+      opacity: 1;
+    }
+
+    
+    .modal-input-enabled{
+      appearance: auto;
+    }
+
   }
   
   /* The Close Button */
   .close {
     color: #aaaaaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
   }

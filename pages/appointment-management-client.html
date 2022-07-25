@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="content">
     <header>
         <div class="header-mobile">
             <button><img src="../icons/menu-hamburger-icon.png" alt="menu-icon"></button>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </header>
- 
+
     <main class="page-content">
         <div class="content-container">
             <div class="appointments-container" id="appointmentContainer">
@@ -63,8 +63,69 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close" id="closingX">&times;</span>
-                <p>Some text in the Modal..</p>
+                <div class="modal-content__header">
+                    <h3> Booking with Hotpink Rubber Chicken</h3>
+                    <span class="close" id="closingX">&times;</span>
+                </div>
+                <form class="modal-form" id="modalContentForm">
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="modalPlacementInput">Placement</label>
+                        <select class="modal-input" name="placement" id="modalPlacementInput" disabled>
+                            <option value="front-arm-right">Front Arm - Right</option>
+                            <option value="front-arm-left">Front Arm - Left</option>
+                            <option value="Placement 3">Placement 3</option>
+                            <option value="Placement 4">Placement 4</option>
+                            <option value="Placement 5">Placement 5</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="modalSizeInput">Size</label>
+                        <select class="modal-input" name="size" id="modalSizeInput" disabled>
+                            <option value="2-3-inches">2-3 inches</option>
+                            <option value="Size 2">Size 2</option>
+                            <option value="Size 3">Size 3</option>
+                            <option value="Size 4">Size 4</option>
+                            <option value="Size 5">Size 5</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="modalAllergiesInput">Allergies/Health</label>
+                        <select class="modal-input" name="allergies-health" id="modalAllergiesInput" disabled>
+                            <option value="Allergy 1">Allergy 1</option>
+                            <option value="Allergy 2">Allergy 2</option>
+                            <option value="Allergy 3">Allergy 3</option>
+                            <option value="Allergy 4">Allergy 4</option>
+                            <option value="Allergy 5">Allergy 5</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label class="textarea-label" for="short-description">Short description of your tattoo</label>
+                        <textarea class="modal-input" name="short-description" id="modalDescriptionInput" cols="20" rows="3"
+                            placeholder=" Army with a bag of potatoes Tattoo on your upper arm " disabled></textarea>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="color">Color</label>
+                        <select class="modal-input" name="color" id="modalColorInput" disabled>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <p>Image Reference</p>
+                        <img id="modalImageReference" src="https://picsum.photos/1200/600">
+                    </div>
+                    <!-- <div class="appointment-detail-input-wrapper">
+                        <p>Date and Time</p>
+                        <p>Front Arm - Right</p>
+                    </div> -->
+                    <div class="appointment-detail-button-wrapper">
+                        <button class="appointment-detail__button-cancel" id="modalContentBtnCancel">Cancel</button>
+                        <button class="appointment-detail__button-edit" id="modalContentBtnEdit">Edit</button>
+                        <button class="appointment-detail__button-edit" id="modalContentBtnUpdate">Update</button>
+                    </div>
+                </form>
+
+
             </div>
         </div>
     </main>
@@ -83,19 +144,22 @@
                     <p><a href="../pages/help-centre.html">FAQ</a></p>
                 </div>
             </div>
-            <div class="footer-legal-container" >
+            <div class="footer-legal-container">
                 <div class="footer-legal-content-container">
                     <h3>Legal</h3>
                     <p><a href="#">Terms & Conditions</a></p>
                 </div>
-            </div>   
+            </div>
             <div class="footer-nav-container">
                 <div class="footer-nav-content">
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
-                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
-                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
+                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png"
+                                        alt="facebook icon"></span></a></li>
+                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png"
+                                        alt="twitter icon"></a></li>
+                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png"
+                                        alt="instagram footer-info-container"></a></li>
                         </ul>
                 </div>
                 </nav>
