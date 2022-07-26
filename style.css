@@ -88,35 +88,660 @@ select {
 }
 /* INDEX =================================================== */
 .home-page-background-cover {
-  background: url(/integrated_project_team4_summer_2022/images/hero-image.jpeg) no-repeat center 45%;
-  -webkit-background-size: cover;
+  background-image: url("/integrated_project_team4_summer_2022/images/mohammad-faruque-AgYOuy8kA7M-unsplash.jpeg");
   background-size: cover;
-  height: 85vh;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media screen and (min-width: 1200px) {
+  .home-page-background-cover {
+    background-position: 100% 18%;
+  }
 }
 .home-page-background-cover .home-page-container {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.35);
   height: inherit;
   display: flex;
+  align-items: center;
 }
 .home-page-background-cover .home-page-container .home-page-content-container {
-  align-self: center;
-  width: 80vw;
-  margin: 0 auto;
-}
-.home-page-background-cover .home-page-container .home-page-content-container .hero-content {
   display: flex;
   flex-flow: column nowrap;
+  gap: 0.5rem;
+  align-items: start;
+  height: 30vh;
+  width: 70vw;
+  justify-self: center;
+  margin: 0 auto;
 }
 .home-page-background-cover .home-page-container .home-page-content-container .hero-content h2 {
   color: #FFF;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
 }
 .home-page-background-cover .home-page-container .home-page-content-container .hero-content p {
-  color: #FFF;
   font-family: "Righteous", cursive;
-  font-size: 3.5rem;
+  color: #FFF;
+  font-size: 40px;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: inherit;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container label {
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 21px;
+  text-align: center;
+  margin-top: 2rem;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0.575rem;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: small;
+}
+@media screen and (min-width: 550px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 38%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 28%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .home-page-background-cover .home-page-container .home-page-content-container .find-studios-artists-container select {
+    width: 24%;
+  }
+}
+.home-page-background-cover .home-page-container .home-page-content-container .discover-container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 180px;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .discover-container p {
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  text-align: center;
+  font-size: 18px;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .discover-container button {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  justify-self: center;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .discover-container button a {
+  color: #FFF;
+}
+.home-page-background-cover .home-page-container .home-page-content-container .discover-container button a img {
+  width: 50px;
+  height: 50px;
+}
+
+.feature-artists-section {
+  background-color: #F1DBCB;
+  padding: 1.5rem 4%;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 450px;
+}
+.feature-artists-section .feature-artists-title-container {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 20%;
+  justify-content: space-between;
+}
+.feature-artists-section .feature-artists-title-container h2 {
+  font-family: "Righteous", cursive;
+  align-self: center;
+  font-size: 36px;
+}
+.feature-artists-section .feature-artists-title-container .top-vancouver-container {
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+.feature-artists-section .feature-artists-title-container .top-vancouver-container h3 {
+  font-family: "Righteous", cursive;
+  align-self: center;
+  font-size: 24px;
+}
+.feature-artists-section .feature-artists-title-container .top-vancouver-container img {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .feature-artists-section .feature-artists-title-container .top-vancouver-container img {
+    display: block;
+    height: 50px;
+    width: 50px;
+  }
+}
+.feature-artists-section .feature-artists-container {
+  margin-top: 1rem;
+  border-top: 1px solid #767676;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-content: center;
+}
+@media screen and (min-width: 900px) {
+  .feature-artists-section .feature-artists-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .feature-artists-section .feature-artists-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+.feature-artists-section .feature-artists-container .artist-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  justify-self: center;
+  padding-top: 1rem;
+}
+.feature-artists-section .feature-artists-container .artist-container img {
+  margin-top: 1rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+.feature-artists-section .feature-artists-container .artist-container img:hover {
+  border: 4px solid #00B5B2;
+}
+.feature-artists-section .feature-artists-container .artist-container h3 {
+  width: 180px;
+  text-align: center;
+  font-family: "Righteous", cursive;
+  margin-top: 0.5rem;
+}
+.feature-artists-section .feature-artists-container .artist-container p {
+  font-family: "Poppins", sans-serif;
+  width: 180px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.feature-artists-section .feature-artists-container .artist-container-grid-1 {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .feature-artists-section .feature-artists-container .artist-container-grid-1 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    justify-self: center;
+    padding-top: 1rem;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-1 img {
+    margin-top: 1rem;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-1 img:hover {
+    border: 4px solid #00B5B2;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-1 h3 {
+    width: 180px;
+    text-align: center;
+    font-family: "Righteous", cursive;
+    margin-top: 0.5rem;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-1 p {
+    font-family: "Poppins", sans-serif;
+    width: 180px;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+.feature-artists-section .feature-artists-container .artist-container-grid-2 {
+  display: none;
+}
+@media screen and (min-width: 1100px) {
+  .feature-artists-section .feature-artists-container .artist-container-grid-2 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    justify-self: center;
+    padding-top: 1rem;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-2 img {
+    margin-top: 1rem;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-2 img:hover {
+    border: 4px solid #00B5B2;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-2 h3 {
+    width: 180px;
+    text-align: center;
+    font-family: "Righteous", cursive;
+    margin-top: 0.5rem;
+  }
+  .feature-artists-section .feature-artists-container .artist-container-grid-2 p {
+    font-family: "Poppins", sans-serif;
+    width: 180px;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+.tattoo-explorer-section {
+  margin: 1.5rem 8%;
+}
+.tattoo-explorer-section .home-tattoo-explorer-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+@media screen and (min-width: 900px) {
+  .tattoo-explorer-section .home-tattoo-explorer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr;
+    gap: 1rem;
+  }
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .img-container-wrapper {
+  grid-column: 2/3;
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .img-container-wrapper .home-tattoo-explorer-img-container {
+  width: 100%;
+  height: 380px;
+  margin-bottom: 1.5rem;
+  border-radius: 25px;
+  background: url(/integrated_project_team4_summer_2022/images/home-explorer1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% 40%;
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .content-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 900px) {
+  .tattoo-explorer-section .home-tattoo-explorer-container .content-wrapper {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+  }
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .content-wrapper h2 {
+  font-family: "Righteous", cursive;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 36px;
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .content-wrapper p {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 300;
+  font-size: large;
+  margin-bottom: 1rem;
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .content-wrapper button {
+  width: 150px;
+  border-radius: 25px;
+  border: 1px solid #FF0000;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #FFF;
+  background-color: #FF0000;
+  padding: 0.675rem 2rem;
+}
+
+.tattoo-styles-section {
+  margin: 2rem 4%;
+}
+.tattoo-styles-section h2 {
+  font-family: "Righteous", cursive;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 36px;
+}
+.tattoo-styles-section .tattoo-styles-home-container {
+  margin: 1rem 6%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+@media screen and (min-width: 900px) {
+  .tattoo-styles-section .tattoo-styles-home-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+.tattoo-styles-section .tattoo-styles-home-container .style-container {
+  display: flex;
+  width: 320px;
+  height: 250px;
+  border-radius: 25px;
+  justify-self: center;
+}
+@media screen and (min-width: 830px) {
+  .tattoo-styles-section .tattoo-styles-home-container .style-container {
+    width: 340px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .tattoo-styles-section .tattoo-styles-home-container .style-container {
+    width: 270px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .tattoo-styles-section .tattoo-styles-home-container .style-container {
+    width: 310px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .tattoo-styles-section .tattoo-styles-home-container .style-container {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .tattoo-styles-section .tattoo-styles-home-container .style-container {
+    width: 400px;
+  }
+}
+.tattoo-styles-section .tattoo-styles-home-container .classic-americana-style-container {
+  background: url(/integrated_project_team4_summer_2022/getatat-images/styles/classic-americana-styles.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tattoo-styles-section .tattoo-styles-home-container .classic-americana-style-container .opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  display: flex;
+}
+.tattoo-styles-section .tattoo-styles-home-container .classic-americana-style-container .opacity a {
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 28px;
+}
+.tattoo-styles-section .tattoo-styles-home-container .asian-style-container {
+  background: url(/integrated_project_team4_summer_2022/getatat-images/styles/asian-styles.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tattoo-styles-section .tattoo-styles-home-container .asian-style-container .opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  display: flex;
+}
+.tattoo-styles-section .tattoo-styles-home-container .asian-style-container .opacity a {
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 28px;
+}
+.tattoo-styles-section .tattoo-styles-home-container .blackwork-style-container {
+  background: url(/integrated_project_team4_summer_2022/getatat-images/styles/blackwork-styles.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tattoo-styles-section .tattoo-styles-home-container .blackwork-style-container .opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  display: flex;
+}
+.tattoo-styles-section .tattoo-styles-home-container .blackwork-style-container .opacity a {
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 28px;
+}
+.tattoo-styles-section .tattoo-styles-home-container .black-gray-style-container {
+  background: url(/integrated_project_team4_summer_2022/getatat-images/styles/black-and-gray-styles.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tattoo-styles-section .tattoo-styles-home-container .black-gray-style-container .opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  display: flex;
+}
+.tattoo-styles-section .tattoo-styles-home-container .black-gray-style-container .opacity a {
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 28px;
+}
+.tattoo-styles-section .tattoo-styles-home-container .lettering-style-container {
+  background: url(/integrated_project_team4_summer_2022/getatat-images/styles/lettering-styles.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tattoo-styles-section .tattoo-styles-home-container .lettering-style-container .opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  display: flex;
+}
+.tattoo-styles-section .tattoo-styles-home-container .lettering-style-container .opacity a {
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 28px;
+}
+.tattoo-styles-section .tattoo-styles-home-container .new-school-style-container {
+  background: url(/integrated_project_team4_summer_2022/getatat-images/styles/new-school-styles.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tattoo-styles-section .tattoo-styles-home-container .new-school-style-container .opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  display: flex;
+}
+.tattoo-styles-section .tattoo-styles-home-container .new-school-style-container .opacity a {
+  align-self: center;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: "Righteous", cursive;
+  color: #FFF;
+  font-size: 28px;
+}
+
+.articles-section h2 {
+  font-family: "Righteous", cursive;
+  text-align: center;
+  font-size: 36px;
+}
+@media screen and (min-width: 900px) {
+  .articles-section .articles-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem 6%;
+  }
+}
+.articles-section .articles-grid-container .article-container {
+  margin: 2rem 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.articles-section .articles-grid-container .article-container img {
+  max-width: 100%;
+  height: auto;
+}
+.articles-section .articles-grid-container .article-container h3 {
+  font-family: "Righteous", cursive;
+  font-size: 28px;
+}
+@media screen and (min-width: 900px) {
+  .articles-section .articles-grid-container .article-container h3 {
+    font-size: 24px;
+  }
+}
+.articles-section .articles-grid-container .article-container p {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+@media screen and (min-width: 900px) {
+  .articles-section .articles-grid-container .article-container p {
+    font-size: 14px;
+  }
+}
+.articles-section .articles-grid-container .article-container button {
+  border: none;
+  width: 100px;
+  font-family: "Righteous", cursive;
+  background-color: #FFF;
+  align-self: end;
+}
+.articles-section .articles-grid-container .article-container button a {
+  text-decoration: none;
+  color: #FF0000;
+}
+
+.more-articles-container {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (min-width: 900px) {
+  .more-articles-container {
+    grid-column: 2/3;
+  }
+}
+.more-articles-container button {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+}
+.more-articles-container p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.advertisement {
+  margin: 2rem 8%;
+}
+@media screen and (min-width: 900px) {
+  .advertisement {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+  }
+}
+.advertisement .square {
+  margin: 0 auto;
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  .advertisement .square {
+    display: none;
+  }
+}
+.advertisement .banner {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .advertisement .banner {
+    display: block;
+  }
+}
+.advertisement .ad-content {
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  .advertisement .ad-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    grid-column: 2/3;
+  }
+  .advertisement .ad-content h2 {
+    font-family: "Righteous", cursive;
+    text-align: center;
+  }
+  .advertisement .ad-content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+  .advertisement .ad-content button {
+    width: 100px;
+    align-self: center;
+    padding: 0.575rem;
+    border-radius: 25px;
+    border: 1px solid #FF0000;
+    background-color: #FF0000;
+  }
+  .advertisement .ad-content button a {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #FFF;
+  }
 }
 
 /* HEADER-FOOTER =========================================== */
@@ -178,7 +803,11 @@ select {
     display: flex;
     justify-content: end;
   }
-  .header-desktop .header-login-button-container a {
+  .header-desktop .header-login-button-container button {
+    background-color: #FFF;
+    border: none;
+  }
+  .header-desktop .header-login-button-container button a {
     align-self: center;
     margin-right: 4em;
     text-decoration: none;
@@ -653,6 +1282,49 @@ footer .copyright {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+.sign-up-client-alternative-login .loginBtn_facebook {
+  display: inline-block;
+  background: #627aac url() left no-repeat;
+  border-top: 1px solid #29447e;
+  border-right: 1px solid #29447e;
+  border-bottom: 1px solid #1a356e;
+  border-left: none;
+  height: 40px;
+  padding-right: 7px;
+  padding-left: 29px;
+  font-weight: bold;
+  font-size: 11px;
+  color: white;
+  text-decoration: none;
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  line-height: 22px;
+  cursor: pointer;
+}
+.sign-up-client-alternative-login .loginBtn_google {
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 12px 16px 12px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+}
+.sign-up-client-alternative-login .loginBtn_google:hover {
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+.sign-up-client-alternative-login .loginBtn_google:active {
+  background-color: #eeeeee;
+}
+.sign-up-client-alternative-login .loginBtn_google:focus {
+  outline: none;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 3px #c8dafc;
 }
 
 .sign-up-client-alternative-sign-in p {
@@ -1424,13 +2096,39 @@ footer .copyright {
   padding: 2rem;
   border: 1px solid #888;
   border-radius: 0.5rem;
-  width: 50%;
+  width: 30%;
+}
+
+.modal-content__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 1rem;
+}
+
+.appointment-detail-input-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 1rem;
+}
+.appointment-detail-input-wrapper label {
+  font-weight: bold;
+}
+.appointment-detail-input-wrapper select {
+  appearance: none;
+  border-radius: 12px;
+  padding: 0 0.5rem;
+}
+.appointment-detail-input-wrapper select:disabled {
+  color: black;
+  opacity: 1;
+}
+.appointment-detail-input-wrapper .modal-input-enabled {
+  appearance: auto;
 }
 
 /* The Close Button */
 .close {
   color: #aaaaaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
 }
@@ -1529,6 +2227,8 @@ footer .copyright {
 }
 .tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-search-container input {
   border: none;
+  flex-basis: 80%;
+  font-family: "Poppins", sans-serif;
 }
 .tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-choose-city-container select {
   border: 1px solid #372019;
@@ -1553,6 +2253,12 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-size: small;
   font-weight: 300;
+}
+
+/* ARTIST GALLERY ============================================ */
+.gallery-artist-main-container .gallery-artist-main-cover-image {
+  height: 40vh;
+  background-image: url("/integrated_project_team4_summer_2022/getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg");
 }
 
 /*# sourceMappingURL=style.css.map */

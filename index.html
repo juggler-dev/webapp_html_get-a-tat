@@ -7,31 +7,40 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <script src="./js/swload.js"></script>
+    <script src="../integrated_project_team4_summer_2022/js/profile-icon.js"></script>
     <title>Home Page</title>
 </head>
 <body>
     <header>
-        <div class="header-search-container">
-            <form action="action_page.php">
-                <button type="submit"><img src="./icons/search-icon.png" alt="search-icon"></button>
-                <input type="text" placeholder="Search.." name="search">
-                <!--Toggle w/ js-->
-            </form>
+        <div class="header-mobile">
+            <button><img src="icons/menu-hamburger-icon.png" alt="menu-icon"></button>
+            <a href="index.html"><img src="images/logo-mobile.png" alt="logo-mobile"></a>
+            <button><img src="icons/user-icon.png" alt="user-icon"></button>
         </div>
-        <div class="header-navigation-container">
-            <nav>
-                <ul>
-                    <li><a href="#">Discover</a></li>
-                    <li><a href="#">Tattoos</a></li>
-                    <li><a href="#"><img src="images/logo.png" alt=""></a></li>
-                    <li><a href="#">Artists</a></li>
-                    <li><a href="#">Articles</a></li>
-                </ul>
-            </nav>
+        <div class="header-desktop">
+            <div class="header-search-container">
+                <form action="action_page.php">
+                    <button type="submit"><img src="icons/search-icon.png" alt="search-icon"></button>
+                    <input type="text" placeholder="Search.." name="search">
+                    <!--Toggle w/ js-->
+                </form>
+            </div>
+            <div class="header-navigation-container">
+                <nav>
+                    <ul>
+                        <li><a href="../pages/tattoo-locator-main.html">Discover</a></li>
+                        <li><a href="../pages/tattoo-explorer-main.html">Tattoos</a></li>
+                        <li><a href="../index.html "><img src="images/logo.png" alt=""></a></li>
+                        <li><a href="../pages/book-appointment-main.html">Booking</a></li>
+                        <li><a href="../pages/article-main.html">Articles</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-login-button-container">
+                <button><a class="header-login" href="pages/login-client.html">Login</a></button>
+            </div>
         </div>
-        <div class="header-login-button-container">
-            <a class="header-login" href="./pages/login-client.html">Login</a>
-        </div>
+    </header>
     </header>
     <div class="home-page-background-cover">
         <div class="home-page-container">
@@ -40,115 +49,196 @@
                     <h2>Get a Tat</h2>
                     <p>Let yout skin bold</p>
                 </div>
-                <div>
-                    <p>Find studios and Artists</p>
-                    <div>
-                        <!--Search bar with dropdown-->
+                <div class="find-studios-artists-container">
+                    <label>Find studios and Artists</label>
+                    <select name="" id="">
+                        <option value="" disabled selected>Vancouver</option>
+                        <option value="Vancouver">Vancouver</option>
+                    </select>
+                    <div class="discover-container">
+                        <p>Discover</p>
+                        <button><a href=""><img src="icons/arrow-down-icon.png" alt="arrow down"></a></button>
                     </div>
                 </div>
-                <div>
-                    <p>Discover</p>
-                    <button><a href=""><img src="./icons/arrow-down-icon.png" alt="arrow down"></a></button>
-                </div>
             </div>
+
         </div>
+        
     </div>
 
     <!--Search bar with dropdown-->
-    <section> 
-        <div>
+    <section class="feature-artists-section"> 
+        <div class="feature-artists-title-container">
             <h2>Feature Artists</h2>
-            <h3>Top Vancouver</h3>
+            <div class="top-vancouver-container">
+                <img src="../integrated_project_team4_summer_2022/icons/tattoo-machine-icon.png" alt="">
+                <h3>Top Vancouver</h3>
+            </div>
         </div>
-        <div>
+        <div class="feature-artists-container">
             <!-- Feature Artists Gallery-->
+            <!-- Mock Up Content -->
+            <div class="artist-container">
+                <img src="../integrated_project_team4_summer_2022/getatat-images/artists/pexels-gabriel-lara-3657563.jpeg" alt="">
+                <!-- <div class="artist-container-image artist-container-image-1"></div> -->
+                <h3>Allan Urbain</h3>
+                <p>@allanurbain</p>
+            </div>
+            <div class="artist-container">
+                <img src="../integrated_project_team4_summer_2022/getatat-images/artists/allef-vinicius-vKIc4k6dm10-unsplash.jpeg" alt="">
+                <h3>Tony Arthur</h3>
+                <p>@tonyarthurst</p>
+            </div>
+            <div class="artist-container">
+                <img src="../integrated_project_team4_summer_2022/getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg" alt="">
+                <h3>Edward Yang</h3>
+                <p>@edwardyang</p>
+            </div>
+            <div class="artist-container-grid-1">
+                <img src="../integrated_project_team4_summer_2022/getatat-images/artists/akram-huseyn-smtP9zIj6qU-unsplash.jpeg " alt="">
+                <h3>Johnny McKean</h3>
+                <p>@johnniestattoo</p>
+            </div>
+            <div class="artist-container-grid-2">
+                <img src="../integrated_project_team4_summer_2022/getatat-images/artists/nina-hill-aWVi7wTfLD0-unsplash.jpeg" alt="">
+                <h3>Ruby Pink</h3>
+                <p>@tatrubyross</p>
+            </div>
         </div>
     </section>
 
-    <!--Styles Section-->
+    <!-- Tattoo Explorer Section-->
 
-    <section>
+    <section class="tattoo-explorer-section">
+        <div class="home-tattoo-explorer-container">
+            <div class="img-container-wrapper">
+                <div class="home-tattoo-explorer-img-container"></div>
+            </div>
+            <div class="content-wrapper">
+                <h2>Tattoo Explorer</h2>
+                <p>Get inspired by a beautiful collection of tattoo images</p>
+                <button>Show Me</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="tattoo-styles-section">
         <h2>Styles</h2>
-        <div>   
-            <div><a href="#">Classic Americana</a></div>
-            <div><a href="#">Asian</a></div>
-            <div><a href="#">Blackwork</a></div>
-            <div><a href="#">Black and Grey</a></div>
-            <div><a href="#">Lettering</a></div>
-            <div><a href="#">New School</a></div>
+        <div class="tattoo-styles-home-container">
+    
+            <div class="classic-americana-style-container style-container">
+                <div class="opacity">
+                    <a href="#">Classic Americana</a>
+                </div>
+            </div>
+            <div class="asian-style-container style-container">
+                <div class="opacity">
+                    <a href="#">Asian</a>
+                </div>
+            </div>
+            <div class="blackwork-style-container style-container">
+                <div class="opacity">
+                    <a href="#">Blackwork</a>
+                </div>
+            </div>
+            <div class="black-gray-style-container style-container">
+                <div class="opacity">
+                    <a href="#">Black and Gray</a>
+                </div>
+            </div>
+            <div class="lettering-style-container style-container">
+                <div class="opacity">
+                    <a href="#">Lettering</a>
+                </div>
+            </div>
+            <div class="new-school-style-container style-container">
+                <div class="opacity">
+                    <a href="#">New School</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <button><!--Go Up Icon Here--></button>
-
-    <hr>
-
-    <!-- Articles Section -->
-
-    <section>
+    <section class="articles-section">
         <h2>Articles</h2>
-        <div>
-            <div>
-                <img src="" alt="">
+         <div class="articles-grid-container">
+             <div class="article-container">
+                    <!-- <div class="article-img-container-1"></div> -->
+                <img src="../integrated_project_team4_summer_2022/getatat-images/feature-articles/matheus-ferrero-Aslyu4LksuU-unsplash.jpeg" alt="">
                 <h3>Basic Tattoo Designers</h3>
                 <p>Tribal Tattooing originated thousands of years ago, and it is still being used by various cultures throughout...</p>
+                <button><a href="">Read more</a></button>
             </div>
-            <button>Read more</button>
-        </div>
-        <div>
-            <div>
-                <img src="" alt="">
+              
+             <div class="article-container">
+                <!-- <div class="article-img-container-1"></div> -->
+                <img src="../integrated_project_team4_summer_2022/getatat-images/feature-articles/jesse-donoghoe-QoUGX2u7kQQ-unsplash.jpeg" alt="">
                 <h3>Post Care For a New Tattoo</h3>
                 <p>You just got tattooed and want to take all the right precautions to make sure it does not get infected, keeps... </p>
+                <button><a href="">Read more</a></button>
             </div>
-            <button>Read more</button>
-        </div>
-        <div>
-            <div>
-                <img src="" alt="">
+                
+            <div class="article-container">
+                <!-- <div class="article-img-container-1"></div> -->
+                <img src="../integrated_project_team4_summer_2022/getatat-images/feature-articles/jordan-whitt-3peR38cnx9U-unsplash.jpeg" alt="">
                 <h3>The Tattoo Artist Profession</h3>
                 <p>As tattoos slowly enter the mainstream and the fashionable, and the image of tattooed people...</p>
+                <button><a href="">Read more</a></button>
             </div>
-            <button>Read more</button>
-        </div>
+
+            <div class="more-articles-container">
+                <button><a href="../integrated_project_team4_summer_2022/pages/article-main.html"><img src="../integrated_project_team4_summer_2022/icons/arrow-down-icon.png" alt=""></a></button>
+                <p>More articles</p>
+            </div>
+         </div>
     </section>
 
-    <section>
-        <div>
-            <!--Advertisement-->
-        </div>
-        <div>
+
+    <section class="advertisement">
+        <img class="square" src="../integrated_project_team4_summer_2022/getatat-images/ads/aveeno_banner-square.png" alt="">
+        <img class="banner" src="/integrated_project_team4_summer_2022/getatat-images/ads/aveeno_banner.png" alt="">
+        <div class="ad-content">
             <h2>Top Ranked Tattoos</h2>
-            <p>Check the most liked tattoos and meet the artists who created them.</p>
-            <button>View All</button>
+            <p>Check the most liked tattoos and meet the artists who created them</p>
+            <button><a href="">View All</a></button>
         </div>
     </section>
 
     <footer>
-        <div class="footer-info-container">
-            <div class="footer-info-container-child">
-                <h3>Company</h3>
-                <p><a href="./about-us.html">About</a></p>
+        <div class="footer-main-container">
+            <div class="footer-company-container">
+                <div class="footer-company-content-container">
+                    <h3>Company</h3>
+                    <p><a href="../pages/about-us.html">About</a></p>
+                </div>
             </div>
-            <div class="footer-info-container-child">
-                <h3>Help Center</h3>
-                <p><a href="./help-centre.html">FAQ</a></p>
+            <div class="footer-help-centre-container">
+                <div class="footer-help-centre-content-container">
+                    <h3>Help Center</h3>
+                    <p><a href="../pages/help-centre.html">FAQ</a></p>
+                </div>
             </div>
-            <div class="footer-info-container-child">
-                <h3>Legal</h3>
-                <p><a href="#">Terms & Conditions</a></p>
+            <div class="footer-legal-container" >
+                <div class="footer-legal-content-container">
+                    <h3>Legal</h3>
+                    <p><a href="#">Terms & Conditions</a></p>
+                </div>
+            </div>   
+            <div class="footer-nav-container">
+                <div class="footer-nav-content">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="https://facebook.com"><img src="icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                            <li><a href="https://twitter.com"><img src="icons/twitter-icon.png" alt="twitter icon"></a></li>
+                            <li><a href="https://instagram.com"><img src="icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
+                        </ul>
+                </div>
+                </nav>
             </div>
+            <p class="copyright-container">&copy; 2022 - Get a Tat</p>
         </div>
-        <div class="footer-nav-container">
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#"><img src="./icons/facebook-icon.png" alt="facebook icon"></span></a></li>
-                    <li><a href="#"><img src="./icons/twitter-icon.png" alt="twitter icon"></a></li>
-                    <li><a href="#"><img src="./icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
-                </ul>
-            </nav>
-            <p>&copy; 2022 - Get a Tat</p>
-        </div>
+        <button><img src="icons/arrow-up-icon.png" alt="arrow-up-icon"></button>
+        <p class="copyright">&copy; 2022 - Get a Tat</p>
     </footer>
 
 

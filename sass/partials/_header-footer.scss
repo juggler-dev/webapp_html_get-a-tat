@@ -76,17 +76,23 @@
         display: flex;
         justify-content: end;
 
-        a{
-            align-self: center;
-            margin-right: 4em;
-            text-decoration: none;
-            color: $primary-red-shade;
-            border: 1px solid $warning;
-            border-radius: 25px;
-            padding: .5rem 1.875rem;
-            // font-size: 
-            font-family: $font-poppins;
+        button{
+            background-color: $neutral-white;
+            border: none;
+
+            a{
+                align-self: center;
+                margin-right: 4em;
+                text-decoration: none;
+                color: $primary-red-shade;
+                border: 1px solid $warning;
+                border-radius: 25px;
+                padding: .5rem 1.875rem;
+                // font-size: 
+                font-family: $font-poppins;
+            }
         }
+
     }
     }
 
