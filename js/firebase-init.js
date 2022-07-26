@@ -4,13 +4,13 @@ import { getFirestore, collection, addDoc, doc, getDoc, getDocs, setDoc, query, 
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAw0RBWZgTpqCkdH6B3oWhU9rXjpz7-7Bw",
-  authDomain: "juggler-test-project.firebaseapp.com",
-  projectId: "juggler-test-project",
-  storageBucket: "juggler-test-project.appspot.com",
-  messagingSenderId: "1082104770953",
-  appId: "1:1082104770953:web:cbef63c511a7248aa3b158",
-  measurementId: "G-0CMQ3R7X0X"
+  apiKey: "AIzaSyC_Q9RWJouEvB5HNZ4SUSKyzgk2Zjt9Vok",
+  authDomain: "getatat-project-team4.firebaseapp.com",
+  databaseURL: "https://getatat-project-team4-default-rtdb.firebaseio.com",
+  projectId: "getatat-project-team4",
+  storageBucket: "getatat-project-team4.appspot.com",
+  messagingSenderId: "771683602653",
+  appId: "1:771683602653:web:1d7ba0a8a9eebbd8570b34"
 };
 
 // Initialize Firebase
