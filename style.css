@@ -2364,14 +2364,108 @@ footer .copyright {
 }
 
 /* ARTIST GALLERY ============================================ */
-.gallery-artist-main-container .gallery-artist-main-cover-image {
-  height: 240px;
-  width: 100%;
-  background-image: url("/integrated_project_team4_summer_2022/getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.gallery-artist-main-container {
+  margin: 2rem 4%;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-flow: column nowrap;
 }
-
+.gallery-artist-main-container .gallery-artist-main-cover-image {
+  display: none;
+}
+.gallery-artist-main-container .gallery-artist-main-profile-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.gallery-artist-main-container .gallery-artist-main-profile-icons .gallery-artist-mock-up-profile-image {
+  margin-top: 1rem;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  border: 4px solid #FF9E81;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-artist-main-container .gallery-artist-main-profile-icons .gallery-artist-profile-image {
+  margin-top: 1rem;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  border: 4px solid #FF9E81;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-artist-main-container .gallery-artist-main-profile-icons .gallery-artist-profile-image small {
+  font-family: "Poppins", sans-serif;
+}
+.gallery-artist-main-container .artist-gallery-main-name-heading {
+  margin-top: 1rem;
+  font-family: "Righteous", cursive;
+  text-align: center;
+  color: #FF0000;
+}
+.gallery-artist-main-container .manage-appointment-button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #372019;
+  border-radius: 25px;
+  padding: 0.675rem;
+  width: 200px;
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  font-weight: 700;
+  background-color: #FFF;
+  color: #372019;
+}
+.gallery-artist-main-container .artist-gallery-main-artist-bio {
+  text-align: center;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+}
+.gallery-artist-main-container .gallery-artist-main-tags-container {
+  margin: 1rem 4%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.gallery-artist-main-container .gallery-artist-main-tags-container .artist-tag {
+  flex-basis: 45%;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFF;
+  border: 1px solid #FF9E81;
+  border-radius: 25px;
+  background-color: #FF9E81;
+  padding: 0.4rem;
+}
+@media screen and (min-width: 500px) {
+  .gallery-artist-main-container .gallery-artist-main-tags-container .artist-tag {
+    flex-basis: 40%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .gallery-artist-main-container .gallery-artist-main-tags-container .artist-tag {
+    flex-basis: 35%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .gallery-artist-main-container .gallery-artist-main-tags-container .artist-tag {
+    flex-basis: 30%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .gallery-artist-main-container .gallery-artist-main-tags-container .artist-tag {
+    flex-basis: 25%;
+  }
+}
 /* DROPDOWN MENU ============================================ */
 header {
   position: relative;

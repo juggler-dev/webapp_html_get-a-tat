@@ -52,15 +52,6 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
 
 
 
-
-
-
-
-
-
-
-
-
 // if (readSessionUserData(SESSION_USER_KEY_VALUE) != null) {
 //   console.log("user.log")
 
