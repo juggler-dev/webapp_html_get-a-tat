@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="../js/tattoo-explorer.js"></script>
     <title>Tattoo Explorer Main</title>
@@ -46,7 +47,7 @@
         <div class="tattoo-explorer-search-details-container">
             <div class="tattoo-explorer-search-container">
                 <img src="../icons/search-icon.png" alt="">
-                <input type="text" name=search" id="">
+                <input type="text" name="search" id="">
                 <img src="../icons/filter-icon.png" alt="">
             </div>
             <div class="tattoo-explorer-filter-buttons">
@@ -58,22 +59,26 @@
                 <button>Lettering</button>
             </div>
         </div>
-        <div class="display-gallery-container" id="displayGallery">
-            <div class="imageDisplay" id="imageDisplay">
-                <img src="" alt="" id="myImg">
-            </div>
-        </div>
-
-        <!-- Styling Image Gallery -->
-        <!-- <div class="tattoo-explorer-display-gallery-container">
-            <div class="image-display">
-                <img src="../images/hero-image.jpeg" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div>
-        </div> -->
-
+    
+<!-- modal -->
+<div class="display-gallery-container" id="displayGalleryContainer">
+    <div class="heading"></div>
+    <div class="imagesExplorer" id="imageDisplay">
+        <!-- <img src="../images/hero-image.jpeg" alt=""> -->
     </div>
+    <div class="modalExplorer">
+        <span class="closeModalExplorer"><i class="fas fa-times"></i></span>
+        <div class="modalContentExplorer">
+            <img src="" class="modalImgExplorer">
+            <span class="modalTxtExplorer"></span>
+            <div id="ctaBtn"></div>
+        </div>
+    </div>
+</div>
+
+<!-- end modal -->
+
+    <!-- </div> -->
 
     <!-- <section class="tattoo-explorer-main-container">
         <h1>Tattoo Explorer</h1> -->

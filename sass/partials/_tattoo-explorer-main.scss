@@ -69,3 +69,113 @@
         }
     }
 }
+
+///////////////// Modal tattoo explore //////////////////
+#displayGalleryContainer {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.imagesExplorer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin: 0 1em;
+}
+
+.imagesExplorer img {
+    max-width: 100%;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    border-radius: 5%;
+}
+
+.imagesExplorer img:hover {
+    transform: scale(0.95);
+}
+
+.modalExplorer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $neutral-white;
+    color: black;
+    z-index: 1;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modalContentExplorer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalImgExplorer {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.modalTxtExplorer {
+    margin-top: 1em;
+}
+
+.closeModalExplorer {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modalExplorer.appear {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalExplorer.appear img {
+    border-radius: 5%;
+}
+
+.modalExplorer.appear .modalImgExplorer,
+.modalExplorer.appear .modalTxtExplorer {
+    animation: zoom 0.3s linear;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modalExplorer i {
+    background-color: $neutral-dark-grey;
+    color: black;
+    padding: .5rem .75rem;
+    border-radius: 50%;
+}
+
+#ctaBtn button {
+    width: 100%;
+    border-radius: 25px;
+    margin: 0 auto;
+    padding: .675rem 2.5rem;
+    font-family: $font-poppins;
+    font-weight: 600;
+    color: $neutral-white;
+    background-color: $primary-red;
+    border: 1px solid $primary-red;
+    cursor: pointer;
+  }
+
+///////////////// End modal tattoo explorer //////////////////
