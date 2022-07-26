@@ -1,7 +1,10 @@
 .gallery-artist-main-container{
     .gallery-artist-main-cover-image{
-        height: 40vh;
+        height: 240px;
+        width: 100%;
         background-image: url("/integrated_project_team4_summer_2022/getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
 }

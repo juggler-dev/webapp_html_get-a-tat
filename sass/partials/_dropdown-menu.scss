@@ -1,0 +1,222 @@
+header{
+    position: relative;
+
+}
+
+
+
+
+.artist-dropdown-menu{
+    border: 1px solid $neutral-dark-grey;
+    width: 360px;
+    position: absolute;
+    right: 0;
+    background-color: $neutral-white;
+    z-index: 1;
+    display: none;
+   
+
+    
+    .artist-dropdown-menu-profile-container{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;  
+        padding: 1rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey;    
+        
+        img{
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            justify-self: center;
+        }
+
+        .user-name-gallery-container{
+            align-self: center;
+            flex-basis: 50%;
+            justify-self: center;
+
+            .artist-name{
+                font-family: $font-poppins;
+                font-size: 16px;
+                font-weight: 800;
+            }
+
+            p{
+                font-family: $font-poppins;
+                font-size: small;
+                
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+
+    .artist-dropdown-menu-artist-info-container{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        padding: .5rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey;
+
+        .dropdown-menu-notifications-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+
+        .dropdown-menu-my-gallery-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+
+        .dropdown-menu-settings-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+
+    .artist-dropdown-menu-artist-other-info{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        padding: .5rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey;
+
+        .dropdown-menu-about-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+
+        .dropdown-menu-help-centre-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+
+    .artist-dropdown-menu-log-out{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        padding: .5rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey;
+
+        .log-out-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+}

@@ -7,12 +7,13 @@
     <script src="https://kit.fontawesome.com/5cba065845.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/styles.css">
+    <!-- <link rel="stylesheet" href="../style/styles.css"> -->
     <link rel="stylesheet" href="../style.css">
     <!-- <script type="module" src="../js/login.js" defer></script> -->
     <script type="module" src="../js/home.js" defer></script>
     <script type ="module" src="../js/profile-icon.js" defer></script>
     <!-- <script type="module" src="../js/home-client.js" defer></script> -->
+    <script type="module" src="../js/profile-icon.js" defer></script>
     <title>Login</title>
 
 </head>
@@ -43,12 +44,16 @@
                 </nav>
             </div>
             <div class="header-login-button-container">
-                <button><a class="header-login" href="../pages/login-client.html">Login</a></button>
+                <button id="dropdownMenuClient"><a id="loginButtonAnchorTag" class="header-login" href="../pages/login-client.html">Login</a></button>
             </div>
         </div>
     </header>
 
     <!-- MAIN CONTENT -->
+
+    <div class="dropdown-menu">
+
+    </div>
 
     <div class="main-container-login">
         <!-- <button id="myProfileUserBtn">My profile</button> -->
@@ -60,33 +65,40 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-info-container">
-            <div class="footer-container-child">
-                <h3>Company</h3>
-                <p><a href="#">About</a></p>
+        <div class="footer-main-container">
+            <div class="footer-company-container">
+                <div class="footer-company-content-container">
+                    <h3>Company</h3>
+                    <p><a href="../pages/about-us.html">About</a></p>
+                </div>
             </div>
-            <div class="footer-container-child">
-                <h3>Help Center</h3>
-                <p><a href="#">FAQ</a></p>
+            <div class="footer-help-centre-container">
+                <div class="footer-help-centre-content-container">
+                    <h3>Help Center</h3>
+                    <p><a href="../pages/help-centre.html">FAQ</a></p>
+                </div>
             </div>
-            <div class="footer-container-child">
-                <h3>Legal</h3>
-                <p><a href="#">Terms & Conditions</a></p>
+            <div class="footer-legal-container" >
+                <div class="footer-legal-content-container">
+                    <h3>Legal</h3>
+                    <p><a href="#">Terms & Conditions</a></p>
+                </div>
+            </div>   
+            <div class="footer-nav-container">
+                <div class="footer-nav-content">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
+                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
+                        </ul>
+                </div>
+                </nav>
             </div>
+            <p class="copyright-container">&copy; 2022 - Get a Tat</p>
         </div>
-
-        <div id="loginOutput"></div>
-        <div class="footer-nav-container">
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </nav>
-
-        </div>
-        <p>&copy; 2022 - Get a Tat</p>
+        <button><img src="../icons/arrow-up-icon.png" alt="arrow-up-icon"></button>
+        <p class="copyright">&copy; 2022 - Get a Tat</p>
     </footer>
 
 

@@ -380,6 +380,7 @@ select {
     grid-template-columns: 1fr 1fr;
     grid-row: 1fr;
     gap: 1rem;
+    margin-top: 1.5rem;
   }
 }
 .tattoo-explorer-section .home-tattoo-explorer-container .img-container-wrapper {
@@ -449,6 +450,7 @@ select {
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
 }
 @media screen and (min-width: 900px) {
   .tattoo-styles-section .tattoo-styles-home-container {
@@ -2257,8 +2259,196 @@ footer .copyright {
 
 /* ARTIST GALLERY ============================================ */
 .gallery-artist-main-container .gallery-artist-main-cover-image {
-  height: 40vh;
+  height: 240px;
+  width: 100%;
   background-image: url("/integrated_project_team4_summer_2022/getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* DROPDOWN MENU ============================================ */
+header {
+  position: relative;
+}
+
+.artist-dropdown-menu {
+  border: 1px solid #767676;
+  width: 360px;
+  position: absolute;
+  right: 0;
+  background-color: #FFF;
+  z-index: 1;
+  display: none;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  justify-self: center;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container {
+  align-self: center;
+  flex-basis: 50%;
+  justify-self: center;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container .artist-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container p {
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-notifications-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-notifications-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-notifications-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-notifications-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-my-gallery-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-my-gallery-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-my-gallery-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-my-gallery-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-settings-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-settings-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-settings-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-info-container .dropdown-menu-settings-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-about-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-about-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-about-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-about-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-help-centre-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-help-centre-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-help-centre-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-artist-other-info .dropdown-menu-help-centre-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-log-out {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-log-out .log-out-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.artist-dropdown-menu .artist-dropdown-menu-log-out .log-out-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-log-out .log-out-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.artist-dropdown-menu .artist-dropdown-menu-log-out .log-out-container p a {
+  text-decoration: none;
+  color: #767676;
 }
 
 /*# sourceMappingURL=style.css.map */
