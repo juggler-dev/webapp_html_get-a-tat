@@ -2532,6 +2532,12 @@ footer .copyright {
     flex-basis: 25%;
   }
 }
+.addButtons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 /* DROPDOWN MENU ============================================ */
 header {
   position: relative;
@@ -2877,5 +2883,7 @@ header {
   text-decoration: none;
   color: #767676;
 }
+
+/* TATTOO LOCATOR ============================================ */
 
 /*# sourceMappingURL=style.css.map */

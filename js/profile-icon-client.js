@@ -17,10 +17,10 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'client'){
   console.log('logged in');
   console.log(readSessionUserData(SESSION_USER_KEY_VALUE).user_type);
 
-  const clientAnchorTag = document.getElementById("clientLoginButtonAnchorTag");
+  const clientAnchorTag = document.getElementById("loginButtonAnchorTag");
   clientAnchorTag.remove();
 
-  const clientButton = document.getElementById("dropdownMenuClientButton");
+  const clientButton = document.getElementById("dropdownMenuButton");
   
   const myIcon = document.createElement("img");
   const imgSrc = document.createAttribute("src");

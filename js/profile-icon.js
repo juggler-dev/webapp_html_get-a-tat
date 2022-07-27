@@ -17,7 +17,7 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
   const anchorTag = document.getElementById("loginButtonAnchorTag");
   anchorTag.remove();
 
-  const artistButton = document.getElementById("dropdownMenuArtistButton");
+  const artistButton = document.getElementById("dropdownMenuButton");
 
   const myIcon = document.createElement("img");
   const imgSrc = document.createAttribute("src");
@@ -46,6 +46,40 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
   });
 
 
+} else if  (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'client') {
+  console.log('logged in');
+  console.log(readSessionUserData(SESSION_USER_KEY_VALUE).user_type);
+
+  const clientAnchorTag = document.getElementById("loginButtonAnchorTag");
+  clientAnchorTag.remove();
+
+  const clientButton = document.getElementById("dropdownMenuButton");
+  
+  const myIcon = document.createElement("img");
+  const imgSrc = document.createAttribute("src");
+ 
+  imgSrc.value = "../icons/user-icon.png";
+
+  myIcon.setAttributeNode(imgSrc);
+
+  clientButton.appendChild(myIcon);
+
+  clientButton.addEventListener("click", () => {
+
+    const clientMenu = document.getElementById("clientDropdownMenu");
+
+    if (clientMenu.style.display === "block") {
+      clientMenu.style.display = "none";
+    } else {
+      clientMenu.style.display = "block";
+    }
+
+    const clientName = document.getElementById("clientName");
+
+    clientName.innerHTML = readSessionUserData(SESSION_USER_KEY_VALUE).full_name;
+
+
+  })
 } else {
   console.log('no user'); 
 }
