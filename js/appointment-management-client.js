@@ -30,15 +30,17 @@ const APPOINTMENT_BUTTON_CLASS = ".appointment-card-btn"
 ////////////////// CLASSES //////////////////
 
 class Appointment {
-  constructor(id, image, artist, placement, size, allergies, description, color, date) {
+  constructor(id, photo, uploadedImageUrl, artist, placement, size, allergies, description, color, time, date) {
     this.id = id,
-      this.image = image,
+      this.photo = photo,
+      this.uploadedImageUrl = uploadedImageUrl,
       this.artist = artist,
       this.placement = placement,
       this.size = size,
       this.allergies = allergies,
       this.description = description,
       this.color = color,
+      this.time = time,
       this.date = date
   }
 }
@@ -46,17 +48,26 @@ class Appointment {
 ////////////////// FUNCTIONS //////////////////
 
 function buildAppointment(firebaseDocument) {
-  return new Appointment(firebaseDocument.id, firebaseDocument.data().image, firebaseDocument.data().artist, firebaseDocument.data().placement, firebaseDocument.data().size, firebaseDocument.data().allergies, firebaseDocument.data().description, firebaseDocument.data().color, firebaseDocument.data().date)
+  return new Appointment(firebaseDocument.id, firebaseDocument.data().photo, firebaseDocument.data().uploadedImageUrl, firebaseDocument.data().artist, firebaseDocument.data().placement, firebaseDocument.data().size, firebaseDocument.data().allergies, firebaseDocument.data().description, firebaseDocument.data().color, firebaseDocument.data().time, firebaseDocument.data().date)
 }
 
 function loadAppointmentDetail(appointmentObject) {
+  document.querySelector(".modal-content").id = appointmentObject.id;
+  document.getElementById("modalContentHeaderTitleArtistName").innerHTML = appointmentObject.artist;
   document.getElementById("modalPlacementInput").value = appointmentObject.placement;
-  console.log('??')
   document.getElementById("modalSizeInput").value = appointmentObject.size;
   document.getElementById("modalAllergiesInput").value = appointmentObject.allergies;
-  // // document.getElementById("modalDescriptionInput").value = appointmentObject.description;
-  // document.getElementById("modalColorInput").value = appointmentObject.color;
-  // document.getElementById("modalImageReference").src = appointmentObject.placement;
+  document.getElementById("modalDescriptionInput").value = appointmentObject.description;
+  document.getElementById("modalColorInput").value = appointmentObject.color;
+  if (appointmentObject.photo !== "") {
+    document.getElementById("modalImageReference").src = appointmentObject.photo;
+  }
+  else {
+    document.getElementById("modalImageReference").src = appointmentObject.uploadedImageUrl;
+  }
+  document.getElementById("modalContentTime").innerHTML = appointmentObject.time;
+  document.getElementById("modalContentDate").innerHTML = appointmentObject.date;
+
 }
 
 // async function retrieveAppointmentsFromFirestore(collectionName, sessionUserUID) {
@@ -89,10 +100,10 @@ function drawAppointmentCard(appointmentObject, container) {
   let dateElement;
   let artistDateGrouping;
 
-  if (appointmentObject.image !== "") {
+  if (appointmentObject.photo !== "") {
     container.innerHTML += `<button class="appointment-card-btn" id="${appointmentObject.id}"></button>`;
 
-    thumbnailElement = `<img src='${appointmentObject.image}' class="thumbnail-image"></img>`;
+    thumbnailElement = `<img src='${appointmentObject.photo}' class="thumbnail-image"></img>`;
 
     artistElement = `<p>Appointment with: ${appointmentObject.artist}</p>`;
     dateElement = `<p>Date: ${appointmentObject.date}</p>`;
@@ -121,6 +132,7 @@ function drawAppointmentCard(appointmentObject, container) {
         // cardElement = `<button class="appointment-card-btn" id="${appointmentObject.id}">${thumbnailElement + artistDateGrouping}</button>`;
 
         document.getElementById(appointmentObject.id).innerHTML += thumbnailElement + artistDateGrouping;
+        appointmentObject.uploadedImageUrl = url;
       })
   }
 
@@ -182,33 +194,53 @@ document.getElementById('closingX').addEventListener('click', () => {
 //Edit Button
 document.getElementById("modalContentBtnEdit").addEventListener('click', async (e) => {
 
-  // e.target.innerHTML = "Update";
+  e.target.innerHTML = "Update";
+  e.target.id = "modalContentBtnUpdate"
   document.querySelectorAll(".modal-input").forEach((input) => {
     input.disabled = false;
     input.classList.add("modal-input-enabled")
   });
 
+  document.getElementById("modalContentBtnUpdate").addEventListener('click', async (e) => {
 
-})
-
-//Update Button
-document.getElementById("modalContentBtnUpdate").addEventListener('click', async (e) => {
-
-
-  const appointmentToUpdateRef = doc(db, "request_appointment", "rhSdLpG5VKWwH0KXisDp");
-  await updateDoc(appointmentToUpdateRef, {
-    placement: document.getElementById('modalPlacementInput').value,
-    size: document.getElementById('modalSizeInput').value,
-    allergies: document.getElementById('modalAllergiesInput').value
-    // description: document.getElementById('short-description').value,
-    // color: document.getElementById('color').value,
-    // date: document.getElementById('datePicker').value,
-    // time: document.getElementById('timePicker').value,
-    // uid: readSessionUserData(SESSION_USER_KEY_VALUE).uid,
-    // image: document.getElementById('image').value,
+    const requestId = document.querySelector(".modal-content").id
+  
+    const appointmentToUpdateRef = doc(db, "request_appointment", requestId);
+    await updateDoc(appointmentToUpdateRef, {
+      placement: document.getElementById('modalPlacementInput').value,
+      size: document.getElementById('modalSizeInput').value,
+      allergies: document.getElementById('modalAllergiesInput').value,
+      description: document.getElementById('modalDescriptionInput').value,
+      color: document.getElementById('modalColorInput').value,
+      // date: document.getElementById('datePicker').value,
+      // time: document.getElementById('timePicker').value,
+      // image: document.getElementById('image').value,
+    })
+    location.reload();
   })
-  location.reload();
+
+
+
 })
+
+// //Update Button
+// document.getElementById("modalContentBtnUpdate").addEventListener('click', async (e) => {
+
+//   const requestId = document.querySelector(".modal-content").id
+
+//   const appointmentToUpdateRef = doc(db, "request_appointment", requestId);
+//   await updateDoc(appointmentToUpdateRef, {
+//     placement: document.getElementById('modalPlacementInput').value,
+//     size: document.getElementById('modalSizeInput').value,
+//     allergies: document.getElementById('modalAllergiesInput').value,
+//     description: document.getElementById('modalDescriptionInput').value,
+//     color: document.getElementById('modalColorInput').value,
+//     // date: document.getElementById('datePicker').value,
+//     // time: document.getElementById('timePicker').value,
+//     // image: document.getElementById('image').value,
+//   })
+//   location.reload();
+// })
 
 //Cancel Button
 document.getElementById("modalContentBtnCancel").addEventListener('click', (e) => {
@@ -223,6 +255,25 @@ document.getElementById("modalContentBtnCancel").addEventListener('click', (e) =
 document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
   window.location.href = "../pages/book-appointment.html";
 });
+
+
+
+// //CAMERA
+// // start camera
+// document.getElementById(modalCam).addEventListener('click', async function() {
+//   let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false});
+//   video.srcObject = stream;
+
+//   showCamera(true)
+// });
+
+// // stop camera
+// document.getElementById('stopCam').addEventListener('click', () => {
+//   const tracks = video.srcObject.getTracks();
+//   tracks.forEach((track) => track.stop());
+
+//   showCamera(false);
+// });
 
 
 

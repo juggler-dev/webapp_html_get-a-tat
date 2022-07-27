@@ -83,9 +83,8 @@ requestBtn.addEventListener('click', async (e) => {
     color: document.getElementById('color').value,
     date: document.getElementById('datePicker').value,
     time: document.getElementById('timePicker').value,
-    // photo_name: "testeo",
     uid: readSessionUserData(SESSION_USER_KEY_VALUE).uid,
-    image: document.getElementById('image').value,
+    photo: document.getElementById('book-appointment__photo-input').value,
   })
 
   const appointmentStoregeRef = ref(storage, 'appointments-img' + '/' + appointmentDoc.id);
@@ -142,7 +141,7 @@ function handleBlob(blob) {
   const reader = new FileReader();
   reader.addEventListener('load', () => {
     console.log('Base64:', reader.result);
-    document.getElementById('image').value = reader.result;
+    document.getElementById('book-appointment__photo-input').value = reader.result;
   });
   reader.readAsDataURL(blob);
 }

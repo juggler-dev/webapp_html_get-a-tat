@@ -62,9 +62,12 @@
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
-            <div class="modal-content">
+            <div class="modal-content" >
                 <div class="modal-content__header">
-                    <h3> Booking with Hotpink Rubber Chicken</h3>
+                    <div class="modal-content__header__title">
+                        <h3> Booking with</h3>
+                        <p id="modalContentHeaderTitleArtistName"></p>
+                    </div>
                     <span class="close" id="closingX">&times;</span>
                 </div>
                 <form class="modal-form" id="modalContentForm">
@@ -114,14 +117,31 @@
                         <p>Image Reference</p>
                         <img id="modalImageReference" src="https://picsum.photos/1200/600">
                     </div>
-                    <!-- <div class="appointment-detail-input-wrapper">
-                        <p>Date and Time</p>
-                        <p>Front Arm - Right</p>
+
+
+                    <!-- ///////////////////////////////// -->
+                    <!-- <div class="upload-image-container">
+                        <div class="label-input-file-wrapper">
+                            <label class="modal-image-input-label" for="modalUploadPicture"><i class="fa-solid fa-image"></i></label>
+                            <input type="file" class="modal-image-input" id="modalImageInput">
+                        </div>
+                        <button type="button" class="modal-photo-btn" id="modalCamBtn"><i class="fa-solid fa-camera"></i></a>
                     </div> -->
+                    <!-- ///////////////////////////////// -->
+
+
+
+                    <div class="appointment-detail-input-wrapper appointment-detail-date-wrapper">
+                        <p>Date</p>
+                        <div class="modal-content__time-date-wrapper">
+                            <p id="modalContentTime"></p>
+                            <p id="modalContentDate"></p>
+                        </div>
+                    </div>
                     <div class="appointment-detail-button-wrapper">
                         <button class="appointment-detail__button-cancel" id="modalContentBtnCancel">Cancel</button>
                         <button class="appointment-detail__button-edit" id="modalContentBtnEdit">Edit</button>
-                        <button class="appointment-detail__button-edit" id="modalContentBtnUpdate">Update</button>
+                        <!-- <button class="appointment-detail__button-edit" id="modalContentBtnUpdate">Update</button> -->
                     </div>
                 </form>
 
