@@ -85,6 +85,7 @@ requestBtn.addEventListener('click', async (e) => {
     time: document.getElementById('timePicker').value,
     uid: readSessionUserData(SESSION_USER_KEY_VALUE).uid,
     photo: document.getElementById('book-appointment__photo-input').value,
+    status: "pending"
   })
 
   const appointmentStoregeRef = ref(storage, 'appointments-img' + '/' + appointmentDoc.id);

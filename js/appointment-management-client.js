@@ -30,7 +30,7 @@ const APPOINTMENT_BUTTON_CLASS = ".appointment-card-btn"
 ////////////////// CLASSES //////////////////
 
 class Appointment {
-  constructor(id, photo, uploadedImageUrl, artist, placement, size, allergies, description, color, time, date) {
+  constructor(id, photo, uploadedImageUrl, artist, placement, size, allergies, description, color, time, date, status) {
     this.id = id,
       this.photo = photo,
       this.uploadedImageUrl = uploadedImageUrl,
@@ -41,14 +41,15 @@ class Appointment {
       this.description = description,
       this.color = color,
       this.time = time,
-      this.date = date
+      this.date = date,
+      this.status = status
   }
 }
 
 ////////////////// FUNCTIONS //////////////////
 
 function buildAppointment(firebaseDocument) {
-  return new Appointment(firebaseDocument.id, firebaseDocument.data().photo, firebaseDocument.data().uploadedImageUrl, firebaseDocument.data().artist, firebaseDocument.data().placement, firebaseDocument.data().size, firebaseDocument.data().allergies, firebaseDocument.data().description, firebaseDocument.data().color, firebaseDocument.data().time, firebaseDocument.data().date)
+  return new Appointment(firebaseDocument.id, firebaseDocument.data().photo, firebaseDocument.data().uploadedImageUrl, firebaseDocument.data().artist, firebaseDocument.data().placement, firebaseDocument.data().size, firebaseDocument.data().allergies, firebaseDocument.data().description, firebaseDocument.data().color, firebaseDocument.data().time, firebaseDocument.data().date, firebaseDocument.data().status)
 }
 
 function loadAppointmentDetail(appointmentObject) {
@@ -70,17 +71,6 @@ function loadAppointmentDetail(appointmentObject) {
 
 }
 
-// async function retrieveAppointmentsFromFirestore(collectionName, sessionUserUID) {
-//   // Query
-//   const appointmentsUserQuery = query(collection(db, collectionName), where(UID_FIELD, "==", sessionUserUID));
-//   const userAppointments = await getDocs(appointmentsUserQuery);
-//   userAppointments.forEach((doc) => {
-
-//     const appointmentObject = buildAppointment(doc);
-//     bookingArray.push(appointmentObject);
-//   });
-// }
-
 function setButtonsEvents(querySelectorClass) {
 
   document.querySelectorAll(querySelectorClass).forEach((button) => {
@@ -98,6 +88,7 @@ function drawAppointmentCard(appointmentObject, container) {
   let thumbnailElement;
   let artistElement;
   let dateElement;
+  let statusElement;
   let artistDateGrouping;
 
   if (appointmentObject.photo !== "") {
@@ -107,8 +98,9 @@ function drawAppointmentCard(appointmentObject, container) {
 
     artistElement = `<p>Appointment with: ${appointmentObject.artist}</p>`;
     dateElement = `<p>Date: ${appointmentObject.date}</p>`;
+    statusElement = `<p>Status: ${appointmentObject.status}</p>`;
 
-    artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
+    artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement + statusElement}</div>`;
 
     document.getElementById(appointmentObject.id).innerHTML += thumbnailElement + artistDateGrouping;
 
@@ -126,8 +118,9 @@ function drawAppointmentCard(appointmentObject, container) {
 
         artistElement = `<p>Appointment with: ${appointmentObject.artist}</p>`;
         dateElement = `<p>Date: ${appointmentObject.date}</p>`;
+        statusElement = `<p>Status: ${appointmentObject.status}</p>`;
 
-        artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement}</div>`;
+        artistDateGrouping = `<div class="appointment-info">${artistElement + dateElement + statusElement}</div>`;
 
         // cardElement = `<button class="appointment-card-btn" id="${appointmentObject.id}">${thumbnailElement + artistDateGrouping}</button>`;
 
@@ -151,17 +144,10 @@ async function updateAppointmentList(collectionName, sessionUserUID) {
   });
 }
 
-function renderTable() {
-
-}
-
 ////////////////// EVENTS //////////////////
 
 //Read Session Object
 const sessionObject = readSessionUserData(SESSION_USER_KEY_VALUE);
-
-// //Pull all appointments from Firebase.
-// await retrieveAppointmentsFromFirestore(COLLECTION_NAME, sessionObject.uid);
 
 //Update table with content
 await updateAppointmentList(COLLECTION_NAME, sessionObject.uid);
@@ -183,13 +169,6 @@ document.getElementById('closingX').addEventListener('click', () => {
     input.classList.remove("modal-input-enabled")
   })
 })
-
-// // When the user clicks on <span> (x), close the modal
-// window.addEventListener('click', (event) => {
-//   if (event.target == modal) {
-//     modal.style.visibility = "hidden";
-//   }
-// })
 
 //Edit Button
 document.getElementById("modalContentBtnEdit").addEventListener('click', async (e) => {
@@ -219,28 +198,7 @@ document.getElementById("modalContentBtnEdit").addEventListener('click', async (
     location.reload();
   })
 
-
-
 })
-
-// //Update Button
-// document.getElementById("modalContentBtnUpdate").addEventListener('click', async (e) => {
-
-//   const requestId = document.querySelector(".modal-content").id
-
-//   const appointmentToUpdateRef = doc(db, "request_appointment", requestId);
-//   await updateDoc(appointmentToUpdateRef, {
-//     placement: document.getElementById('modalPlacementInput').value,
-//     size: document.getElementById('modalSizeInput').value,
-//     allergies: document.getElementById('modalAllergiesInput').value,
-//     description: document.getElementById('modalDescriptionInput').value,
-//     color: document.getElementById('modalColorInput').value,
-//     // date: document.getElementById('datePicker').value,
-//     // time: document.getElementById('timePicker').value,
-//     // image: document.getElementById('image').value,
-//   })
-//   location.reload();
-// })
 
 //Cancel Button
 document.getElementById("modalContentBtnCancel").addEventListener('click', (e) => {

@@ -8,7 +8,7 @@
     <script type="module" src="../js/appointment-management-artist.js"></script>
     <title>Artist Appointment Management</title>
 </head>
-<body>
+<body class="content">
     <header>
         <div class="header-mobile">
             <button><img src="../icons/menu-hamburger-icon.png" alt="menu-icon"></button>
@@ -28,7 +28,7 @@
                     <ul>
                         <li><a href="../pages/tattoo-explorer-main.html">Discover</a></li>
                         <li><a href="">Tattoos</a></li>
-                        <li><a href="#"><img src="../images/logo.png" alt=""></a></li>
+                        <li><a href="home-artist.html"><img src="../images/logo.png" alt=""></a></li>
                         <li><a href="../pages/book-appointment-main.html">Booking</a></li>
                         <li><a href="../pages/article-main.html">Articles</a></li>
                     </ul>
@@ -43,6 +43,97 @@
         <div class="content-container">
             <div class="appointments-container" id="appointmentContainer">
                 <h3>My Appointments</h3>
+
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" >
+                <div class="modal-content__header">
+                    <div class="modal-content__header__title">
+                        <h3> Booking with</h3>
+                        <p id="modalContentHeaderTitleArtistName"></p>
+                    </div>
+                    <span class="close" id="closingX">&times;</span>
+                </div>
+                <form class="modal-form" id="modalContentForm">
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="modalPlacementInput">Placement</label>
+                        <select class="modal-input" name="placement" id="modalPlacementInput" disabled>
+                            <option value="front-arm-right">Front Arm - Right</option>
+                            <option value="front-arm-left">Front Arm - Left</option>
+                            <option value="Placement 3">Placement 3</option>
+                            <option value="Placement 4">Placement 4</option>
+                            <option value="Placement 5">Placement 5</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="modalSizeInput">Size</label>
+                        <select class="modal-input" name="size" id="modalSizeInput" disabled>
+                            <option value="2-3-inches">2-3 inches</option>
+                            <option value="Size 2">Size 2</option>
+                            <option value="Size 3">Size 3</option>
+                            <option value="Size 4">Size 4</option>
+                            <option value="Size 5">Size 5</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="modalAllergiesInput">Allergies/Health</label>
+                        <select class="modal-input" name="allergies-health" id="modalAllergiesInput" disabled>
+                            <option value="Allergy 1">Allergy 1</option>
+                            <option value="Allergy 2">Allergy 2</option>
+                            <option value="Allergy 3">Allergy 3</option>
+                            <option value="Allergy 4">Allergy 4</option>
+                            <option value="Allergy 5">Allergy 5</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label class="textarea-label" for="short-description">Short description of your tattoo</label>
+                        <textarea class="modal-input" name="short-description" id="modalDescriptionInput" cols="20" rows="3"
+                            placeholder=" Army with a bag of potatoes Tattoo on your upper arm " disabled></textarea>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <label for="color">Color</label>
+                        <select class="modal-input" name="color" id="modalColorInput" disabled>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="appointment-detail-input-wrapper">
+                        <p>Image Reference</p>
+                        <img id="modalImageReference" src="https://picsum.photos/1200/600">
+                    </div>
+
+
+                    <!-- ///////////////////////////////// -->
+                    <!-- <div class="upload-image-container">
+                        <div class="label-input-file-wrapper">
+                            <label class="modal-image-input-label" for="modalUploadPicture"><i class="fa-solid fa-image"></i></label>
+                            <input type="file" class="modal-image-input" id="modalImageInput">
+                        </div>
+                        <button type="button" class="modal-photo-btn" id="modalCamBtn"><i class="fa-solid fa-camera"></i></a>
+                    </div> -->
+                    <!-- ///////////////////////////////// -->
+
+
+
+                    <div class="appointment-detail-input-wrapper appointment-detail-date-wrapper">
+                        <p>Date</p>
+                        <div class="modal-content__time-date-wrapper">
+                            <p id="modalContentTime"></p>
+                            <p id="modalContentDate"></p>
+                        </div>
+                    </div>
+                    <div class="appointment-detail-button-wrapper">
+                        <button class="appointment-detail__button-cancel" id="modalContentBtnCancel">Cancel</button>
+                        <button class="appointment-detail__button-accept" id="modalContentBtnAccept">Accept</button>
+                        <!-- <button class="appointment-detail__button-edit" id="modalContentBtnUpdate">Update</button> -->
+                    </div>
+                </form>
+
 
             </div>
         </div>
