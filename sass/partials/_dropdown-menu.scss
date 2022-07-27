@@ -220,3 +220,195 @@ header{
         }
     }
 }
+
+
+.client-dropdown-menu{
+    border: 1px solid $neutral-dark-grey;
+    width: 360px;
+    position: absolute; 
+    right: 0;
+    background-color: $neutral-white;
+    z-index: 1;
+    display: none;
+
+    .client-dropdown-menu-profile-container{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;  
+        padding: 1rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey; 
+        
+        img{
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            justify-self: center;
+        }
+  
+        .client-name-profile-container{
+            align-self: center;
+            flex-basis: 50%;
+            justify-self: center;
+
+            .client-name{
+                font-family: $font-poppins;
+                font-size: 16px;
+                font-weight: 800;
+            }
+
+            p{
+                font-family: $font-poppins;
+                font-size: small;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+
+    }
+
+    .client-dropdown-menu-info-container{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        padding: .5rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey;
+
+        .client-menu-notifications-container{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+
+        .client-dropdown-menu-settings-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+    
+    .client-dropdown-menu-artist-other-info{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        padding: .5rem 0;
+        margin: 0 5%;
+        border-bottom: 1px solid $neutral-dark-grey;
+
+        .client-dropdown-menu-about-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+
+        .client-dropdown-menu-help-centre-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+
+    .client-dropdown-menu-log-out{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: .5rem;
+        padding: .5rem 0;
+        margin: 0 5%;
+        margin-bottom: 1rem;;
+
+        .client-log-out-container{
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: start;
+            gap: 1rem;
+            
+            img{
+                margin-left: 2.5rem;
+                height: 40px;
+            }
+
+            p{
+                align-self: center;
+                font-family: $font-poppins;
+                font-size: 14px;
+
+                a{
+                    text-decoration: none;
+                    color: $neutral-dark-grey;
+                }
+            }
+        }
+    }
+}

@@ -10,15 +10,18 @@ const USER_TYPE_ARTIST = "artist";
 
 
 
-if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
-  console.log('user is logged in');
+console.log("hey");
+
+
+if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'client'){
+  console.log('logged in');
   console.log(readSessionUserData(SESSION_USER_KEY_VALUE).user_type);
 
-  const anchorTag = document.getElementById("loginButtonAnchorTag");
-  anchorTag.remove();
+  const clientAnchorTag = document.getElementById("clientLoginButtonAnchorTag");
+  clientAnchorTag.remove();
 
-  const artistButton = document.getElementById("dropdownMenuArtistButton");
-
+  const clientButton = document.getElementById("dropdownMenuClientButton");
+  
   const myIcon = document.createElement("img");
   const imgSrc = document.createAttribute("src");
  
@@ -26,30 +29,25 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
 
   myIcon.setAttributeNode(imgSrc);
 
-  artistButton.appendChild(myIcon);
+  clientButton.appendChild(myIcon);
 
-  artistButton.addEventListener("click", () => {
+  clientButton.addEventListener("click", () => {
 
-  const artistMenu = document.getElementById("artistDropdownMenu");
- 
-    if (artistMenu.style.display === "block") {
-      artistMenu.style.display = "none";
+    const clientMenu = document.getElementById("clientDropdownMenu");
+
+    if (clientMenu.style.display === "block") {
+      clientMenu.style.display = "none";
     } else {
-      artistMenu.style.display = "block";
+      clientMenu.style.display = "block";
     }
 
-    const artistName = document.getElementById("artistName");
-    console.log(artistName);
+    const clientName = document.getElementById("clientName");
 
-    artistName.innerHTML = readSessionUserData(SESSION_USER_KEY_VALUE).full_name;
-    
-  });
+    clientName.innerHTML = readSessionUserData(SESSION_USER_KEY_VALUE).full_name;
 
 
-} else {
-  console.log('no user'); 
+  })
 }
-
 
 
 // if (readSessionUserData(SESSION_USER_KEY_VALUE) != null) {

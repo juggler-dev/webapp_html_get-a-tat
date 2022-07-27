@@ -2651,4 +2651,165 @@ header {
   color: #767676;
 }
 
+.client-dropdown-menu {
+  border: 1px solid #767676;
+  width: 360px;
+  position: absolute;
+  right: 0;
+  background-color: #FFF;
+  z-index: 1;
+  display: none;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  justify-self: center;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container {
+  align-self: center;
+  flex-basis: 50%;
+  justify-self: center;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container .client-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container p {
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-menu-notifications-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-menu-notifications-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-menu-notifications-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-menu-notifications-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-dropdown-menu-settings-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-dropdown-menu-settings-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-dropdown-menu-settings-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.client-dropdown-menu .client-dropdown-menu-info-container .client-dropdown-menu-settings-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0 5%;
+  border-bottom: 1px solid #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-about-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-about-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-about-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-about-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-help-centre-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-help-centre-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-help-centre-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.client-dropdown-menu .client-dropdown-menu-artist-other-info .client-dropdown-menu-help-centre-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-log-out {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0 5%;
+  margin-bottom: 1rem;
+}
+.client-dropdown-menu .client-dropdown-menu-log-out .client-log-out-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 1rem;
+}
+.client-dropdown-menu .client-dropdown-menu-log-out .client-log-out-container img {
+  margin-left: 2.5rem;
+  height: 40px;
+}
+.client-dropdown-menu .client-dropdown-menu-log-out .client-log-out-container p {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+.client-dropdown-menu .client-dropdown-menu-log-out .client-log-out-container p a {
+  text-decoration: none;
+  color: #767676;
+}
+
 /*# sourceMappingURL=style.css.map */
