@@ -69,10 +69,13 @@ console.log(coordinates);
           position: new google.maps.LatLng(locations[i]._lat, locations[i]._long),
           map: map
         });
+
+
         
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
             infowindow.open(map, marker);
+            
           }
         })(marker, i));
       }
