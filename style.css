@@ -1165,9 +1165,6 @@ footer .copyright {
   }
 }
 .main-container-login .artist-sign-in-p {
-  display: none;
-}
-.main-container-login .sign-up-p {
   margin-top: 8rem;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -1176,8 +1173,23 @@ footer .copyright {
   font-size: 14px;
 }
 @media screen and (min-width: 900px) {
-  .main-container-login .sign-up-p {
+  .main-container-login .artist-sign-in-p {
     margin-top: 2rem;
+  }
+}
+.main-container-login .artist-sign-in-p a {
+  color: #FF9E81;
+}
+.main-container-login .sign-up-p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #372019;
+  font-size: 14px;
+}
+@media screen and (min-width: 900px) {
+  .main-container-login .sign-up-p {
+    margin-top: 0.5rem;
   }
 }
 .main-container-login .sign-up-p a {
@@ -1771,6 +1783,7 @@ footer .copyright {
     grid-template-columns: 1fr;
     padding-left: 2rem;
     border-left: 1.5px solid #FF9E81;
+    align-items: center;
   }
 }
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-placement-container {
@@ -1820,6 +1833,7 @@ footer .copyright {
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-allergies-health-container {
   display: flex;
   flex-flow: column nowrap;
+  gap: 0.5rem;
 }
 @media screen and (min-width: 900px) {
   .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-allergies-health-container {

@@ -120,10 +120,6 @@
   }
 
   .artist-sign-in-p{
-    display: none;
-  }
-
-  .sign-up-p{
     margin-top: 8rem;
     text-align: center;
     font-family: $font-poppins;
@@ -133,6 +129,23 @@
 
     @media screen and(min-width: 900px){
       margin-top: 2rem;
+    }
+
+    a{
+      color: $warning;
+    }
+  }
+
+  .sign-up-p{
+    // margin-top: 8rem;
+    text-align: center;
+    font-family: $font-poppins;
+    font-weight: 500;
+    color: $primary-red-shade;
+    font-size: 14px;
+
+    @media screen and(min-width: 900px){
+      margin-top: .5rem;
     }
 
     a{

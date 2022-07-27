@@ -16,6 +16,8 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
 
   const anchorTag = document.getElementById("loginButtonAnchorTag");
   anchorTag.remove();
+  
+
 
   const artistButton = document.getElementById("dropdownMenuButton");
 

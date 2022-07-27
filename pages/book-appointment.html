@@ -133,17 +133,124 @@
 
     <!-- <div class="appointment-planning-cover-image">
     </div> -->
-    <section>
-        <h1 class="h1-appointment-planning">My Planning Tattoo</h1> <!--I'm not sure if we should use h1 or h2-->
-       
-        <div class="appointment-planning-form-container">
+    <div class="book-appointment-single-main-container">
+        <!-- <h2>My Custom Tattoo</h2> I'm not sure if we should use h1 or h2 -->
+        <div class="book-appointment-single-form-container">
+
             <form id="appointment_planner" action="#">
-                <div class="artists-options">
-                    <label for="artists">Artist</label>
-                    <br>
-                    <select id="artistsListOutput"></select>
+
+                <div class="book-appointment-single-artist-options-container">
+                    <div class="left-arrow-icon-container">
+                        <a href="../pages/book-appointment-main.html"><img src="../icons/arrow-left-icon.png" alt="Left Arrow Icon"></a>
+                    </div>
+
+                    <label for="artists">Choose Your Artist</label>
+                    <select name="artistsListOutput" id="artistsListOutput"></select>
                 </div>
-                <div class="appointment-planning-container">
+
+                <h2>My Custom Tattoo</h2>
+
+                <div class="book-appointment-single-grid-container">
+
+                    <div class="grid-wrapper">
+
+                        <div class="book-appointment-single-placement-container"> 
+                            <label for="placement">Placement</label>
+                            <select name="placement" id="placement">
+                                <option value="front-arm-right">Front Arm - Right</option>
+                                <option value="Placement 2">Placement 2</option>
+                                <option value="Placement 3">Placement 3</option>
+                                <option value="Placement 4">Placement 4</option>
+                                <option value="Placement 5">Placement 5</option>
+                            </select>
+                        </div>
+
+                        <div class="book-appointment-single-size-container">
+                            <label for="size">Size</label>
+                            <select name="size" id="size">
+                                <option value="2-3-inches">2-3 inches</option>
+                                <option value="Size 2">Size 2</option>
+                                <option value="Size 3">Size 3</option>
+                                <option value="Size 4">Size 4</option>
+                                <option value="Size 5">Size 5</option>
+                            </select>
+                        </div>
+
+                        <div class="book-appointment-single-allergies-health-container">
+                            <label for="allergies-health">Allergies/Health</label>
+                            <select name="allergies-health" id="allergies-health">
+                                <option value="Allergy 1">Allergy 1</option>
+                                <option value="Allergy 2">Allergy 2</option>
+                                <option value="Allergy 3">Allergy 3</option>
+                                <option value="Allergy 4">Allergy 4</option>
+                                <option value="Allergy 5">Allergy 5</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="grid-wrapper-1">
+                        <div class="book-appointment-single-short-description-container">
+                            <label class="textarea-label"  for="short-description">Short description of your tattoo</label>
+                            <textarea name="short-description" id="short-description" cols="20" rows="3" placeholder=" Army with a bag of potatoes Tattoo on your upper arm "></textarea>
+                            <div class="book-appointment-single-color-tattoo-container">
+                                <label for="color">Color</label>
+                                <select name="color" id="color">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="book-appointment-single-upload-image-container">
+                            <p>Upload an image for reference</p>
+                            <input type="file" id="choosePicture">
+                            <button type="button" id="uploadPicture"><i class="fa-solid fa-plus"></i></button> <!--plus icon-->
+                            <button type="button" id="startCam"><i class="fa-solid fa-camera"></i></a> <!--camera icon-->
+                              
+                            <div class="camera-wrapper">
+                                <video id="video" width="320" height="240" autoplay style="display: none;"></video>
+                                <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+                            </div>
+            
+                            <div class="btns-wrapper">
+                                <button type="button" id="takePhoto"  style="display: none;"    >1) Take photo</button>
+                                <!-- <button type="button" id="uploadPhoto" style="display: none;"   >2) Upload photo</button> -->
+                                <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
+                                <input type="url" size="40" id="book-appointment__photo-input">
+            
+                            </div>   
+                            
+                        </div>  
+                        <div class="book-appointment-single-date-time-container">
+                                <div id="chooseDate" class="choose-date-time-container">
+                                    <label for="datePicker">Choose date</label>
+                                    <input class="datePicker" type="date" id="datePicker" name="datePicker" min="">
+                                </div>
+                                <div id="chooseTime" class="choose-date-time-container">
+                                    <label for="timePicker">Choose time</label>
+                                    <input class="timePicker" type="time" id="timePicker" name="timePicker" min="">
+                                </div> 
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="book-appointment-single-cancel-update-buttons-container">
+                    <button type="reset" id="cancelBtn" class="cancel-button">Cancel</button> 
+                    <button type="submit" id="requestBtn" class="confirm-button">Update</button>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                
+                <!-- <div class="appointment-planning-container">
                     <div class="placement-container"> 
                         <label for="placement">Placement</label>
                         <select name="placement" id="placement">
@@ -180,18 +287,15 @@
                         <div class="short-description-textarea-container">
                             <label for="short-description">Short description of your tattoo</label>
                             <textarea name="short-description" id="short-description" cols="20" rows="3" placeholder=" Army with a bag of potatoes Tattoo on your upper arm "></textarea>
-                        </div>
-
-                        <div class="color-tattoo-container">
-                            <label for="color">Color</label>
-                            <select name="color" id="color">
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                                <option value="Not sure">Not sure</option>
-                            </select>
-                        </div>
-
-
+                            <div class="color-tattoo-container">
+                                <label for="color">Color</label>
+                                <select name="color" id="color">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+                        </div> -->
 
                         <!-- <div class="color-tattoo-container">
                             <p>Color Tattoo:</p>
@@ -202,56 +306,68 @@
                                 <input type="radio" name="no" id="no_color">
                             </div>
                         </div> -->
-                    </div>
+                    <!-- </div>
                     <div class="upload-image-container">
                         <p>Upload an image for reference</p>
                         <input type="file" id="choosePicture">
-                        <button type="button" id="uploadPicture"><i class="fa-solid fa-plus"></i></button> <!--plus icon-->
-                        <button type="button" id="startCam"><i class="fa-solid fa-camera"></i></a> <!--camera icon-->
+                        <button type="button" id="uploadPicture"><i class="fa-solid fa-plus"></i></button> 
+                        <button type="button" id="startCam"><i class="fa-solid fa-camera"></i></a> 
+                          
+                        <div class="camera-wrapper"> -->
+                            <!-- <video id="video" width="320" height="240" autoplay style="display: none;"></video>
+                            <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+                        </div> -->
+        
+                        <!-- <div class="btns-wrapper">
+                            <button type="button" id="takePhoto"  style="display: none;"    >1) Take photo</button> -->
+                            <!-- <button type="button" id="uploadPhoto" style="display: none;"   >2) Upload photo</button> -->
+                            <!-- <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
+                            <input type="url" size="40" id="book-appointment__photo-input">
+        
+                        </div>   
                         
-
-                    </div>
+                    </div> -->
                     <!-- <div class="camara-container">
                         <video id="video" width="320" height="240" autoplay></video>
                         <canvas id="canvas" width="320" height="240"></canvas>
                         <button id="takePhoto" type="button">Take photo</button>
                     </div> -->
 
-                    <div class="camera-wrapper">
+                    <!-- <div class="camera-wrapper">
                         <video id="video" width="320" height="240" autoplay style="display: none;"></video>
                         <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
                     </div>
 
                     <div class="btns-wrapper">
-                        <button type="button" id="takePhoto"  style="display: none;"    >1) Take photo</button>
+                        <button type="button" id="takePhoto"  style="display: none;"    >1) Take photo</button> -->
                         <!-- <button type="button" id="uploadPhoto" style="display: none;"   >2) Upload photo</button> -->
-                        <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
+                        <!-- <button type="button" id="stopCam" style="display: none;"       >2) Close camera</button>
                         <input type="url" size="40" id="book-appointment__photo-input">
 
                     </div>
-                    <div>
-                        <div id="chooseDate" class="choose-date-time-container">
+                    <div> -->
+                        <!-- <div id="chooseDate" class="choose-date-time-container"> -->
                             <!--I still need to do some research on how to do the time slot buttons-->
-                            <label for="datePicker">Choose date</label>
+                            <!-- <label for="datePicker">Choose date</label>
                             <input class="datePicker" type="date" id="datePicker" name="datePicker" min="">
-                        </div>
+                        </div> -->
                         <!-- <p><a href="#">Suggest another day</a></p> -->
-                    </div>
+                    <!-- </div>
 
                     <div>
-                        <div id="chooseTime" class="choose-date-time-container">
+                        <div id="chooseTime" class="choose-date-time-container"> -->
                             <!--I still need to do some research on how to do the time slot buttons-->
 
                             <!-- only time picker -->
-                            <label for="timePicker">Choose time</label>
-                            <input class="timePicker" type="time" id="timePicker" name="timePicker" min="">
+                            <!-- <label for="timePicker">Choose time</label>
+                            <input class="timePicker" type="time" id="timePicker" name="timePicker" min=""> -->
 
                             <!-- date and time. need to be adjusted -->
                             <!-- <label for="timePicker">Choose time</label>
                             <input class="timePicker" type="datetime-local" id="timePicker" name="timePicker" min="">-->
-                        </div> 
+                        <!-- </div>  -->
                         <!-- <p><a href="#">Suggest another day</a></p> -->
-                    </div>
+                    <!-- </div>
                 </div>
         </div>
             <div class="cancel-update-buttons-container">
@@ -259,7 +375,7 @@
                 <button type="submit" id="requestBtn" class="update-button">Update</button>
             </div>
         </form>
-    </section>
+    </div> -->
     <footer>
         <div class="footer-main-container">
             <div class="footer-company-container">
