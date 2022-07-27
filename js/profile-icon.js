@@ -45,6 +45,27 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
     
   });
 
+  const artistButtonMobile = document.getElementById("buttonDropdownMenuMobile");
+
+  artistButtonMobile.addEventListener("click", () => {
+    const artistMenu = document.getElementById("artistDropdownMenu");
+ 
+    if (artistMenu.style.display === "block") {
+      artistMenu.style.display = "none";
+    } else {
+      artistMenu.style.display = "block";
+    }
+
+    const artistName = document.getElementById("artistName");
+    console.log(artistName);
+
+    artistName.innerHTML = readSessionUserData(SESSION_USER_KEY_VALUE).full_name;
+
+  })
+
+
+
+
 
 } else if  (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'client') {
   console.log('logged in');
@@ -80,6 +101,25 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
 
 
   })
+
+  const artistButtonMobile = document.getElementById("buttonDropdownMenuMobile");
+
+  artistButtonMobile.addEventListener("click", () => {
+    const artistMenu = document.getElementById("artistDropdownMenu");
+ 
+    if (artistMenu.style.display === "block") {
+      artistMenu.style.display = "none";
+    } else {
+      artistMenu.style.display = "block";
+    }
+
+    const artistName = document.getElementById("artistName");
+    console.log(artistName);
+
+    artistName.innerHTML = readSessionUserData(SESSION_USER_KEY_VALUE).full_name;
+
+  })
+
 } else {
   console.log('no user'); 
 }
