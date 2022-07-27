@@ -8,6 +8,23 @@
     <script type="module" src="../js/gallery-artist.js" defer></script>
     <script type="module" src="../js/profile-icon.js" defer></script>
     <title>Artist Gallery Main</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5%;
+        }
+
+        #photoGallery {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: 1fr 1fr;
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -138,26 +155,28 @@
                 <!-- <img class="gallery-artist-profile-image" src="../images/profile-placeholder.svg" alt="profile"> -->
             </div>
         </div>
-        <h2 class="artist-gallery-main-name-heading" id="artistNameGallery">Artist Name Here</h2>
-        <button class="manage-appointment-button">Manage Appointments</button>
-        <p class="artist-gallery-main-artist-bio">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut autem repellendus odit deleniti cumque recusandae quo inventore asperiores iusto vero! Et cupiditate iste hic iure, doloremque quidem ducimus placeat vero.</p>
-        <div class="gallery-artist-main-tags-container">
+        <h2 class="artist-gallery-main-name-heading" id="artistNameGallery"></h2>
+        <button class="manage-appointment-button" id="btnAppointment">Manage Appointments</button>
+        <p class="artist-gallery-main-artist-bio" id="printBio"></p>
+        <!-- <div class="gallery-artist-main-tags-container">
             <button class="artist-tag">Tag Here</button>
             <button class="artist-tag">Tag Here</button>
             <button class="artist-tag">Tag Here</button>
-        </div>
+        </div> -->
     </div>
     <div class="content">
-            <div class="gallery-list">
-                <table class="gallery-table" id="galleryTable">
-                  </table>
-            </div>
+            
 
         <div class="addButtons">
             <input type="file" id="addImageArtist">
             <button id="addImageToGallery">Add</button>
         </div>
+        <div class="gallery-list" id="photoGallery">
+            <!-- <table class="gallery-table" id="galleryTable">
+              </table> -->
+        </div>
     </div>
+  
     <footer>
         <div class="footer-main-container">
             <div class="footer-company-container">
