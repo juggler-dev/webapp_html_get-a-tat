@@ -2054,6 +2054,7 @@ footer .copyright {
 .appointment-card-btn .appointment-info {
   display: grid;
   justify-items: start;
+  pointer-events: none;
 }
 
 .appointment-card-btn img {
@@ -2073,18 +2074,30 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
 }
 
+.thumbnail-image {
+  pointer-events: none;
+}
+
 /* The Modal (background) */
 .modal {
-  visibility: hidden; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  visibility: hidden;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0%;
   top: 0%;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: hidden;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -2099,6 +2112,8 @@ footer .copyright {
   border: 1px solid #888;
   border-radius: 0.5rem;
   width: 30%;
+  height: 90vh;
+  overflow: auto;
 }
 
 .modal-content__header {
@@ -2144,6 +2159,57 @@ footer .copyright {
 
 .page-content {
   display: grid;
+}
+
+.modal-content__time-date-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  border: 1px solid grey;
+}
+
+.appointment-detail-date-wrapper {
+  align-items: flex-start;
+}
+
+.modal-image-input-label {
+  cursor: pointer;
+}
+
+.modal-image-input {
+  border: 1px solid grey;
+}
+
+.label-input-file-wrapper {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #FFFFFF;
+  overflow: hidden;
+  transition: all 1s;
+  color: #FFFFFF;
+  border: 1px solid grey;
+}
+.label-input-file-wrapper .fa-solid {
+  color: black;
+}
+.label-input-file-wrapper input[type=file] {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.upload-image-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
 }
 
 /* APPOINTMENTS MANAGEMENT ARTIST ============================================ */
@@ -2466,6 +2532,12 @@ footer .copyright {
     flex-basis: 25%;
   }
 }
+.addButtons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 /* DROPDOWN MENU ============================================ */
 header {
   position: relative;
@@ -2811,5 +2883,7 @@ header {
   text-decoration: none;
   color: #767676;
 }
+
+/* TATTOO LOCATOR ============================================ */
 
 /*# sourceMappingURL=style.css.map */

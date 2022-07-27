@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../js/profile-icon.js" defer></script>
     <title>User Appointment Management</title>
 </head>
 <body>
@@ -25,19 +26,65 @@
             <div class="header-navigation-container">
                 <nav>
                     <ul>
-                        <li><a href="../pages/tattoo-explorer-main.html">Discover</a></li>
-                        <li><a href="">Tattoos</a></li>
-                        <li><a href="#"><img src="../images/logo.png" alt=""></a></li>
+                        <li><a href="../pages/tattoo-locator-main.html">Discover</a></li>
+                        <li><a href="../pages/tattoo-explorer-main.html">Tattoos</a></li>
+                        <li><a href="../index.html "><img src="../images/logo.png" alt=""></a></li>
                         <li><a href="../pages/book-appointment-main.html">Booking</a></li>
                         <li><a href="../pages/article-main.html">Articles</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="header-login-button-container">
-                <a class="header-login" href="login-account.html">Login</a>
+                <button id="dropdownMenuButton"><a id="loginButtonAnchorTag" class="header-login" href="../pages/login-client.html">Login</a></button>
             </div>
         </div>
     </header>
+
+    <div class="artist-dropdown-menu" id="artistDropdownMenu">
+        <div class="artist-dropdown-menu-profile-container">
+            <div class="user-profile-image-container">
+                <img src="../images/profile-placeholder.svg" alt="">
+            </div>
+            <div class="user-name-gallery-container">
+                <p class="artist-name" id="artistName"></p>
+                <p><a href="#">View Gallery</a></p>
+            </div>
+            <div class="dropdown-menu-logo-container">
+                <img src="../images/logo-mobile.png" alt="">
+            </div>
+        </div>
+        <div class="artist-dropdown-menu-artist-info-container">
+            <div class="dropdown-menu-notifications-container">
+                <img src="../icons/bell-icon.png" alt="">
+                <p><a href="#">Notifications</a></p>
+            </div>
+            <div class="dropdown-menu-my-gallery-container">
+                <img src="../icons/calendar-icon.png" alt="">
+                <p><a href="../pages/gallery-artist-main.html">My Gallery</a></p>
+            </div>
+            <div class="dropdown-menu-settings-container">
+                <img src="../icons/filter-icon.png" alt="">
+                <p><a href="#">Settings</a></p>
+            </div>
+        </div>
+        <div class="artist-dropdown-menu-artist-other-info">
+            <div class="dropdown-menu-about-container">
+                <img src="../icons/crown-icon.png" alt="">
+                <p><a href="#">About</a></p>
+            </div>
+            <div class="dropdown-menu-help-centre-container">
+                <img src="../icons/market-icon.png" alt="">
+                <p><a href="#">Help Centre</a></p>
+            </div>
+        </div>
+        <div class="artist-dropdown-menu-log-out">
+            <div class="log-out-container">
+                <img src="../icons/check-icon.png" alt="">
+                <p><a href="#">Log Out</a></p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-info-container">
             <div class="footer-info-container-child">
