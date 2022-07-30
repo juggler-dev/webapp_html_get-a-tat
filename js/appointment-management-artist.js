@@ -23,11 +23,12 @@ const APPOINTMENT_BUTTON_CLASS = ".appointment-card-btn"
 ////////////////// CLASSES //////////////////
 
 class Appointment {
-  constructor(id, photo, uploadedImageUrl, artist, placement, size, allergies, description, color, time, date, status) {
+  constructor(id, photo, uploadedImageUrl, artist, client, placement, size, allergies, description, color, time, date, status) {
     this.id = id,
       this.photo = photo,
       this.uploadedImageUrl = uploadedImageUrl,
       this.artist = artist,
+      this.client = client,
       this.placement = placement,
       this.size = size,
       this.allergies = allergies,
@@ -41,12 +42,12 @@ class Appointment {
 ////////////////// FUNCTIONS //////////////////
 
 function buildAppointment(firebaseDocument) {
-  return new Appointment(firebaseDocument.id, firebaseDocument.data().photo, firebaseDocument.data().uploadedImageUrl, firebaseDocument.data().artist, firebaseDocument.data().placement, firebaseDocument.data().size, firebaseDocument.data().allergies, firebaseDocument.data().description, firebaseDocument.data().color, firebaseDocument.data().time, firebaseDocument.data().date, firebaseDocument.data().status)
+  return new Appointment(firebaseDocument.id, firebaseDocument.data().photo, firebaseDocument.data().uploadedImageUrl, firebaseDocument.data().artist, firebaseDocument.data().client, firebaseDocument.data().placement, firebaseDocument.data().size, firebaseDocument.data().allergies, firebaseDocument.data().description, firebaseDocument.data().color, firebaseDocument.data().time, firebaseDocument.data().date, firebaseDocument.data().status)
 }
 
 function loadAppointmentDetail(appointmentObject) {
   document.querySelector(".modal-content").id = appointmentObject.id;
-  document.getElementById("modalContentHeaderTitleArtistName").innerHTML = appointmentObject.artist;
+  document.getElementById("modalContentHeaderTitleClientName").innerHTML = appointmentObject.client;
   document.getElementById("modalPlacementInput").value = appointmentObject.placement;
   document.getElementById("modalSizeInput").value = appointmentObject.size;
   document.getElementById("modalAllergiesInput").value = appointmentObject.allergies;

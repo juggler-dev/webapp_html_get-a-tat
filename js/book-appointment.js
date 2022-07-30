@@ -48,7 +48,7 @@ artists.forEach((artist) => {
   artistsListOutput.innerHTML += `<div><select><option>${artist.data().full_name}</option></select></div>`
 })
 
-requestBtn.addEventListener('click', async (e) => {
+createBtn.addEventListener('click', async (e) => {
 
   // Prevent form refresh
   e.preventDefault();
@@ -76,6 +76,7 @@ requestBtn.addEventListener('click', async (e) => {
 
   const appointmentDoc = await addDoc(REQUEST_APPOINTMENTS_COLLECTION_REFERENCE, {
     artist: document.getElementById('artistsListOutput').value,
+    client: readSessionUserData(SESSION_USER_KEY_VALUE).full_name,
     placement: document.getElementById('placement').value,
     size: document.getElementById('size').value,
     allergies: document.getElementById('allergies-health').value,
@@ -91,10 +92,10 @@ requestBtn.addEventListener('click', async (e) => {
   const appointmentStoregeRef = ref(storage, 'appointments-img' + '/' + appointmentDoc.id);
   uploadBytes(appointmentStoregeRef, userFile)
     .then((snapshot) => {
-      console.log(snapshot);
+      window.location.href = "../pages/appointment-management-client.html";
     });
 
-  console.log("Added appointment" + " " + appointmentDoc.id)
+  
 
 });
 
@@ -106,8 +107,8 @@ let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');
 
 // start camera
-camBtn.addEventListener('click', async function() {
-  let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false});
+camBtn.addEventListener('click', async function () {
+  let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
   video.srcObject = stream;
 
   showCamera(true)
@@ -122,7 +123,7 @@ document.getElementById('stopCam').addEventListener('click', () => {
 });
 
 // take photo
-takePhoto.addEventListener('click', function(){
+takePhoto.addEventListener('click', function () {
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 
   const appointmentPhoto = ref(storage, 'appointment-request-photo/images' + Date());
@@ -130,8 +131,8 @@ takePhoto.addEventListener('click', function(){
   const imageBlob = canvas.toBlob(handleBlob, "image/jpeg");
 
   uploadBytes(appointmentPhoto, imageBlob).then((snapshot) => {
-      console.log('uploaded a blob');
-   })
+    console.log('uploaded a blob');
+  })
 });
 
 // blob function
@@ -150,7 +151,7 @@ function handleBlob(blob) {
 // show and hide camera function
 let taker = true
 function showCamera(taker) {
-  if (taker==true) {
+  if (taker == true) {
     document.getElementById('takePhoto').style.display = "block";
     document.getElementById('video').style.display = "block";
     document.getElementById('canvas').style.display = "block";
