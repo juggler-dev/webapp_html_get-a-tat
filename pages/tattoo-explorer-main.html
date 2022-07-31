@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="../js/tattoo-explorer.js"></script>
     <script type="module" src="../js/profile-icon.js" defer></script>
     <title>Tattoo Explorer Main</title>
 </head>
+
 <body>
     <header>
         <div class="header-mobile">
@@ -37,11 +41,14 @@
                 </nav>
             </div>
             <div class="header-login-button-container">
-                <button id="dropdownMenuButton"><a class="header-login" id="loginButtonAnchorTag" href="../pages/login-client.html">Login</a></button>
+                <button id="dropdownMenuButton"><a class="header-login" id="loginButtonAnchorTag"
+                        href="../pages/login-client.html">Login</a></button>
             </div>
         </div>
     </header>
 
+
+    <!-- DROPDOWN MENU -->
     <div class="artist-dropdown-menu" id="artistDropdownMenu">
         <div class="artist-dropdown-menu-profile-container">
             <div class="user-profile-image-container">
@@ -128,7 +135,8 @@
             </div>
         </div>
     </div>
- 
+    <!-- DROPDOWN MENU END-->
+
     <div class="tattoo-explorer-main-container">
         <h1>Tattoo Explorer</h1>
         <div class="tattoo-explorer-search-details-container">
@@ -146,65 +154,64 @@
                 <button>Lettering</button>
             </div>
         </div>
-    
-<!-- modal -->
-<div class="display-gallery-container" id="displayGalleryContainer">
-    <div class="heading"></div>
-    <div class="imagesExplorer" id="imageDisplay">
-        <!-- <img src="../images/hero-image.jpeg" alt=""> -->
-    </div>
-    <div class="modalExplorer">
-        <span class="closeModalExplorer"><i class="fas fa-times"></i></span>
-        <div class="modalContentExplorer">
-            <img src="" class="modalImgExplorer">
-            <span class="modalTxtExplorer"></span>
-            <div class="modalNavExplorer">
-                <button type="button" class="prevBtn">Prev</button>
-                <button type="button" class="nextBtn">Next</button>
-            </div>
-            <div id="ctaBtn">
-                <!-- <h3>Tatto made by</h3>
-                <p id="artistFname"></p>
-                <p id="artistInstagram"></p>
-                <a href="../pages/book-appointment.html"><button>Bio</button></a> -->
+
+        <!-- GALLERY SECTION -->
+        <div class="gallery-section" id="gallerySection">
+            <!-- <div class="heading"></div> -->
+            <div class="gallery-container" id="galleryContainer">
             </div>
         </div>
-    </div>
-</div>
+        <!-- GALLERY SECTION END-->
 
-<!-- end modal -->
+        <!-- MODAL SECTION -->
+        <!-- The Modal -->
+        <div class="modal-background" id="modalBackground">
 
-    <!-- </div> -->
+            <!-- Modal closer -->
 
-    <!-- <section class="tattoo-explorer-main-container">
-        <h1>Tattoo Explorer</h1> -->
-        <!-- <button id="displayGallery">Display Gallery</button> -->
-        <!-- <div class="tattoo-explorer-form-container">
-            <form action="">
-                <div class="tattoo-explorer-search-container">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search.." name="search">
+
+            <!-- Modal content -->
+            <div class="modal-card">
+                <div class="modal-card-closer-wrapper">
+                    <span class="modal-card-closer">&times;</span>
                 </div>
-            </form>
-        </div>
-        <div class="display-gallery-container" id="displayGallery">
-            <div class="imageDisplay" id="imageDisplay">
-                <img src="" alt="" id="myImg">
-            </div>
-        </div>
-    </section> -->
-    <footer>
-        <div class="footer-main-container">
-            <div class="footer-company-container">
-                <div class="footer-company-content-container">
-                    <h3>Company</h3>
-                    <p><a href="../pages/about-us.html">About</a></p>
+                <div class="modal-card-content">
+                    <div class="artist-bio-section">
+                        <p>Tattoo Made by</p>
+                        <img class="artist-profile" src="" alt="">
+                        <p class="modal-card-artist-name">Artist Name</p>
+                        <p class="modal-card-artist-instagram">@Artist-tattoo</p>
+                        <button>Gallery</button>
+                    </div>
+                    <div class="image-section">
+                        <img class="modal-card-image" src="" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="footer-help-centre-container">
-                <div class="footer-help-centre-content-container">
-                    <h3>Help Center</h3>
-                    <p><a href="../pages/help-centre.html">FAQ</a></p>
+        </div>
+
+        <!-- <div class="modalExplorer">
+                <span class="closeModalExplorer"><i class="fas fa-times"></i></span>
+                <div class="modalContentExplorer">
+                    <img src="" class="modalImgExplorer">
+                    <span class="modalTxtExplorer"></span>
+                    <div class="modalNavExplorer">
+                        <button type="button" class="prevBtn">Prev</button>
+                        <button type="button" class="nextBtn">Next</button>
+                    </div>
+                    <div id="ctaBtn">
+                    </div>
+                </div>
+            </div> -->
+        <!-- MODAL SECTION END -->
+
+        <footer>
+            <div class="footer-main-container">
+                <div class="footer-company-container">
+                    <div class="footer-company-content-container">
+                        <h3>Company</h3>
+                        <p><a href="../pages/about-us.html">About</a></p>
+                    </div>
                 </div>
             </div>
             <div class="footer-legal-container" >
@@ -212,23 +219,32 @@
                     <h3>Legal</h3>
                     <p><a href="terms-conditions.html">Terms & Conditions</a></p>
                 </div>
-            </div>   
-            <div class="footer-nav-container">
-                <div class="footer-nav-content">
-                    <nav class="footer-nav">
-                        <ul>
-                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
-                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
-                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
-                        </ul>
+                <div class="footer-legal-container">
+                    <div class="footer-legal-content-container">
+                        <h3>Legal</h3>
+                        <p><a href="#">Terms & Conditions</a></p>
+                    </div>
                 </div>
-                </nav>
+                <div class="footer-nav-container">
+                    <div class="footer-nav-content">
+                        <nav class="footer-nav">
+                            <ul>
+                                <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png"
+                                            alt="facebook icon"></span></a></li>
+                                <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png"
+                                            alt="twitter icon"></a></li>
+                                <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png"
+                                            alt="instagram footer-info-container"></a></li>
+                            </ul>
+                    </div>
+                    </nav>
+                </div>
+                <p class="copyright-container">&copy; 2022 - Get a Tat</p>
             </div>
-            <p class="copyright-container">&copy; 2022 - Get a Tat</p>
-        </div>
-        <button><img src="../icons/arrow-up-icon.png" alt="arrow-up-icon"></button>
-        <p class="copyright">&copy; 2022 - Get a Tat</p>
-    </footer>
-    
+            <button><img src="../icons/arrow-up-icon.png" alt="arrow-up-icon"></button>
+            <p class="copyright">&copy; 2022 - Get a Tat</p>
+        </footer>
+
 </body>
+
 </html>

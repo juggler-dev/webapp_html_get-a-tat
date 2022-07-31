@@ -1,22 +1,22 @@
-.tattoo-explorer-main-container{
-    
+.tattoo-explorer-main-container {
 
-    h1{
+
+    h1 {
         font-family: $font-righteous;
         text-align: center;
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
 
-    .tattoo-explorer-search-details-container{
+    .tattoo-explorer-search-details-container {
         display: flex;
         flex-flow: column nowrap;
         gap: 2rem;
         width: 80vw;
-        margin: 0 auto; 
+        margin: 0 auto;
         margin-bottom: 2rem;
 
-        .tattoo-explorer-search-container{
+        .tattoo-explorer-search-container {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
@@ -24,22 +24,22 @@
             border: 1px solid $primary-red-shade;
             border-radius: 25px;
 
-            img{
+            img {
                 height: 40px;
                 width: 40px;
             }
 
-            input{
-                border: none;   
+            input {
+                border: none;
                 flex-basis: 80%;
                 font-family: $font-poppins;
-                
+
             }
         }
 
-        .tattoo-explorer-choose-city-container{
+        .tattoo-explorer-choose-city-container {
 
-            select{
+            select {
                 border: 1px solid $primary-red-shade;
                 padding: .675rem;
                 border-radius: 25px;
@@ -50,16 +50,16 @@
         }
     }
 
-    .tattoo-explorer-filter-buttons{
+    .tattoo-explorer-filter-buttons {
 
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 1rem;
 
-        
 
-        button{
+
+        button {
             color: $primary-red-shade;
             border: 2px solid $primary-red-shade;
             background-color: $neutral-white;
@@ -73,111 +73,138 @@
 }
 
 ///////////////// Modal tattoo explore //////////////////
-#displayGalleryContainer {
+.gallery-section {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.imagesExplorer {
+.gallery-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 1em;
     margin: 0 1em;
 }
 
-.imagesExplorer img {
+.gallery-container button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-container button img {
     max-width: 100%;
     cursor: pointer;
     transition: 0.3s all ease;
     border-radius: 5%;
-}
-
-.imagesExplorer img:hover {
-    transform: scale(0.95);
-}
-
-.modalExplorer {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: $neutral-white;
-    color: black;
-    z-index: 1;
-    overflow: auto;
-    opacity: 0;
     pointer-events: none;
 }
 
-.modalContentExplorer {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.gallery-container img:hover {
+    transform: scale(0.95);
 }
 
-.modalImgExplorer {
-    max-width: 80vw;
-    max-height: 80vh;
-}
+/* The Modal (background) */
 
-.modalTxtExplorer {
-    margin-top: 1em;
-}
-
-.closeModalExplorer {
-    position: absolute;
-    top: 1em;
-    right: 1.5em;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.modalExplorer.appear {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.modalExplorer.appear img {
-    border-radius: 5%;
-}
-
-.modalExplorer.appear .modalImgExplorer,
-.modalExplorer.appear .modalTxtExplorer {
-    animation: zoom 0.3s linear;
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-.modalExplorer i {
-    background-color: $neutral-dark-grey;
-    color: black;
-    padding: .5rem .75rem;
-    border-radius: 50%;
-}
-
-#ctaBtn button {
+.modal-background {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    border-radius: 25px;
-    margin: 0 auto;
-    padding: .675rem 2.5rem;
-    font-family: $font-poppins;
-    font-weight: 600;
-    color: $neutral-white;
-    background-color: $primary-red;
-    border: 1px solid $primary-red;
-    cursor: pointer;
-  }
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-card-closer {
+        text-align: right;
+    }
+}
+
+/* Modal Content */
+.modal-card {
+    background-color: transparent;
+    margin: auto;
+    padding: 0.5rem;
+    width: 80%;
+    min-height: 90vh;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    .modal-card-closer-wrapper {
+        display: flex;
+        justify-content: end;
+        background-color: transparent;
+
+
+        .modal-card-closer {
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .modal-card-content {
+        background-color: #fefefe;
+        height: 100%;
+        padding: 0.5rem;
+        border-radius: 1rem;
+
+        display: grid;
+        grid-template-columns: .2fr .8fr;
+
+        .artist-bio-section{
+            background-color: red;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .image-section{
+
+            img {
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+.modal-card-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
 
 ///////////////// End modal tattoo explorer //////////////////
