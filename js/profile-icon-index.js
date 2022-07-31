@@ -148,6 +148,23 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
   console.log('no user'); 
 }
 
+// Logout
+
+const logout = document.getElementById('signOutBtn');
+
+logout.addEventListener('click',(e) => {
+  sessionStorage.clear();
+  console.log('user logged out')
+  window.location.href  = "../index.html";
+})
+
+const logout2 = document.getElementById('signOutBtn2');
+
+logout2.addEventListener('click',(e) => {
+  sessionStorage.clear();
+  console.log('user logged out 2')
+  window.location.href  = "../index.html";
+})
 
 
 
