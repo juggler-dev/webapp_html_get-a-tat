@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../js/profile-icon.js" defer></script>
+    <title>Terms & Conditions</title>
+</head>
+<body>
+    <header>
+        <div class="header-mobile">
+            <button><img src="../icons/menu-hamburger-icon.png" alt="menu-icon"></button>
+            <a href="../index.html"><img src="../images/logo-mobile.png" alt="logo-mobile"></a>
+            <button id="buttonDropdownMenuMobile"><img src="../icons/user-icon.png" alt="user-icon"></button>
+        </div>
+        <div class="header-desktop">
+            <div class="header-search-container">
+                <form action="action_page.php">
+                    <button type="submit"><img src="../icons/search-icon.png" alt="search-icon"></button>
+                    <input type="text" placeholder="Search.." name="search">
+                    <!--Toggle w/ js-->
+                </form>
+            </div>
+            <div class="header-navigation-container">
+                <nav>
+                    <ul>
+                        <li><a href="../pages/tattoo-locator-main.html">Discover</a></li>
+                        <li><a href="../pages/tattoo-explorer-main.html">Tattoos</a></li>
+                        <li><a href="../index.html "><img src="../images/logo.png" alt=""></a></li>
+                        <li><a href="../pages/book-appointment-main.html">Booking</a></li>
+                        <li><a href="../pages/article-main.html">Articles</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-login-button-container">
+                <button id="dropdownMenuButton"><a class="header-login" id="loginButtonAnchorTag" href="../pages/login-client.html">Login</a></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="artist-dropdown-menu" id="artistDropdownMenu">
+        <div class="artist-dropdown-menu-profile-container">
+            <div class="user-profile-image-container">
+                <img src="../images/profile-placeholder.svg" alt="">
+            </div>
+            <div class="user-name-gallery-container">
+                <p class="artist-name" id="artistName"></p>
+                <p><a href="../pages/gallery-artist-main.html">View Gallery</a></p>
+            </div>
+            <div class="dropdown-menu-logo-container">
+                <img src="../images/logo-mobile.png" alt="">
+            </div>
+        </div>
+        <div class="artist-dropdown-menu-artist-info-container">
+            <div class="dropdown-menu-notifications-container">
+                <img src="../icons/bell-icon.png" alt="">
+                <p><a href="../pages/notifications.html">Notifications</a></p>
+            </div>
+            <div class="dropdown-menu-my-gallery-container">
+                <img src="../icons/my-gallery-icon.svg" alt="">
+                <p><a href="../pages/gallery-artist-main.html">My Gallery</a></p>
+            </div>
+            <div class="dropdown-menu-settings-container">
+                <img src="../icons/filter-icon.png" alt="">
+                <p><a href="../pages/settings-artist.html">Settings</a></p>
+            </div>
+        </div>
+        <div class="artist-dropdown-menu-artist-other-info">
+            <div class="dropdown-menu-about-container">
+                <img src="../icons/about-icon.svg" alt="">
+                <p><a href="../pages/about-us.html">About</a></p>
+            </div>
+            <div class="dropdown-menu-help-centre-container">
+                <img src="../icons/help-centre-icon.svg" alt="">
+                <p><a href="../pages/help-centre.html">Help Centre</a></p>
+            </div>
+        </div>
+        <div class="artist-dropdown-menu-log-out">
+            <div class="log-out-container">
+                <img src="../icons/log-out-icon.svg" alt="">
+                <p><a href="#">Log Out</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="client-dropdown-menu" id="clientDropdownMenu">
+        <div class="client-dropdown-menu-profile-container">
+            <div class="client-profile-image-container">
+                <img src="../images/profile-placeholder.svg" alt="">
+            </div>
+            <div class="client-name-profile-container">
+                <p class="client-name" id="clientName"></p>
+                <p><a href="#">View Profile</a></p>
+            </div>
+            <div class="client-dropdown-menu-logo-container">
+                <img src="../images/logo-mobile.png" alt="">
+            </div>
+        </div>
+        <div class="client-dropdown-menu-info-container">
+            <div class="client-menu-notifications-container">
+                <img src="../icons/bell-icon.png" alt="">
+                <p><a href="../pages/notifications.html">Notifications</a></p>
+            </div>
+            <div class="client-dropdown-menu-settings-container">
+                <img src="../icons/filter-icon.png" alt="">
+                <p><a href="../pages/settings-client.html">Settings</a></p>
+            </div>
+        </div>
+        <div class="client-dropdown-menu-artist-other-info">
+            <div class="client-dropdown-menu-about-container">
+                <img src="../icons/about-icon.svg" alt="">
+                <p><a href="../pages/about-us.html">About</a></p>
+            </div>
+            <div class="client-dropdown-menu-help-centre-container">
+                <img src="../icons/help-centre-icon.svg" alt="">
+                <p><a href="../pages/help-centre.html">Help Centre</a></p>
+            </div>
+        </div>
+        <div class="client-dropdown-menu-log-out">
+            <div class="client-log-out-container">
+                <img src="../icons/log-out-icon.svg" alt="">
+                <p><a href="#">Log Out</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main-container">
+            <div class="footer-company-container">
+                <div class="footer-company-content-container">
+                    <h3>Company</h3>
+                    <p><a href="../pages/about-us.html">About</a></p>
+                </div>
+            </div>
+            <div class="footer-help-centre-container">
+                <div class="footer-help-centre-content-container">
+                    <h3>Help Center</h3>
+                    <p><a href="../pages/help-centre.html">FAQ</a></p>
+                </div>
+            </div>
+            <div class="footer-legal-container" >
+                <div class="footer-legal-content-container">
+                    <h3>Legal</h3>
+                    <p><a href="terms-conditions.html">Terms & Conditions</a></p>
+                </div>
+            </div>   
+            <div class="footer-nav-container">
+                <div class="footer-nav-content">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
+                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
+                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
+                        </ul>
+                </div>
+                </nav>
+            </div>
+            <p class="copyright-container">&copy; 2022 - Get a Tat</p>
+        </div>
+        <button><img src="../icons/arrow-up-icon.png" alt="arrow-up-icon"></button>
+        <p class="copyright">&copy; 2022 - Get a Tat</p>
+    </footer>
+    <!-- <script type="module" src="../js/profile-icon.js" defer></script> -->
+</body>
+</html>
