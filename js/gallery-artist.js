@@ -13,7 +13,7 @@ const USER_TYPE_CLIENT = "client";
 const USER_TYPE_ARTIST = "artist";
 
 //Get name artist
-const artistNameRef = doc(db, "artists", `${readSessionUserData(SESSION_USER_KEY_VALUE).uid}`);
+const artistNameRef = doc(db, "artists", readSessionUserData(SESSION_USER_KEY_VALUE).uid);
 const artistNameSnap = await getDoc(artistNameRef);
 
 if (artistNameSnap.exists()) {
@@ -67,7 +67,7 @@ document.getElementById('addImageToGallery').addEventListener('click', async () 
 
     //Store in Storage
     const userFile = document.getElementById('addImageArtist').files[0];
-    const filename = Date() + '.png';
+    const filename = readSessionUserData(SESSION_USER_KEY_VALUE).uid + "_" + Date.now() + '.png';
     const storegeRef = ref(storage, 'artist-img-uploads' + '/' + `${readSessionUserData(SESSION_USER_KEY_VALUE).uid}` + '/' + filename);
 
     uploadBytes(storegeRef, userFile)
@@ -79,10 +79,13 @@ document.getElementById('addImageToGallery').addEventListener('click', async () 
 
     //Store in Firestore
     const docRef = await addDoc(collection(db, "artist_img_uploads"), {
+        artist_name: readSessionUserData(SESSION_USER_KEY_VALUE).full_name,
         artist_id: readSessionUserData(SESSION_USER_KEY_VALUE).uid,
         img_name: filename
     });
     // updateTable("artist_img_uploads");
+
+    location.reload();
 
 })
 
