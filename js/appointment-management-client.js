@@ -96,7 +96,7 @@ function drawAppointmentCard(appointmentObject, container) {
 
     thumbnailElement = `<img src='${appointmentObject.photo}' class="thumbnail-image"></img>`;
 
-    artistElement = `<p>Appointment with: ${appointmentObject.artist}</p>`;
+    artistElement = `<p>Artist: <span>${appointmentObject.artist}</span></p>`;
     dateElement = `<p>Date: ${appointmentObject.date}</p>`;
     statusElement = `<p>Status: ${appointmentObject.status}</p>`;
 
@@ -116,7 +116,7 @@ function drawAppointmentCard(appointmentObject, container) {
       .then((url) => {
         thumbnailElement = `<img src='${url}' class="thumbnail-image"></img>`;
 
-        artistElement = `<p>Appointment with: ${appointmentObject.artist}</p>`;
+        artistElement = `<p>Artist: <span> ${appointmentObject.artist} </span></p>`;
         dateElement = `<p>Date: ${appointmentObject.date}</p>`;
         statusElement = `<p>Status: ${appointmentObject.status}</p>`;
 
