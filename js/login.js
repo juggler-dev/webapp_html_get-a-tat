@@ -69,11 +69,13 @@ async function saveSessionUserDataOnSessionStorage(collection, sessionUserUid) {
   //Moving to next window
   if (docSnap.data().user_type == USER_TYPE_CLIENT) {
     console.log("happening! Again");
-    window.location.href = HOME_CLIENT;
+    // window.location.href = HOME_CLIENT;
+    window.location.href = "../index.html";
   }
 
   if (docSnap.data().user_type == USER_TYPE_ARTIST) {
-    window.location.href = HOME_ARTIST;
+    // window.location.href = HOME_ARTIST;
+    window.location.href = "../index.html";
   }
 
 }

@@ -149,7 +149,6 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
 }
 
 // Logout
-
 const logout = document.getElementById('signOutBtn');
 
 logout.addEventListener('click',(e) => {
@@ -167,13 +166,83 @@ logout2.addEventListener('click',(e) => {
 })
 
 // Open menu
-
 const btnMenu = document.getElementById('openMenu');
 
 btnMenu.addEventListener('click', function(){
   document.body.classList.toggle('menu-open');
 });
 
+// move to correct booking site
+const bookingLink = document.getElementById('bookingLink');
+bookingLink.addEventListener('click', function(){
+  if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+    window.location.href  = "../pages/appointment-management-artist.html";
+  } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
+    window.location.href  = "../pages/appointment-management-client.html";
+  } else {
+    console.log('no user')
+  }});
+
+const bookingLink2 = document.getElementById('bookingLink2');
+bookingLink2.addEventListener('click', function(){
+  if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+    window.location.href  = "../pages/appointment-management-artist.html";
+  } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
+    window.location.href  = "../pages/appointment-management-client.html";
+  } else {
+    console.log('no user')
+  }});
+
+
+
+
+
+
+
+
+// const bookingLink = document.getElementById('bookingLink');
+//   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+//     bookingLink.addEventListener('click', function(){
+//       alert('hey')
+//           window.location.href  = "https://www.youtube.com/";
+//     })
+//   }
+
+//   const bookingLink2 = document.getElementById('bookingLink2');
+//   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+//     bookingLink2.addEventListener('click', function(){
+//       alert('hoy')
+//       window.location.href  = "https://www.youtube.com/";
+//     })
+//   }
+
+
+
+// // const bookingLink = document.getElementById('bookingLink');
+// bookingLink.addEventListener('click', function(){
+//   // move2CorrectPage("https://www.google.com")
+//   alert('hey')
+
+//       window.location.href  = "pages/appointment-management-artist.html";
+
+
+//   // if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+//   //   window.location.href  = "../pages/appointment-management-artist.html";
+//   // }
+// });
+
+// const bookingLink2 = document.getElementById('bookingLink2');
+// bookingLink2.addEventListener('click', function(){
+//   // move2CorrectPage("https://www.google.com")
+//   alert('hoy')
+
+//   window.location.href  = "pages/appointment-management-artist.html";
+
+
+//   // if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+//   //   window.location.href  = "../pages/appointment-management-artist.html";
+//   // }
+// });
 
 
 
