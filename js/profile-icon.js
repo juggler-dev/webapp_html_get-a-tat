@@ -1,15 +1,4 @@
 
-
-import { auth, db } from "./firebase-init.js";
-import {
-  signInWithEmailAndPassword,
-  signOut,
-  signInWithPopup,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithRedirect,
-  onAuthStateChanged
-} from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 import { storeSessionUserData, readSessionUserData } from "./session-storage.js";
 
 const SESSION_USER_KEY_VALUE = "sessionUser";
@@ -174,6 +163,14 @@ logout2.addEventListener('click',(e) => {
   console.log('user logged out 2')
   window.location.href  = "../index.html";
 })
+
+// Open menu
+
+const btnMenu = document.getElementById('openMenu');
+
+btnMenu.addEventListener('click', function(){
+  document.body.classList.toggle('menu-open');
+});
 
 
 

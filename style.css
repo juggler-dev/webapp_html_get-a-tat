@@ -2403,110 +2403,111 @@ footer .copyright {
   font-weight: 300;
 }
 
-#displayGalleryContainer {
+.gallery-section {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.imagesExplorer {
+.gallery-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 1em;
   margin: 0 1em;
 }
 
-.imagesExplorer img {
+.gallery-container button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-container button img {
   max-width: 100%;
   cursor: pointer;
   transition: 0.3s all ease;
   border-radius: 5%;
-}
-
-.imagesExplorer img:hover {
-  transform: scale(0.95);
-}
-
-.modalExplorer {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #FFF;
-  color: black;
-  z-index: 1;
-  overflow: auto;
-  opacity: 0;
   pointer-events: none;
 }
 
-.modalContentExplorer {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.gallery-container img:hover {
+  transform: scale(0.95);
 }
 
-.modalImgExplorer {
-  max-width: 80vw;
-  max-height: 80vh;
-}
-
-.modalTxtExplorer {
-  margin-top: 1em;
-}
-
-.closeModalExplorer {
-  position: absolute;
-  top: 1em;
-  right: 1.5em;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.modalExplorer.appear {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.modalExplorer.appear img {
-  border-radius: 5%;
-}
-
-.modalExplorer.appear .modalImgExplorer,
-.modalExplorer.appear .modalTxtExplorer {
-  animation: zoom 0.3s linear;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-.modalExplorer i {
-  background-color: #767676;
-  color: black;
-  padding: 0.5rem 0.75rem;
-  border-radius: 50%;
-}
-
-#ctaBtn button {
+/* The Modal (background) */
+.modal-background {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100%;
-  border-radius: 25px;
-  margin: 0 auto;
-  padding: 0.675rem 2.5rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  color: #FFF;
-  background-color: #FF0000;
-  border: 1px solid #FF0000;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-background .modal-card-closer {
+  text-align: right;
+}
+
+/* Modal Content */
+.modal-card {
+  background-color: transparent;
+  margin: auto;
+  padding: 0.5rem;
+  width: 80%;
+  min-height: 90vh;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+}
+.modal-card .modal-card-closer-wrapper {
+  display: flex;
+  justify-content: end;
+  background-color: transparent;
+}
+.modal-card .modal-card-closer-wrapper .modal-card-closer {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.modal-card .modal-card-closer-wrapper .modal-card-closer:hover, .modal-card .modal-card-closer-wrapper .modal-card-closer:focus {
+  color: #000;
+  text-decoration: none;
   cursor: pointer;
+}
+.modal-card .modal-card-content {
+  background-color: #fefefe;
+  height: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 0.2fr 0.8fr;
+}
+.modal-card .modal-card-content .artist-bio-section {
+  background-color: red;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.modal-card .modal-card-content .image-section img {
+  border-radius: 0.5rem;
+}
+
+.modal-card-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 /* ARTIST GALLERY ============================================ */
@@ -2964,6 +2965,57 @@ header {
   color: #767676;
 }
 
+#openMenu {
+  cursor: pointer;
+}
+
+#buttonDropdownMenuMobile {
+  cursor: pointer;
+}
+
+.header-navigation-mobile {
+  display: none;
+  padding-bottom: -5rem;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .header-navigation-mobile {
+    background-color: #FFF;
+    border: 1px solid #767676;
+    transform: translateX(-100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  .menu-open .header-navigation-mobile {
+    transform: translateX(0);
+    display: block;
+    opacity: 1;
+  }
+  .nav-mobile ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .nav-mobile li:nth-child(1) {
+    padding: 0.75rem;
+    padding-top: 0;
+    border-bottom: 1px solid #767676;
+  }
+  .nav-mobile li:nth-child(2),
+.nav-mobile li:nth-child(3) {
+    padding: 0.75rem;
+    border-bottom: 1px solid #767676;
+  }
+  .nav-mobile li:nth-child(4) {
+    padding: 0.75rem;
+    padding-bottom: 0;
+  }
+  .nav-mobile a {
+    text-decoration: none;
+    color: #767676;
+  }
+}
 /* TATTOO LOCATOR ============================================ */
 
 /*# sourceMappingURL=style.css.map */

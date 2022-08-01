@@ -166,6 +166,14 @@ logout2.addEventListener('click',(e) => {
   window.location.href  = "../index.html";
 })
 
+// Open menu
+
+const btnMenu = document.getElementById('openMenu');
+
+btnMenu.addEventListener('click', function(){
+  document.body.classList.toggle('menu-open');
+});
+
 
 
 
