@@ -190,8 +190,14 @@ bookingLink2.addEventListener('click', function(){
   } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
     window.location.href  = "../pages/appointment-management-client.html";
   } else {
-    console.log('no user')
+    window.location.href  = "../pages/login-client.html";
   }});
+
+  // move to explorer page
+  const showExplorerPage = document.getElementById('showExplorerPage');
+  showExplorerPage.addEventListener('click', function(){
+    window.location.href  = "../pages/tattoo-explorer-main.html";
+  });
 
 
 
