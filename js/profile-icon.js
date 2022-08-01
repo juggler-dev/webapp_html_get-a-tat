@@ -1,4 +1,5 @@
 
+import { auth } from "./firebase-init.js";
 import { storeSessionUserData, readSessionUserData } from "./session-storage.js";
 
 const SESSION_USER_KEY_VALUE = "sessionUser";
@@ -26,6 +27,22 @@ const USER_TYPE_ARTIST = "artist";
 
 // }
 
+
+// Open menu
+const btnMenu = document.getElementById('openMenu');
+
+btnMenu.addEventListener('click', function(){
+  document.body.classList.toggle('menu-open');
+});
+
+// if no user move to login when clicking "booking"
+const bookingLink3 = document.getElementById('bookingLink');
+bookingLink3.addEventListener('click', function(){
+if (readSessionUserData(SESSION_USER_KEY_VALUE) == null) {
+  window.location.href  = "../pages/login-client.html";
+  
+}
+});
 
 
 
@@ -142,9 +159,14 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
 
   })
 
-} else {
+
+} 
+
+else {
   console.log('no user'); 
 }
+
+
 
 // Logout
 const logout = document.getElementById('signOutBtn');
@@ -163,34 +185,47 @@ logout2.addEventListener('click',(e) => {
   window.location.href  = "../index.html";
 })
 
-// Open menu
-const btnMenu = document.getElementById('openMenu');
 
-btnMenu.addEventListener('click', function(){
-  document.body.classList.toggle('menu-open');
+
+// move to correct booking site when user are logged in
+const bookingLink = document.getElementById('bookingLink');
+bookingLink.addEventListener('click', function(e){
+  e.preventDefault();
+
+  if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
+    window.location.href  = "../pages/appointment-management-artist.html";
+  } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
+    window.location.href  = "../pages/appointment-management-client.html";
+  }
+
 });
 
 
-// move to correct booking site
-const bookingLink = document.getElementById('bookingLink');
-bookingLink.addEventListener('click', function(){
-  if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
-    window.location.href  = "../pages/appointment-management-artist.html";
-  } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
-    window.location.href  = "../pages/appointment-management-client.html";
-  } else if ((readSessionUserData(SESSION_USER_KEY_VALUE).user_type == null)) {
-    window.location.href  = "../pages/login-client.html";
-  }});
 
 const bookingLink2 = document.getElementById('bookingLink2');
-bookingLink2.addEventListener('click', function(){
+bookingLink2.addEventListener('click', function(e){
+  e.preventDefault();
+
   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
     window.location.href  = "../pages/appointment-management-artist.html";
   } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
     window.location.href  = "../pages/appointment-management-client.html";
-  } else {
-    window.location.href  = "../pages/login-client.html";
-  }});
+  } 
+
+});
+
+//   switch(user_type) {
+//     case (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST):
+//       window.location.href  = "../pages/appointment-management-artist.html";
+//       break;
+//     case (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT):
+//       window.location.href  = "../pages/appointment-management-client.html";
+//       break;
+//     default:
+//       window.location.href  = "../pages/login-client.html";
+//   }
+
+// })
 
 
 

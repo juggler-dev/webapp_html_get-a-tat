@@ -28,10 +28,39 @@ const USER_TYPE_ARTIST = "artist";
 
 // }
 
+// Open menu
+const btnMenu = document.getElementById('openMenu');
 
+btnMenu.addEventListener('click', function(){
+  document.body.classList.toggle('menu-open');
+});
 
+// if no user move to login when clicking "booking"
+const bookingLink3 = document.getElementById('bookingLink');
+bookingLink3.addEventListener('click', function(){
+if (readSessionUserData(SESSION_USER_KEY_VALUE) == null) {
+  alert('please log in to access this function')
+}
+});
 
-if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
+const bookingLink4 = document.getElementById('bookingLink2');
+bookingLink4.addEventListener('click', function(){
+if (readSessionUserData(SESSION_USER_KEY_VALUE) == null) {
+  alert('please log in to access this function')
+
+  window.location.href  = "../pages/login-client.html";
+}
+});
+
+// move to explorer page
+const showExplorerPage = document.getElementById('showExplorerPage');
+showExplorerPage.addEventListener('click', function(){
+  window.location.href  = "../pages/tattoo-explorer-main.html";
+});
+
+// login menu
+
+if  (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == 'artist') {
   console.log('user is logged in');
   console.log(readSessionUserData(SESSION_USER_KEY_VALUE).user_type);
 
@@ -165,91 +194,28 @@ logout2.addEventListener('click',(e) => {
   window.location.href  = "../index.html";
 })
 
-// Open menu
-const btnMenu = document.getElementById('openMenu');
 
-btnMenu.addEventListener('click', function(){
-  document.body.classList.toggle('menu-open');
-});
-
-// move to correct booking site
+// move to correct booking site when user are logged in
 const bookingLink = document.getElementById('bookingLink');
 bookingLink.addEventListener('click', function(){
+
   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
     window.location.href  = "../pages/appointment-management-artist.html";
   } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
     window.location.href  = "../pages/appointment-management-client.html";
-  } else {
-    console.log('no user')
-  }});
+  }
+
+});
 
 const bookingLink2 = document.getElementById('bookingLink2');
 bookingLink2.addEventListener('click', function(){
+
   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
     window.location.href  = "../pages/appointment-management-artist.html";
   } else if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_CLIENT) {
     window.location.href  = "../pages/appointment-management-client.html";
-  } else {
-    window.location.href  = "../pages/login-client.html";
-  }});
-
-  // move to explorer page
-  const showExplorerPage = document.getElementById('showExplorerPage');
-  showExplorerPage.addEventListener('click', function(){
-    window.location.href  = "../pages/tattoo-explorer-main.html";
-  });
-
-
-
-
-
-
-
-
-// const bookingLink = document.getElementById('bookingLink');
-//   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
-//     bookingLink.addEventListener('click', function(){
-//       alert('hey')
-//           window.location.href  = "https://www.youtube.com/";
-//     })
-//   }
-
-//   const bookingLink2 = document.getElementById('bookingLink2');
-//   if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
-//     bookingLink2.addEventListener('click', function(){
-//       alert('hoy')
-//       window.location.href  = "https://www.youtube.com/";
-//     })
-//   }
-
-
-
-// // const bookingLink = document.getElementById('bookingLink');
-// bookingLink.addEventListener('click', function(){
-//   // move2CorrectPage("https://www.google.com")
-//   alert('hey')
-
-//       window.location.href  = "pages/appointment-management-artist.html";
-
-
-//   // if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
-//   //   window.location.href  = "../pages/appointment-management-artist.html";
-//   // }
-// });
-
-// const bookingLink2 = document.getElementById('bookingLink2');
-// bookingLink2.addEventListener('click', function(){
-//   // move2CorrectPage("https://www.google.com")
-//   alert('hoy')
-
-//   window.location.href  = "pages/appointment-management-artist.html";
-
-
-//   // if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
-//   //   window.location.href  = "../pages/appointment-management-artist.html";
-//   // }
-// });
-
-
+  }
+  
+});
 
 

@@ -209,10 +209,11 @@ document.getElementById("modalContentBtnCancel").addEventListener('click', (e) =
   })
 })
 
-////Move to Create Appointments page
-document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
-  window.location.href = "../pages/book-appointment.html";
-});
+////////////// deleted because it was causing problems. so far everything is working normally if this event remains comented 
+// ////Move to Create Appointments page
+// document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
+//   window.location.href = "../pages/book-appointment.html";
+// });
 
 
 
