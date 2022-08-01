@@ -26,7 +26,7 @@ const ARTIST_IMG_UPLOADS_STORAGE_FOLDER = "/artist-img-uploads";
 
 /* ////////////////////////// CLASSES   ////////////////////////// */
 
-class UploadedImage{
+class ArtistUploadedImage{
   constructor(id, artistId, imgName){
     this.id = id;
     this.artistId = artistId,
@@ -45,8 +45,8 @@ class ArtistBioSmall{
 /* ////////////////////////// FUNCTIONS ////////////////////////// */
 
 // Building Functions ===================
-function buildUploadedImageObject(firebaseDocument){
-  return new UploadedImage(firebaseDocument.id, firebaseDocument.data().artist_id, firebaseDocument.data().img_name)
+function buildArtistUploadedImageObject(firebaseDocument){
+  return new ArtistUploadedImage(firebaseDocument.id, firebaseDocument.data().artist_id, firebaseDocument.data().img_name)
 }
 
 function buildUploadedArtistBioSmall(firebaseDocument){
@@ -58,23 +58,23 @@ function buildUploadedArtistBioSmall(firebaseDocument){
 // Main Event Functions ===================
 
 //fill image list array
-async function fillImageArray(){
+async function fillImageArray(array){
 
   const imagesUploadedFromArtist = await getDocs(collection(db, ARTISTS_IMG_UPLOADS_COLLECTION_NAME));
   imagesUploadedFromArtist.forEach((doc) => {
-    const uploadedImgObject = buildUploadedImageObject(doc);
-    uploadedImageArray.push(uploadedImgObject);
+    const uploadedImgObject = buildArtistUploadedImageObject(doc);
+    array.push(uploadedImgObject);
   });
 }
 
 //Create images cards (buttons) from array
-function createImageCards(){
-  uploadedImageArray.forEach(imageObject => {
+function createImageCards(array){
+  array.forEach(imageObject => {
     const artistUploadedImageToShowInGallery = document.createElement("button");
     artistUploadedImageToShowInGallery.class = "gallery-artist-uploaded-image";
     artistUploadedImageToShowInGallery.id = imageObject.id;
 
-    const thumbnailRef = ref(storage, ARTIST_IMG_UPLOADS_STORAGE_FOLDER + '/'  + readSessionUserData(SESSION_USER_KEY_VALUE).uid + '/' + imageObject.imgName);
+    const thumbnailRef = ref(storage, ARTIST_IMG_UPLOADS_STORAGE_FOLDER + '/'  + imageObject.artistId + '/' + imageObject.imgName);
     getDownloadURL(thumbnailRef)
     .then((url) => {
       imageObject.url = url;
@@ -88,10 +88,10 @@ function createImageCards(){
 }
 
 //Open Modal
-function openModalAndReturnUploadedImageObj(modalElement, tattooExplorerButtonId) {
+function openModalAndReturnUploadedImageObj(array, modalElement, tattooExplorerButtonId) {
   modalElement.style.visibility = "visible";
   BODY_ELEMENT.style.overflowY = "hidden";
-  const uploadedImgObj = uploadedImageArray.find(image => image.id === tattooExplorerButtonId);
+  const uploadedImgObj = array.find(image => image.id === tattooExplorerButtonId);
   return uploadedImgObj;
 }
 
@@ -104,7 +104,7 @@ function setEventListenerToGalleryContainerForOpenModal(){
   GALLERY_CONTAINER.addEventListener('click',async (e) => {
     if (e.target.matches("button")) {
       // console.log("Clicked Button" + " " + e.target.id)
-      const uploadedImgObj = openModalAndReturnUploadedImageObj(MODAL_ELEMENT, e.target.id);
+      const uploadedImgObj = openModalAndReturnUploadedImageObj(uploadedImageArray, MODAL_ELEMENT, e.target.id);
       await populateModalScreen(uploadedImgObj);
     }
   })
@@ -139,8 +139,8 @@ async function populateModalScreen(uploadedImgObject){
 }
 
 /* ////////////////////////// EVENTS    ////////////////////////// */
-await fillImageArray();
-createImageCards();
+await fillImageArray(uploadedImageArray);
+createImageCards(uploadedImageArray);
 await setEventListenerToGalleryContainerForOpenModal();
 setEventListenerToModalCardCloserForCloseModal();
 
