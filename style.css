@@ -205,9 +205,13 @@ select {
   height: 60px;
   margin: 0 auto;
   justify-self: center;
+  background-color: transparent;
+  border: none;
 }
 .home-page-background-cover .home-page-container .home-page-content-container .discover-container button a {
   color: #FFF;
+  display: flex;
+  justify-content: center;
 }
 .home-page-background-cover .home-page-container .home-page-content-container .discover-container button a img {
   width: 50px;
@@ -438,6 +442,10 @@ select {
   color: #FFF;
   background-color: #FF0000;
   padding: 0.675rem 2rem;
+}
+.tattoo-explorer-section .home-tattoo-explorer-container .content-wrapper button:hover {
+  background-color: #FFF;
+  color: #FF0000;
 }
 
 .tattoo-styles-section {
@@ -743,11 +751,17 @@ select {
     border: 1px solid #FF0000;
     background-color: #FF0000;
   }
+  .advertisement .ad-content button:hover {
+    background-color: #FFF;
+  }
   .advertisement .ad-content button a {
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #FFF;
+  }
+  .advertisement .ad-content button a:hover {
+    color: #FF0000;
   }
 }
 
@@ -1093,6 +1107,26 @@ footer .copyright {
     align-content: center;
   }
 }
+@media screen and (min-width: 1150px) {
+  .main-container-login {
+    width: 28%;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .main-container-login {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .main-container-login {
+    width: 21%;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .main-container-login {
+    width: 18%;
+  }
+}
 .main-container-login h2 {
   font-family: "Righteous", cursive;
   color: #FF0000;
@@ -1117,6 +1151,9 @@ footer .copyright {
   font-weight: 600;
   outline: #372019;
 }
+.main-container-login .login-form-container .login-email-container input:hover {
+  border: 2.5px solid #00B5B2;
+}
 .main-container-login .login-form-container .login-password-container {
   display: flex;
   flex-flow: column nowrap;
@@ -1130,6 +1167,9 @@ footer .copyright {
   font-size: small;
   font-weight: 600;
   outline: #372019;
+}
+.main-container-login .login-form-container .login-password-container input:hover {
+  border: 2.5px solid #00B5B2;
 }
 .main-container-login .login-form-container .login-password-container small {
   text-align: right;
@@ -1153,6 +1193,10 @@ footer .copyright {
   color: #FFF;
   background-color: #FF0000;
   border: 1px solid #FF0000;
+}
+.main-container-login .login-form-container .login-button:hover {
+  background-color: #FFF;
+  color: #FF0000;
 }
 .main-container-login .forgot-password-p {
   display: none;
@@ -1601,6 +1645,9 @@ footer .copyright {
   border: 1px solid #FF0000;
   margin: 0 auto;
 }
+.book-appointment-main-container button:hover {
+  background-color: #FFF;
+}
 @media screen and (min-width: 900px) {
   .book-appointment-main-container button {
     width: 15%;
@@ -1609,6 +1656,9 @@ footer .copyright {
 .book-appointment-main-container button a {
   text-decoration: none;
   color: #FFF;
+}
+.book-appointment-main-container button a:hover {
+  color: #FF0000;
 }
 
 .book-appointment-main-steps {
@@ -1660,6 +1710,60 @@ footer .copyright {
   content: counter(item) ".";
 }
 
+.book-appointment-main-steps-artist {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1100px) {
+  .book-appointment-main-steps-artist {
+    width: 80vw;
+    margin-bottom: 1rem;
+  }
+}
+.book-appointment-main-steps-artist ol {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  margin: 0 0 1.5em;
+  padding: 0;
+  counter-reset: item;
+}
+@media screen and (min-width: 1100px) {
+  .book-appointment-main-steps-artist ol {
+    width: 70vw;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+.book-appointment-main-steps-artist ol li {
+  margin: 0;
+  padding: 0 0 0 2em;
+  text-indent: -2em;
+  list-style-type: none;
+  counter-increment: item;
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+}
+@media screen and (min-width: 1100px) {
+  .book-appointment-main-steps-artist ol li {
+    flex-basis: 30%;
+  }
+}
+.book-appointment-main-steps-artist ol li:before {
+  display: inline-block;
+  width: 1em;
+  padding-right: 0.5em;
+  font-weight: bold;
+  text-align: right;
+  content: counter(item) ".";
+}
+
 .book-appointment-main-planning-tattoos-container {
   height: 35vh;
 }
@@ -1688,6 +1792,7 @@ footer .copyright {
 @media screen and (min-width: 900px) {
   .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-artist-options-container {
     gap: 1rem;
+    flex-flow: row nowrap;
   }
 }
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-artist-options-container .left-arrow-icon-container {
@@ -1717,6 +1822,9 @@ footer .copyright {
   border-radius: 25px;
   padding: 0.675rem;
   font-size: small;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-artist-options-container select:hover {
+  border: 2.5px solid #00B5B2;
 }
 @media screen and (max-width: 380px) {
   .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-artist-options-container select {
@@ -1856,6 +1964,9 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-size: small;
 }
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-placement-container select:hover {
+  border: 2.5px solid #00B5B2;
+}
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-size-container {
   display: flex;
   flex-flow: column nowrap;
@@ -1877,6 +1988,9 @@ footer .copyright {
   border: 1.5px solid #767676;
   font-family: "Poppins", sans-serif;
   font-size: small;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-size-container select:hover {
+  border: 2.5px solid #00B5B2;
 }
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-allergies-health-container {
   display: flex;
@@ -1900,6 +2014,9 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-size: small;
 }
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-allergies-health-container select:hover {
+  border: 2.5px solid #00B5B2;
+}
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-short-description-container {
   display: flex;
   flex-flow: column nowrap;
@@ -1921,6 +2038,9 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-size: small;
 }
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-short-description-container textarea:hover {
+  border: 2.5px solid #00B5B2;
+}
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-short-description-container .book-appointment-single-color-tattoo-container {
   display: flex;
   flex-flow: row nowrap;
@@ -1936,6 +2056,9 @@ footer .copyright {
   border: 1.5px solid #767676;
   font-family: "Poppins", sans-serif;
   font-size: small;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-short-description-container .book-appointment-single-color-tattoo-container select:hover {
+  border: 2.5px solid #00B5B2;
 }
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-date-container {
   grid-column: 1/3;
@@ -1954,6 +2077,9 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-size: small;
 }
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-date-container input:hover {
+  border: 2.5px solid #00B5B2;
+}
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-time-container {
   grid-column: 1/3;
   display: flex;
@@ -1970,6 +2096,9 @@ footer .copyright {
   padding: 0.675rem;
   font-family: "Poppins", sans-serif;
   font-size: small;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-time-container input:hover {
+  border: 2.5px solid #00B5B2;
 }
 .book-appointment-single-main-container .book-appointment-single-upload-image-container {
   height: auto;
@@ -2018,11 +2147,17 @@ footer .copyright {
   object-fit: cover;
   border: 1.5px solid #372019;
 }
+.book-appointment-single-main-container .book-appointment-single-upload-image-container label img:hover {
+  border: 2.5px solid #00B5B2;
+}
 .book-appointment-single-main-container .book-appointment-single-upload-image-container #startCam {
   grid-column: 2/3;
   grid-row: 2/3;
   background-color: #FFF;
   justify-self: start;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #startCam:hover {
+  border: 2.5px solid #00B5B2;
 }
 .book-appointment-single-main-container .book-appointment-single-upload-image-container #startCam img {
   height: 50px;
@@ -2176,9 +2311,19 @@ footer .copyright {
 }
 .page-content .content-container .appointments-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media screen and (min-width: 730px) {
+  .page-content .content-container .appointments-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media screen and (min-width: 900px) {
+  .page-content .content-container .appointments-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .page-content .content-container .appointments-container .appointment-card-btn {
   justify-self: center;
@@ -2191,6 +2336,16 @@ footer .copyright {
   background-color: #FFF;
   border: 0px;
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 730px) {
+  .page-content .content-container .appointments-container .appointment-card-btn {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-content .content-container .appointments-container .appointment-card-btn {
+    width: 350px;
+  }
 }
 .page-content .content-container .appointments-container .appointment-card-btn img {
   height: 180px;
@@ -2615,6 +2770,9 @@ footer .copyright {
   padding: 0;
   margin: 0;
 }
+.gallery-section .gallery-container button:hover {
+  transform: scale(0.95);
+}
 .gallery-section .gallery-container img {
   width: 400px;
   height: 400px;
@@ -2634,18 +2792,6 @@ footer .copyright {
   .gallery-section .gallery-container img {
     width: 600px;
   }
-}
-
-.gallery-container button img {
-  max-width: 100%;
-  cursor: pointer;
-  transition: 0.3s all ease;
-  border-radius: 5%;
-  pointer-events: none;
-}
-
-.gallery-container img:hover {
-  transform: scale(0.95);
 }
 
 /* The Modal (background) */
@@ -2680,6 +2826,36 @@ footer .copyright {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
 }
+@media screen and (min-width: 850px) {
+  .modal-card {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 950px) {
+  .modal-card {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .modal-card {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .modal-card {
+    width: 58%;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .modal-card {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1450px) {
+  .modal-card {
+    width: 40%;
+  }
+}
 .modal-card .modal-card-closer-wrapper {
   display: flex;
   justify-content: end;
@@ -2701,21 +2877,76 @@ footer .copyright {
   cursor: pointer;
 }
 .modal-card .modal-card-content {
-  background-color: #fefefe;
-  padding: 0.5rem;
+  background-color: #DBBAAD;
   border-radius: 1rem;
   display: grid;
-  grid-template-columns: 0.2fr 0.8fr;
-  column-gap: 1rem;
+  grid-template-columns: 0.5fr 1.2fr;
+  border-radius: 1rem;
 }
 .modal-card .modal-card-content .artist-bio-section {
-  background-color: red;
+  background-color: #DBBAAD;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
-.modal-card .modal-card-content .image-section img {
-  border-radius: 0.5rem;
-  max-width: 100%;
+.modal-card .modal-card-content .artist-bio-section p:nth-of-type(1) {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: small;
+  margin-bottom: 1rem;
+}
+.modal-card .modal-card-content .artist-bio-section .modal-card-artist-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.modal-card .modal-card-content .artist-bio-section .modal-card-artist-instagram {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+.modal-card .modal-card-content .artist-bio-section button {
+  border-radius: 25px;
+  background-color: #FF0000;
+  font-family: "Poppins", sans-serif;
+  color: #FFF;
+  font-size: small;
+  font-weight: 600;
+  padding: 0.475rem;
+  border: 1px solid #FF0000;
+}
+@media screen and (min-width: 600px) {
+  .modal-card .modal-card-content .artist-bio-section button {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .modal-card .modal-card-content .artist-bio-section button {
+    width: 75%;
+  }
+}
+.modal-card .modal-card-content .image-section {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.modal-card .modal-card-content .image-section .image-section-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  border-radius: 1REM;
+}
+.modal-card .modal-card-content .image-section .image-section-wrapper img {
+  object-fit: cover;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .modal-card-header {

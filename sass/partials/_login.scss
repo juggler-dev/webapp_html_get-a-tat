@@ -29,7 +29,23 @@
     width: 33%;
     align-content: center;
   }
+
+  @media screen and(min-width: 1150px){
+    width: 28%;
+  }
   
+  @media screen and(min-width: 1250px){
+    width: 25%;
+  }
+
+  @media screen and(min-width: 1350px){
+    width: 21%;
+  }
+
+  @media screen and(min-width: 1350px){
+    width: 18%;
+  }
+
   h2{
     font-family: $font-righteous;
     color: $primary-red;
@@ -55,6 +71,10 @@
         font-size: small;
         font-weight: 600;
         outline: $primary-red-shade;
+
+        &:hover{
+          border: 2.5px solid $eco-friendly-dark-green;
+        }
         
       }
 
@@ -73,6 +93,10 @@
         font-size: small;
         font-weight: 600;
         outline: $primary-red-shade;
+
+        &:hover{
+          border: 2.5px solid $eco-friendly-dark-green;
+        }
       }
 
       small{
@@ -99,6 +123,11 @@
       color: $neutral-white;
       background-color: $primary-red;
       border: 1px solid $primary-red;
+
+      &:hover{
+        background-color: $neutral-white;
+        color: $primary-red;
+      }
 
     }
   }

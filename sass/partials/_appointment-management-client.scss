@@ -22,10 +22,22 @@
     .appointments-container{
 
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      // grid-template-columns: 1fr 1fr 1fr;
+      // grid-template-rows: auto;
  
-      margin-bottom: 1rem;
+      @media screen and (min-width: 730px){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+      }
+
+      @media screen and (min-width: 900px){
+        grid-template-columns: 1fr 1fr 1fr;
+      
+      }
+
 
       .appointment-card-btn{
         justify-self: center;
@@ -38,6 +50,14 @@
         background-color: $neutral-white;
         border: 0px;
         margin-bottom: 1rem;
+
+        @media screen and (min-width: 730px){
+          width: 320px;
+        }
+
+        @media screen and (min-width: 1200px){
+          width: 350px;
+        }
        
         img{
           height: 180px;

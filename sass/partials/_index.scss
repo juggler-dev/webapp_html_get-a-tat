@@ -123,10 +123,14 @@
                     height: 60px;
                     margin: 0 auto;
                     justify-self: center;
+                    background-color: transparent;
+                    border: none;
              
 
                     a{
                         color: $neutral-white;
+                        display: flex;
+                        justify-content: center;
 
                         img{
                             width: 50px;
@@ -401,7 +405,12 @@
                 font-weight: 600;
                 color: $neutral-white;
                 background-color: $primary-red;
-                padding: .675rem 2rem;   
+                padding: .675rem 2rem;  
+                
+                &:hover{
+                    background-color: $neutral-white;
+                    color: $primary-red;
+                  }
             }
         }
     }
@@ -747,11 +756,19 @@
                 border: 1px solid $primary-red;
                 background-color: $primary-red;
 
+                &:hover{
+                    background-color: $neutral-white;
+                  }
+
                 a{
                     text-decoration: none;
                     font-family: $font-poppins;
                     font-weight: 600;
                     color: $neutral-white;
+
+                    &:hover{
+                        color: $primary-red;
+                      }
                 }
             }
         }

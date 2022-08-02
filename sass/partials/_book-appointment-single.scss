@@ -16,6 +16,7 @@
 
             @media screen and (min-width: 900px){
                 gap: 1rem;
+                flex-flow: row nowrap;
             }
 
             .left-arrow-icon-container{
@@ -47,6 +48,10 @@
                 border-radius: 25px;
                 padding: .675rem;
                 font-size: small;
+
+                &:hover{
+                    border: 2.5px solid $eco-friendly-dark-green;
+                  }
 
                 @media screen and (max-width: 380px){
                     width: 80vw;
@@ -182,6 +187,10 @@
                     border: 1.5px solid $neutral-dark-grey;
                     font-family: $font-poppins;
                     font-size: small;
+
+                    &:hover{
+                        border: 2.5px solid $eco-friendly-dark-green;
+                      }
                 }
             }
 
@@ -206,6 +215,10 @@
                     border: 1.5px solid $neutral-dark-grey;
                     font-family: $font-poppins;
                     font-size: small;
+
+                    &:hover{
+                        border: 2.5px solid $eco-friendly-dark-green;
+                      }
                 }
             }
 
@@ -231,6 +244,10 @@
                     border: 1.5px solid $neutral-dark-grey;
                     font-family: $font-poppins;
                     font-size: small;
+
+                    &:hover{
+                        border: 2.5px solid $eco-friendly-dark-green;
+                      }
                 }
             }
 
@@ -254,6 +271,10 @@
                     border: 1.5px solid $neutral-dark-grey;
                     font-family: $font-poppins;
                     font-size: small;
+
+                    &:hover{
+                        border: 2.5px solid $eco-friendly-dark-green;
+                      }
                 }
 
                 .book-appointment-single-color-tattoo-container{
@@ -272,6 +293,10 @@
                         border: 1.5px solid $neutral-dark-grey;
                         font-family: $font-poppins;
                         font-size: small;
+
+                        &:hover{
+                            border: 2.5px solid $eco-friendly-dark-green;
+                          }
                     }
                 }
             }
@@ -292,6 +317,10 @@
                     padding: .675rem;
                     font-family: $font-poppins;
                     font-size: small;
+
+                    &:hover{
+                        border: 2.5px solid $eco-friendly-dark-green;
+                      }
                 }
             }
 
@@ -312,6 +341,10 @@
                     padding: .675rem;
                     font-family: $font-poppins;
                     font-size: small;
+
+                    &:hover{
+                        border: 2.5px solid $eco-friendly-dark-green;
+                      }
                 }
             }
 
@@ -356,6 +389,7 @@
             grid-column: 1 / 2;
             grid-row: 2 / 3;
 
+
             #choosePicture{
                 clip: rect(0 0 0 0);
                 clip-path: inset(50%);
@@ -364,11 +398,17 @@
                 position: absolute;
                 white-space: nowrap;
                 width: 1px;
+
+  
             }
 
             img{
                 object-fit: cover;
                 border: 1.5px solid $primary-red-shade;
+
+                &:hover{
+                    border: 2.5px solid $eco-friendly-dark-green;
+                  }
             }
         }
 
@@ -379,11 +419,17 @@
             background-color: $neutral-white;
             justify-self: start;
 
+            &:hover{
+                border: 2.5px solid $eco-friendly-dark-green;
+              }
+
 
             img{
                 height: 50px;
                 width: 50px;
                 object-fit: cover;
+
+                
             }
             
         }
