@@ -2181,6 +2181,7 @@ footer .copyright {
   margin-bottom: 1rem;
 }
 .page-content .content-container .appointments-container .appointment-card-btn {
+  justify-self: center;
   margin: 0;
   padding: 0;
   width: 280px;
@@ -2547,6 +2548,12 @@ footer .copyright {
   border: 1px solid #372019;
   border-radius: 25px;
 }
+@media screen and (min-width: 900px) {
+  .tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-search-container {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
 .tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-search-container img {
   height: 40px;
   width: 40px;
@@ -2586,10 +2593,21 @@ footer .copyright {
 }
 .gallery-section .gallery-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 1em;
   margin: 2rem 8%;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 700px) {
+  .gallery-section .gallery-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .gallery-section .gallery-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .gallery-section .gallery-container button {
   background-color: transparent;
@@ -2598,13 +2616,24 @@ footer .copyright {
   margin: 0;
 }
 .gallery-section .gallery-container img {
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   cursor: pointer;
   object-fit: cover;
+  margin: 0 auto;
   transition: 0.3s all ease;
   border-radius: 5%;
   pointer-events: none;
+}
+@media screen and (min-width: 500px) {
+  .gallery-section .gallery-container img {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .gallery-section .gallery-container img {
+    width: 600px;
+  }
 }
 
 .gallery-container button img {
