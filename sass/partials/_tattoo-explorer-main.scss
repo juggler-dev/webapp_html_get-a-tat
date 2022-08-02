@@ -74,25 +74,36 @@
 
 ///////////////// Modal tattoo explore //////////////////
 .gallery-section {
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
-    align-items: flex-start;
+ 
+
+    .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 1em;
+        margin: 2rem 8%;
+
+        button{
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        img{
+            width: 300px;
+            height: 350px;
+            cursor: pointer;
+            object-fit: cover;
+            transition: 0.3s all ease;
+            border-radius: 5%;
+            pointer-events: none;
+        }
+    }
+    
 }
 
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 1em;
-    margin: 0 1em;
-}
-
-.gallery-container button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
 
 .gallery-container button img {
     max-width: 100%;

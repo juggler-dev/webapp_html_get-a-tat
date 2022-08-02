@@ -2460,24 +2460,29 @@ footer .copyright {
 }
 
 .gallery-section {
-  display: flex;
-  justify-content: center;
   min-height: 100vh;
-  align-items: flex-start;
 }
-
-.gallery-container {
+.gallery-section .gallery-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
   grid-gap: 1em;
-  margin: 0 1em;
+  margin: 2rem 8%;
 }
-
-.gallery-container button {
+.gallery-section .gallery-container button {
   background-color: transparent;
   border: none;
   padding: 0;
   margin: 0;
+}
+.gallery-section .gallery-container img {
+  width: 300px;
+  height: 350px;
+  cursor: pointer;
+  object-fit: cover;
+  transition: 0.3s all ease;
+  border-radius: 5%;
+  pointer-events: none;
 }
 
 .gallery-container button img {
@@ -2518,7 +2523,7 @@ footer .copyright {
   margin: auto;
   padding: 0.5rem;
   width: 80%;
-  min-height: 90vh;
+  height: 90vh;
   border-radius: 0.5rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -2546,11 +2551,11 @@ footer .copyright {
 }
 .modal-card .modal-card-content {
   background-color: #fefefe;
-  height: 100%;
   padding: 0.5rem;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: 0.2fr 0.8fr;
+  column-gap: 1rem;
 }
 .modal-card .modal-card-content .artist-bio-section {
   background-color: red;
@@ -2559,6 +2564,7 @@ footer .copyright {
 }
 .modal-card .modal-card-content .image-section img {
   border-radius: 0.5rem;
+  max-width: 100%;
 }
 
 .modal-card-header {
