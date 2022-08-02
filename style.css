@@ -1782,6 +1782,16 @@ footer .copyright {
   margin: 1rem 6%;
   padding-bottom: 2rem;
 }
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .grid-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .grid-wrapper-1 {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
 @media screen and (min-width: 600px) {
   .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container {
     margin: 1rem 7%;
@@ -1927,44 +1937,156 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-size: small;
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 {
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-date-container {
+  grid-column: 1/3;
   display: flex;
   flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-date-container label {
+  font-family: "Righteous", cursive;
+  color: #767676;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-date-container input {
+  border-radius: 25px;
+  border: 1.5px solid #767676;
+  padding: 0.675rem;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-time-container {
+  grid-column: 1/3;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-time-container label {
+  font-family: "Righteous", cursive;
+  color: #767676;
+}
+.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-choose-time-container input {
+  border-radius: 25px;
+  border: 1.5px solid #767676;
+  padding: 0.675rem;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container {
+  height: auto;
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.25fr 1fr;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
   margin-top: -1rem;
+  margin-left: 9%;
+  margin-right: 9%;
+  margin-bottom: 4rem;
 }
 @media screen and (min-width: 900px) {
-  .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 {
-    grid-column: 1/3;
-    grid-row: 3/4;
-    margin-top: 1rem;
+  .book-appointment-single-main-container .book-appointment-single-upload-image-container {
+    grid-column: 2/3;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 1fr;
+    grid-template-rows: 0.2fr 1fr 0.12fr;
+    gap: 0.5rem;
+    padding-left: 2rem;
+    margin-left: 50%;
+    margin-right: 0%;
+    margin-bottom: 4rem;
   }
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 .choice {
-  font-family: "Literata", serif;
-  font-size: 18px;
-  margin-bottom: 1rem;
+.book-appointment-single-main-container .book-appointment-single-upload-image-container p {
+  font-family: "Righteous", cursive;
+  color: #767676;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  align-self: end;
+  margin-bottom: 0.5rem;
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 .suggestion {
-  font-family: "Literata", serif;
-  text-align: center;
+.book-appointment-single-main-container .book-appointment-single-upload-image-container label {
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 .suggestion a {
-  text-decoration: none;
-  color: #372019;
-  font-size: 18px;
+.book-appointment-single-main-container .book-appointment-single-upload-image-container label #choosePicture {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 .mycontainer {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+.book-appointment-single-main-container .book-appointment-single-upload-image-container label img {
+  object-fit: cover;
+  border: 1.5px solid #372019;
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 .mycontainer button {
-  border: none;
-  background-color: white;
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #startCam {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: #FFF;
+  justify-self: start;
 }
-.book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-date-time-container1 .mycontainer button img {
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #startCam img {
   height: 50px;
   width: 50px;
+  object-fit: cover;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #book-appointment__photo-input {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container .camera-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+@media screen and (min-width: 900px) {
+  .book-appointment-single-main-container .book-appointment-single-upload-image-container .camera-wrapper {
+    flex-flow: column nowrap;
+  }
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #takePhoto {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  width: 200px;
+  margin-top: 1rem;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid #FF0000;
+  color: #FFF;
+  background-color: #FF0000;
+  font-size: small;
+  font-weight: 600;
+  margin-left: 19%;
+}
+@media screen and (min-width: 900px) {
+  .book-appointment-single-main-container .book-appointment-single-upload-image-container #takePhoto {
+    width: 49%;
+    margin-left: 0;
+  }
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #stopCam {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  width: 200px;
+  margin-top: 1rem;
+  margin-right: 19%;
+  justify-self: end;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid #372019;
+  color: #372019;
+  background-color: #FFF;
+  font-size: small;
+  font-weight: 600;
+}
+@media screen and (min-width: 900px) {
+  .book-appointment-single-main-container .book-appointment-single-upload-image-container #stopCam {
+    width: 49%;
+    margin-right: 0;
+  }
 }
 .book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container {
   display: flex;
