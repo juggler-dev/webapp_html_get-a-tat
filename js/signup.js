@@ -1,16 +1,20 @@
 ////////////////// IMPORTS //////////////////
 
-import { auth, db } from "./firebase-init.js";
-import { 
+import { auth, db, storage } from "./firebase-init.js";
+import {
   CLIENTS_COLLECTION_REFERENCE,
-  ARTISTS_COLLECTION_REFERENCE } from "./firestore-references.js";
-import { 
+  ARTISTS_COLLECTION_REFERENCE
+} from "./firestore-references.js";
+import {
   createUserWithEmailAndPassword,
-  signInWithPopup, 
-  GoogleAuthProvider, 
-  FacebookAuthProvider, 
-  onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
-  import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  onAuthStateChanged
+} from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
+import { addDoc, doc, setDoc, getDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+
+import { ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 import { storeSessionUserData, readSessionUserData } from "./session-storage.js";
 
@@ -28,6 +32,14 @@ const SESSION_USER_KEY_VALUE = "sessionUser";
 const SIGN_UP_CLIENT_PAGE_NAME = "Sign Up - Client";
 const SIGN_UP_ARTIST_PAGE_NAME = "Sign Up - Artist";
 
+const VIDEO_HTML_ELEMENT = document.getElementById('videoElement');
+const CANVAS_HTML_ELEMENT = document.getElementById('canvasElement');
+const START_CAM_BUTTON = document.getElementById("startCamBtn");
+const STOP_CAM_BUTTON = document.getElementById('stopCamBtn');
+const TAKE_PHOTO_BUTTON = document.getElementById('takePhotoBtn');
+
+const USER_PROFILE_COLLECTION = "user-profile";
+const PROFILE_PICTURE_NAME = "profile.jpg";
 
 ////////////////// CLASSES //////////////////
 
@@ -68,7 +80,7 @@ async function saveSessionUserDataOnSessionStorage(collection, sessionUserUid) {
   //Data stored on SessionStorage
   storeSessionUserData(SESSION_USER_KEY_VALUE, sessionUserObject)
 
-  //Moving to next window
+  // Moving to next window
   if (docSnap.data().user_type == USER_TYPE_CLIENT) {
     console.log("happening! Again");
     window.location.href = HOME_CLIENT;
@@ -80,8 +92,79 @@ async function saveSessionUserDataOnSessionStorage(collection, sessionUserUid) {
 
 }
 
+function showCamera(taker) {
+  if (taker == true) {
+    TAKE_PHOTO_BUTTON.style.display = "block";
+    VIDEO_HTML_ELEMENT.style.display = "block";
+    CANVAS_HTML_ELEMENT.style.display = "block";
+    STOP_CAM_BUTTON.style.display = "block";
 
-// ============ SIGN UP EMAIL & PASSWORD ============
+    console.log('show camera')
+  }
+  else {
+    TAKE_PHOTO_BUTTON.style.display = "none";
+    VIDEO_HTML_ELEMENT.style.display = "none";
+    CANVAS_HTML_ELEMENT.style.display = "none";
+    STOP_CAM_BUTTON.style.display = "none";
+
+    console.log('close and hide camera')
+  }
+}
+
+function setEventButtonForStartCamera() {
+  START_CAM_BUTTON.addEventListener('click', async function () {
+    let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    VIDEO_HTML_ELEMENT.srcObject = stream;
+
+    showCamera(true)
+  });
+}
+
+function setEventButtonForTakePhoto() {
+  TAKE_PHOTO_BUTTON.addEventListener('click', function () {
+    CANVAS_HTML_ELEMENT.getContext('2d').drawImage(VIDEO_HTML_ELEMENT, 0, 0, CANVAS_HTML_ELEMENT.width, CANVAS_HTML_ELEMENT.height);
+  });
+}
+
+function setEventButtonForStopCamera() {
+  STOP_CAM_BUTTON.addEventListener('click', () => {
+    const tracks = VIDEO_HTML_ELEMENT.srcObject.getTracks();
+    tracks.forEach((track) => track.stop());
+
+    showCamera(false);
+  });
+}
+
+// function handleBlob(blob){
+
+// }
+
+function storePhotoInFireBaseStorage(newUser) {
+
+  CANVAS_HTML_ELEMENT.toBlob(async (blob) => {
+    const artistProfileRef = ref(storage, USER_PROFILE_COLLECTION + '/' + newUser.user.uid + '/' + PROFILE_PICTURE_NAME);
+    await uploadBytes(artistProfileRef, blob)
+      .then((snapshot) => {
+        console.log(snapshot);
+      });
+
+  }, "image/jpg");
+}
+
+
+////////////////// EVENTS //////////////////
+
+// CAMERA ============
+setEventButtonForStartCamera();
+
+setEventButtonForTakePhoto();
+
+setEventButtonForStopCamera();
+
+
+
+// SIGN UP EMAIL & PASSWORD ============
+
 document.getElementById('signUpBtn').addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -94,6 +177,9 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
     // createUserWithEmailAndPassword(auth, userEmail, userPassword) 
     createUserWithEmailAndPassword(auth, userEmail, userPassword)
       .then((newClient) => {
+        // //save profile picture
+        storePhotoInFireBaseStorage(newClient);
+
         setDoc(doc(CLIENTS_COLLECTION_REFERENCE, newClient.user.uid), {
           user_type: USER_TYPE_CLIENT,
           full_name: document.getElementById('fName').value,
@@ -129,6 +215,9 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
     // createUserWithEmailAndPassword(auth, userEmail, userPassword) 
     createUserWithEmailAndPassword(auth, userEmail, userPassword)
       .then((newArtist) => {
+        //save profile picture
+        storePhotoInFireBaseStorage(newArtist);
+
         setDoc(doc(ARTISTS_COLLECTION_REFERENCE, newArtist.user.uid), {
           user_type: USER_TYPE_ARTIST,
           full_name: document.getElementById('artist_full_name').value,
@@ -164,65 +253,4 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
 
 
 })
-
-// // ============ Sign up and sign in with Google ============
-// document.getElementById('signUpGoogle').addEventListener('click', () => {
-//   signInWithPopup(auth, provider)
-//     .then((result) => {
-//       // This gives you a Google Access Token. You can use it to access the Google API.
-//       const credential = GoogleAuthProvider.credentialFromResult(result);
-//       console.log(result.user);
-//       window.location.href = "login-account.html"
-
-//       const token = credential.accessToken;
-//       // The signed-in user info.
-//       const user = result.user;
-
-//       // ...
-//     }).catch((error) => {
-//       // Handle Errors here.
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       // The email of the user's account used.
-//       const email = error.customData.email;
-//       // The AuthCredential type that was used.
-//       const credential = GoogleAuthProvider.credentialFromError(error);
-//       // ...
-//     });
-// })
-
-// // ============ Sign up and sign in with Facebook ============
-// document.getElementById('signUpFacebook').addEventListener('click', () => {
-//   signInWithPopup(auth, providerTwo)
-//     .then((result) => {
-//       // The signed-in user info.
-//       const user = result.user;
-
-//       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-//       const credential = FacebookAuthProvider.credentialFromResult(result);
-//       const accessToken = credential.accessToken;
-
-//       // ...
-//     })
-//     .catch((error) => {
-//       // Handle Errors here.
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       // The email of the user's account used.
-//       const email = error.customData.email;
-//       // The AuthCredential type that was used.
-//       const credential = FacebookAuthProvider.credentialFromError(error);
-
-//       // ...
-//     });
-// })
-
-
-
-
-
-
-
-
-
 

@@ -12,10 +12,12 @@
     <script type="module" src="../js/profile-icon.js" defer></script>
     <!-- <script src="../js/tattoo_geolocator.js" defer></script> -->
 </head>
+
 <body>
     <header>
         <div class="header-mobile">
-            <button id="openMenu" class="mobile-menu"><img src="../icons/menu-hamburger-icon.png" alt="menu-icon"></button>
+            <button id="openMenu" class="mobile-menu"><img src="../icons/menu-hamburger-icon.png"
+                    alt="menu-icon"></button>
             <a href="../index.html"><img src="../images/logo-mobile.png" alt="logo-mobile"></a>
             <button id="buttonDropdownMenuMobile"><img src="../icons/user-icon.png" alt="user-icon"></button>
         </div>
@@ -49,7 +51,8 @@
                 </nav>
             </div>
             <div class="header-login-button-container">
-                <button id="dropdownMenuButton"><a class="header-login" id="loginButtonAnchorTag" href="../pages/login-client.html">Login</a></button>
+                <button id="dropdownMenuButton"><a class="header-login" id="loginButtonAnchorTag"
+                        href="../pages/login-client.html">Login</a></button>
             </div>
         </div>
     </header>
@@ -142,7 +145,7 @@
     <div class="sign-up-artist-main-container">
 
         <h2>Hey Artist!</h2>
-       
+
         <div class="sign-up-artist-form-container">
 
             <div class="sign-up-artist-email-container">
@@ -150,7 +153,7 @@
             </div>
 
             <div class="sign-up-artist-full-name-container">
-                 <input type="text" name="user_full_name" id="artist_full_name" placeholder="Full Name">
+                <input type="text" name="user_full_name" id="artist_full_name" placeholder="Full Name">
             </div>
 
             <div class="sign-up-artist-postal-code-container">
@@ -171,8 +174,8 @@
             </div>
 
             <div class="sign-up-artist-phone-number-container">
-                <input type="tel" id="artist_phone_number" name="artist_phone_number" pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}"
-                            placeholder="Phone Number">
+                <input type="tel" id="artist_phone_number" name="artist_phone_number"
+                    pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}" placeholder="Phone Number">
             </div>
 
             <div class="sign-up-artist-bio-container">
@@ -181,25 +184,27 @@
             </div>
 
             <div class="sign-up-artist-website-url-container">
-                <input type="url" name="website_url" id="website_url"
-                    placeholder="Paste your website link here">
+                <input type="url" name="website_url" id="website_url" placeholder="Paste your website link here">
             </div>
 
             <div class="sign-up-artist-instagram-url-container">
-                <input type="url" name="instagram_url" id="instagram_url"
-                    placeholder="Paste your instagram link here">
+                <input type="url" name="instagram_url" id="instagram_url" placeholder="Paste your instagram link here">
             </div>
 
-            <div class="sign-up-artist-upload-images-container">
-                <p>Upload your masterpieces</p>
-
-                <button class="sign-up-artist-upload-image-button"><img src="../icons/plus-sign-icon.png" alt="Plus Sign Icon"></button>
-
-                <button><img src="../icons/camera-icon.png" alt="Camera Icon"></button>
-            </div>
-
-            <div>
-                <!-- gallery -->
+            <div class="sign-up-camera-wrapper">
+                <div class="sign-up-artist-upload-images-container">
+                    <p>Take a picture for your profile</p>
+                </div>
+                <button type="button" id="startCamBtn"><img src="../icons/camera-icon.png" alt="">
+                </button>
+                <div class="camera-wrapper">
+                    <video id="videoElement" width="320" height="250" autoplay style="display: none;"></video>
+                    <canvas id="canvasElement" width="320" height="250" style="display: none;"></canvas>
+                </div>
+                <div class="btns-wrapper">
+                    <button type="button" id="takePhotoBtn">Take photo</button>
+                    <button type="button" id="stopCamBtn">Close camera</button>
+                </div>
             </div>
 
         </div>
@@ -216,7 +221,7 @@
             <p>Are you a client look for tattoos? <a href="signup-user.html">Sign up here!</a></p>
         </div>
 
-    </div>    
+    </div>
 
     <footer>
         <div class="footer-main-container">
@@ -232,19 +237,22 @@
                     <p><a href="../pages/help-centre.html">FAQ</a></p>
                 </div>
             </div>
-            <div class="footer-legal-container" >
+            <div class="footer-legal-container">
                 <div class="footer-legal-content-container">
                     <h3>Legal</h3>
                     <p><a href="terms-conditions.html">Terms & Conditions</a></p>
                 </div>
-            </div>   
+            </div>
             <div class="footer-nav-container">
                 <div class="footer-nav-content">
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png" alt="facebook icon"></span></a></li>
-                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png" alt="twitter icon"></a></li>
-                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png" alt="instagram footer-info-container"></a></li>
+                            <li><a href="https://facebook.com"><img src="../icons/facebook-icon.png"
+                                        alt="facebook icon"></span></a></li>
+                            <li><a href="https://twitter.com"><img src="../icons/twitter-icon.png"
+                                        alt="twitter icon"></a></li>
+                            <li><a href="https://instagram.com"><img src="../icons/instagram-icon.png"
+                                        alt="instagram footer-info-container"></a></li>
                         </ul>
                 </div>
                 </nav>

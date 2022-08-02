@@ -120,7 +120,7 @@ async function addImageToGallery() {
 
 /* ////////////////////////// EVENTS    ////////////////////////// */
 
-if(GALLERY_ID_VALUE !== ""){
+if(GALLERY_ID_VALUE !== null ){
     const artistInfo = await getArtistInformation(ARTIST_COLLECTION, GALLERY_ID_VALUE);
 
     populateArtistProfile(PROFILE_IMAGE_ELEMENT, artistInfo)

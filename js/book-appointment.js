@@ -149,7 +149,7 @@ function handleBlob(blob) {
 }
 
 // show and hide camera function
-let taker = true
+
 function showCamera(taker) {
   if (taker == true) {
     document.getElementById('takePhoto').style.display = "block";
