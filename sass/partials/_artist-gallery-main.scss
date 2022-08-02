@@ -57,7 +57,7 @@
     .manage-appointment-button{
         margin-top: 1rem;
         margin-bottom:  1rem;
-        border: 2px solid $primary-red-shade;  
+        border: 2px solid $primary-red;  
         border-radius: 25px;
         padding: .675rem;
         width: 200px;
@@ -65,8 +65,8 @@
         font-family: $font-poppins;
         font-size: small;
         font-weight: 700;
-        background-color: $neutral-white;
-        color: $primary-red-shade;
+        background-color: $primary-red;
+        color: $neutral-white;
 
     }
 

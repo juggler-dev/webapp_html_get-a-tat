@@ -145,14 +145,14 @@ else {
 if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
 
     const artistNameGallery = document.getElementById("btnAppointment");
-    artistNameGallery.innerHTML = `Manage Appointment`;
+    artistNameGallery.innerHTML = `Manage Bookings`;
 
     document.getElementById("btnAppointment").addEventListener('click', () => {
         window.location.href = "../pages/appointment-management-artist.html";
     });
 } else {
     const artistNameGallery = document.getElementById("btnAppointment");
-    artistNameGallery.innerHTML = `Book Appointment`;
+    artistNameGallery.innerHTML = `Book An Appointment`;
 
     document.getElementById("btnAppointment").addEventListener('click', () => {
         window.location.href = "../pages/book-appointment.html";

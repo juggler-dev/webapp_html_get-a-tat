@@ -252,18 +252,31 @@
                 font-weight: 500;
                 font-size: small;
                 margin-bottom: 1rem;;
+                align-self: center;
+                
+            }
+
+            .modal-artist-profile{
+                border-radius: 50%;
+                height: 80px;
+                width: 80px;
+                align-self: center;
+                object-fit: cover;
+                border: 1.5px solid $primary-red-shade;
                 
             }
 
             .modal-card-artist-name{
                 font-family: $font-poppins;
                 font-weight: 600;
+                align-self: center;
             }
 
             .modal-card-artist-instagram{
                 font-family: $font-poppins;
                 font-size: 12px;
                 margin-bottom: 1rem;
+                align-self: center;
             }
 
             button{
@@ -275,6 +288,12 @@
                 font-weight: 600;
                 padding: .475rem    ;
                 border: 1px solid $primary-red;
+                align-self: center;
+
+                &:hover{
+                    background-color: $neutral-white;
+                    color: $primary-red;
+                  }
 
                 @media screen and (min-width: 600px){
                     width: 80%;
@@ -308,7 +327,8 @@
 
                     object-fit: cover;
                     border-top-right-radius: 1rem; 
-                    border-bottom-right-radius: 1rem;                   border-top-right-radius: 1rem;
+                    border-bottom-right-radius: 1rem;                   
+                    border-top-right-radius: 1rem;
                 }
             }
         }

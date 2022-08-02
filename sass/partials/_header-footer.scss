@@ -88,8 +88,13 @@
                 border: 1px solid $warning;
                 border-radius: 25px;
                 padding: .5rem 1.875rem;
-                // font-size: 
+                font-weight: 400;
                 font-family: $font-poppins;
+
+                &:hover{
+                    border: 2.5px solid $warning;
+                    font-weight: 600;
+                }
             }
         }
 
