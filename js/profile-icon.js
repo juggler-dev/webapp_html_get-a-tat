@@ -39,10 +39,30 @@ btnMenu.addEventListener('click', function(){
 const bookingLink3 = document.getElementById('bookingLink');
 bookingLink3.addEventListener('click', function(){
 if (readSessionUserData(SESSION_USER_KEY_VALUE) == null) {
+  alert('please log in to access this function')
   window.location.href  = "../pages/login-client.html";
-  
+
 }
 });
+
+const bookingLink4 = document.getElementById('bookingLink2');
+bookingLink4.addEventListener('click', function(){
+if (readSessionUserData(SESSION_USER_KEY_VALUE) == null) {
+  alert('please log in to access this function')
+
+  window.location.href  = "../pages/login-client.html";
+}
+});
+
+
+// if no user move to login when clicking user icon
+const userIconLogin = document.getElementById('buttonDropdownMenuMobile');
+userIconLogin.addEventListener('click', function(){
+  if (readSessionUserData(SESSION_USER_KEY_VALUE) == null) {
+  
+    window.location.href  = "../pages/login-client.html";
+  }
+  });
 
 
 
