@@ -11,6 +11,11 @@ import { readSessionUserData } from "./session-storage.js";
 
 const SESSION_USER_KEY_VALUE = "sessionUser";
 
+const ARTIST_COLLECTION = "artists";
+
+const GALLERY_ID_KEY = "galleryId";
+const GALLERY_ID_VALUE = sessionStorage.getItem(GALLERY_ID_KEY);
+
 ////////////////// CLASSES //////////////////
 
 class Appointment {
@@ -35,6 +40,13 @@ function createNewAppointment(artist, placement, size, allergies, description, c
   return new Appointment(artist, placement, size, allergies, description, color, date, time, uid);
 }
 
+async function getArtistToBook(artistId){
+  const artistRef = doc(db, ARTIST_COLLECTION, artistId);
+  const artistDoc = await getDoc(artistRef);
+
+  return artistDoc;
+}
+
 ////////////////// EVENTS //////////////////
 
 // Disable past and current date ??????????????????
@@ -45,8 +57,16 @@ document.getElementsByName("timePicker")[0].setAttribute('min', today);
 const artists = await getDocs(ARTISTS_COLLECTION_REFERENCE);
 artists.forEach((artist) => {
 
-  artistsListOutput.innerHTML += `<div><select><option>${artist.data().full_name}</option></select></div>`
+  artistsListOutput.innerHTML += `<div><select><option>${artist.data().full_name}</option></select></div>`;
+
 })
+
+if(GALLERY_ID_VALUE !== null ){
+  const artistToBook = await getArtistToBook(GALLERY_ID_VALUE);
+  artistsListOutput.value = artistToBook.data().full_name;
+}
+
+
 
 createBtn.addEventListener('click', async (e) => {
 
@@ -95,7 +115,7 @@ createBtn.addEventListener('click', async (e) => {
       window.location.href = "../pages/appointment-management-client.html";
     });
 
-  
+
 
 });
 

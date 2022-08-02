@@ -8,7 +8,7 @@ import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE, REQUEST_APP
 /* ////////////////////////// VARIABLES ////////////////////////// */
 
 const SESSION_USER_KEY_VALUE = "sessionUser";
-const GALLERY_ID_KEY_VALUE = "galleryId";
+const GALLERY_ID_KEY = "galleryId";
 
 const ARTIST_COLLECTION = "artists";
 const USER_PROFILE_COLLECTION = "user-profile";
@@ -23,7 +23,7 @@ const ARTIST_NAME_HTML_ELEMENT = document.querySelector(".artist-gallery-main-na
 const ARTIST_BIO_HTML_ELEMENT = document.querySelector(".artist-gallery-main-artist-bio");
 const ARTIST_GALLERY_HTML_ELEMENT = document.querySelector(".gallery-list");
 
-const GALLERY_ID_VALUE = sessionStorage.getItem(GALLERY_ID_KEY_VALUE);
+const GALLERY_ID_VALUE = sessionStorage.getItem(GALLERY_ID_KEY);
 
 /* ////////////////////////// CLASSES   ////////////////////////// */
 
@@ -154,10 +154,12 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
     const artistNameGallery = document.getElementById("btnAppointment");
     artistNameGallery.innerHTML = `Book Appointment`;
 
+    document.getElementById("btnAppointment").addEventListener('click', () => {
+        window.location.href = "../pages/book-appointment.html";
+    });
+
     document.querySelector('.addButtons').style.display = 'none';
 }
-
-
 
 
 // Upload an image. Currently one by one
@@ -167,24 +169,5 @@ document.getElementById('addImageToGallery').addEventListener('click', async () 
 
 
 
-
-
-
-
-
-
-//Get name artist
-
-// //Get bio from artist
-// const artistBioRef = doc(db, "artists", `${readSessionUserData(SESSION_USER_KEY_VALUE).uid}`);
-// const artistBioSnap = await getDoc(artistBioRef);
-
-// if (artistBioSnap.exists()) {
-//     console.log("Document data:", artistBioSnap.data().bio);
-//     printBio.innerHTML = artistBioSnap.data().bio
-// } else {
-//     // doc.data() will be undefined in this case
-//     console.log("No such document!");
-// }
 
 
