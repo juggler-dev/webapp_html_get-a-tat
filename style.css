@@ -2892,7 +2892,7 @@ footer .copyright {
     padding-left: 2rem;
     margin-left: 50%;
     margin-right: 0%;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
 }
 .book-appointment-single-main-container .book-appointment-single-upload-image-container p {
@@ -3008,7 +3008,6 @@ footer .copyright {
   flex-flow: row nowrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: -1.25rem;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 900px) {
@@ -3096,6 +3095,17 @@ footer .copyright {
   .book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .confirm-button {
     width: 21%;
   }
+}
+.book-appointment-single-main-container #bookingUIMessage {
+  margin-bottom: 2rem;
+}
+.book-appointment-single-main-container #bookingUIMessage p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: end;
+  margin-right: 4%;
+  margin-bottom: 2rem;
 }
 
 /* APPOINTMENTS MANAGEMENT CLIENT ============================================ */

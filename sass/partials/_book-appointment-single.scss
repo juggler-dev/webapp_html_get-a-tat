@@ -372,7 +372,7 @@
             padding-left: 2rem;
             margin-left: 50%;
             margin-right: 0%;
-            margin-bottom: 4rem;   
+            margin-bottom: 1rem;   
 
         }
 
@@ -520,7 +520,7 @@
         flex-flow: row nowrap;
         justify-content: center;
         gap: 1rem;
-        margin-top: -1.25rem;
+        // margin-top: -1.25rem;
         margin-bottom: 2rem;
 
         @media screen and(min-width: 900px){
@@ -613,6 +613,19 @@
             @media screen and (min-width: 810px){
                 width: 21%;
             }
+        }
+    }
+
+    #bookingUIMessage{
+        margin-bottom: 2rem;
+
+        p{
+            font-family: $font-poppins;
+            font-weight: 500;
+            font-size: 13px;
+            text-align: end;
+            margin-right: 4%;
+            margin-bottom: 2rem;
         }
     }
     
