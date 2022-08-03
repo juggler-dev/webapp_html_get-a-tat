@@ -783,8 +783,8 @@ select {
 }
 @media screen and (min-width: 900px) {
   .header-desktop {
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     justify-content: space-between;
     border-bottom: 1px solid black;
   }
@@ -3948,7 +3948,7 @@ header {
 .artist-dropdown-menu .artist-dropdown-menu-profile-container {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: center;
   padding: 1rem 0;
   margin: 0 5%;
   border-bottom: 1px solid #767676;
@@ -4128,9 +4128,9 @@ header {
 .client-dropdown-menu .client-dropdown-menu-profile-container {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: center;
   padding: 1rem 0;
-  margin: 0 5%;
+  margin: 0 11%;
   border-bottom: 1px solid #767676;
 }
 .client-dropdown-menu .client-dropdown-menu-profile-container img {
@@ -4143,10 +4143,11 @@ header {
   align-self: center;
   flex-basis: 50%;
   justify-self: center;
+  margin-right: 13%;
 }
 .client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container .client-name {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
 }
 .client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container p {
@@ -4156,6 +4157,9 @@ header {
 .client-dropdown-menu .client-dropdown-menu-profile-container .client-name-profile-container p a {
   text-decoration: none;
   color: #767676;
+}
+.client-dropdown-menu .client-dropdown-menu-profile-container .client-dropdown-menu-logo-container {
+  margin-right: -15%;
 }
 .client-dropdown-menu .client-dropdown-menu-info-container {
   display: flex;

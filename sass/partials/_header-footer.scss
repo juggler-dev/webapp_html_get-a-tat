@@ -11,8 +11,10 @@
     //    padding-top: .5 rem;
     //    padding-bottom: .5rem;
     //    border-bottom: 1px solid black;
-    display: flex;
-    flex-flow: row nowrap;
+    // display: flex;
+    // flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     justify-content: space-between;
     border-bottom: 1px solid black;
 
