@@ -440,6 +440,7 @@ header{
         position: absolute;
         left: 0;
         right: 0;
+        width: 250px;
     }
 
     .menu-open .header-navigation-mobile {
@@ -452,6 +453,22 @@ header{
         ul {
             list-style-type: none;
             padding-left: 0;
+        }
+
+        li{
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+
+            a{
+                flex-basis: 55%;
+                font-family: $font-poppins;
+            }
+
+            img{
+                height: 30px;
+                max-width: 100%;
+            }
         }
 
         li:nth-child(1) {

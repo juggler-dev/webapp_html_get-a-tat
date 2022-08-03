@@ -32,9 +32,23 @@
         margin: 0 auto;
 
         &:hover{
-            background-color: $neutral-white;
+            background-color: $warning;
+            border: 1px solid $warning;
+
+            a{
+                color: $neutral-white;
+            }
         
-          }
+        }
+
+        &:active{
+            background-color: $neutral-white;
+            border: 1px solid $primary-red;
+
+            a{
+                color: $primary-red;
+            }
+        }
 
         @media screen and(min-width: 900px){
             width: 15%;
@@ -44,9 +58,7 @@
             text-decoration: none;
             color: $neutral-white;
 
-            &:hover{
-                color: $primary-red;
-            }
+
         }
     }
 }

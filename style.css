@@ -661,6 +661,7 @@ select {
   }
 }
 .articles-section .articles-grid-container .article-container p {
+  height: 100px;
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-size: 16px;
@@ -765,22 +766,14 @@ select {
     background-color: #FFF;
     color: #FF0000;
   }
+  .advertisement .ad-content button:active a {
+    color: #FF0000;
+  }
   .advertisement .ad-content button a {
-    border: 1px solid #FF0000;
-    background-color: #FF0000;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #FFF;
-  }
-  .advertisement .ad-content button a:hover {
-    border: 2px solid #FF9E81;
-    background-color: #FF9E81;
-  }
-  .advertisement .ad-content button a:active {
-    border: 2px solid #FF0000;
-    background-color: #FFF;
-    color: #FF0000;
   }
 }
 
@@ -2399,7 +2392,18 @@ footer .copyright {
   margin: 0 auto;
 }
 .book-appointment-main-container button:hover {
+  background-color: #FF9E81;
+  border: 1px solid #FF9E81;
+}
+.book-appointment-main-container button:hover a {
+  color: #FFF;
+}
+.book-appointment-main-container button:active {
   background-color: #FFF;
+  border: 1px solid #FF0000;
+}
+.book-appointment-main-container button:active a {
+  color: #FF0000;
 }
 @media screen and (min-width: 900px) {
   .book-appointment-main-container button {
@@ -2409,9 +2413,6 @@ footer .copyright {
 .book-appointment-main-container button a {
   text-decoration: none;
   color: #FFF;
-}
-.book-appointment-main-container button a:hover {
-  color: #FF0000;
 }
 
 .book-appointment-main-steps {
@@ -4282,6 +4283,7 @@ header {
     position: absolute;
     left: 0;
     right: 0;
+    width: 250px;
   }
   .menu-open .header-navigation-mobile {
     transform: translateX(0);
@@ -4291,6 +4293,19 @@ header {
   .nav-mobile ul {
     list-style-type: none;
     padding-left: 0;
+  }
+  .nav-mobile li {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .nav-mobile li a {
+    flex-basis: 55%;
+    font-family: "Poppins", sans-serif;
+  }
+  .nav-mobile li img {
+    height: 30px;
+    max-width: 100%;
   }
   .nav-mobile li:nth-child(1) {
     padding: 0.75rem;
