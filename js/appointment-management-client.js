@@ -1,7 +1,7 @@
 ////////////////// IMPORTS //////////////////
 import { db, storage } from "./firebase-init.js";
 import { REQUEST_APPOINTMENTS_COLLECTION_REFERENCE } from "./firestore-references.js";
-import { addDoc, doc, setDoc, updateDoc, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { addDoc, doc, setDoc, updateDoc, getDocs, collection, query, where, deleteDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 import { readSessionUserData } from "./session-storage.js";
@@ -200,14 +200,36 @@ document.getElementById("modalContentBtnEdit").addEventListener('click', async (
 
 })
 
-//Cancel Button
-document.getElementById("modalContentBtnCancel").addEventListener('click', (e) => {
-  modal.style.visibility = "hidden";
-  document.querySelectorAll(".modal-input").forEach((input) => {
-    input.disabled = true;
-    input.classList.remove("modal-input-enabled")
-  })
-})
+// //Cancel Button
+// document.getElementById("modalContentBtnCancel").addEventListener('click', (e) => {
+//   modal.style.visibility = "hidden";
+//   document.querySelectorAll(".modal-input").forEach((input) => {
+//     input.disabled = true;
+//     input.classList.remove("modal-input-enabled")
+//   })
+// })
+
+// Delete/Cancel Appointment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////// deleted because it was causing problems. so far everything is working normally if this event remains comented 
 // ////Move to Create Appointments page
