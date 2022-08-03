@@ -164,7 +164,7 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
 
 // Upload an image. Currently one by one
 document.getElementById('addImageToGallery').addEventListener('click', async () => {
-    addImageToGallery
+    addImageToGallery()
 })
 
 
