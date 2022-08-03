@@ -2538,6 +2538,12 @@ footer .copyright {
   margin-top: 2rem;
 }
 
+#uiBookingP {
+  color: #FF9E81;
+  font-weight: bold;
+  grid-column: span 2;
+}
+
 .book-appointment-single-main-container {
   overflow: scroll;
 }

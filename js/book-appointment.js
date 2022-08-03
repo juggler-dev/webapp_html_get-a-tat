@@ -152,6 +152,8 @@ takePhoto.addEventListener('click', function () {
 
   uploadBytes(appointmentPhoto, imageBlob).then((snapshot) => {
     console.log('uploaded a blob');
+    const uiMessage = document.getElementById('uiBookingP');
+    uiMessage.innerHTML = `Photo added. Click on "Book Now" when you're ready to go.`
   })
 });
 
@@ -190,3 +192,9 @@ function showCamera(taker) {
     console.log('close and hide camera')
   }
 }
+
+// ui
+document.getElementById('choosePicture').addEventListener('click', function(){
+  const uiMessage = document.getElementById('uiBookingP');
+  uiMessage.innerHTML = `After choose your picture, click on "Book Now" to book your appointment.`
+});
