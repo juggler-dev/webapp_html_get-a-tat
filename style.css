@@ -3963,10 +3963,11 @@ header {
   align-self: center;
   flex-basis: 50%;
   justify-self: center;
+  margin-right: 10%;
 }
 .artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container .artist-name {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
 }
 .artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container p {
@@ -3976,6 +3977,9 @@ header {
 .artist-dropdown-menu .artist-dropdown-menu-profile-container .user-name-gallery-container p a {
   text-decoration: none;
   color: #767676;
+}
+.artist-dropdown-menu .artist-dropdown-menu-profile-container .dropdown-menu-logo-container {
+  margin-right: -15%;
 }
 .artist-dropdown-menu .artist-dropdown-menu-artist-info-container {
   display: flex;

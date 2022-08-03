@@ -36,10 +36,12 @@ header{
             align-self: center;
             flex-basis: 50%;
             justify-self: center;
+            margin-right: 10%;
+
 
             .artist-name{
                 font-family: $font-poppins;
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 800;
             }
 
@@ -52,6 +54,10 @@ header{
                     color: $neutral-dark-grey;
                 }
             }
+        }
+
+        .dropdown-menu-logo-container{
+            margin-right: -15%;
         }
     }
 
