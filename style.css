@@ -4343,5 +4343,29 @@ header {
   }
 }
 /* TATTOO LOCATOR ============================================ */
+.coming-soon-main-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+.coming-soon-main-container .coming-soon-child-container {
+  width: 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+  justify-self: center;
+}
+.coming-soon-main-container .coming-soon-child-container img {
+  max-width: 230px;
+  max-height: 230px;
+  object-fit: cover;
+  align-self: center;
+}
+.coming-soon-main-container .coming-soon-child-container h1 {
+  font-family: "Righteous", cursive;
+  font-size: 38px;
+  text-align: center;
+  align-self: center;
+}
 
 /*# sourceMappingURL=style.css.map */

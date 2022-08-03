@@ -1,0 +1,32 @@
+.coming-soon-main-container{
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+
+    .coming-soon-child-container{
+
+        width: 60%;
+        display: flex;
+        flex-flow: column nowrap;
+
+        align-self: center;
+        justify-self: center;
+
+        img{
+            max-width: 230px;
+            max-height: 230px;
+            object-fit: cover;
+            align-self: center;
+      
+        }
+
+        h1{
+            font-family: $font-righteous;
+            font-size: 38px;
+            text-align: center;
+            align-self:center;
+  
+        }
+    }
+}
