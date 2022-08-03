@@ -1,11 +1,14 @@
 
-
-
+import { auth, storage, db } from "./firebase-init.js";
+import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE, REQUEST_APPOINTMENTS_COLLECTION_REFERENCE } from "./firestore-references.js";
+import { collection, doc, getDoc, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { storeSessionUserData, readSessionUserData } from "./session-storage.js";
 
 const SESSION_USER_KEY_VALUE = "sessionUser";
 const USER_TYPE_CLIENT = "client";
 const USER_TYPE_ARTIST = "artist";
+const ARTIST_COLLECTION = "artists";
+
 
 
 
@@ -34,6 +37,23 @@ const btnMenu = document.getElementById('openMenu');
 btnMenu.addEventListener('click', function(){
   document.body.classList.toggle('menu-open');
 });
+
+// get features artists
+
+//Get info from artist
+async function getArtistInfo(artistId) {
+  // Query
+  const artistInfoRef = doc(db, "artists", "uid");
+  const artistInfo = await getDoc(artistInfoRef);
+
+  const artistProfilePhotoUrl = await getArtistProfileUrl(artistId)
+  console.log(artistProfilePhotoUrl);
+
+  return buildUploadedArtistBioSmall(artistInfo, artistProfilePhotoUrl)
+}
+
+
+//////////////////////////////
 
 // if no user move to login when clicking "booking"
 const bookingLink3 = document.getElementById('bookingLink');

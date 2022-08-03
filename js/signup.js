@@ -123,6 +123,9 @@ function setEventButtonForStartCamera() {
 function setEventButtonForTakePhoto() {
   TAKE_PHOTO_BUTTON.addEventListener('click', function () {
     CANVAS_HTML_ELEMENT.getContext('2d').drawImage(VIDEO_HTML_ELEMENT, 0, 0, CANVAS_HTML_ELEMENT.width, CANVAS_HTML_ELEMENT.height);
+    const photoMessage = document.getElementById("photoMessage");
+    photoMessage.innerHTML = `Photo added. Click on "Sign Up" when you're ready to go`
+
   });
 }
 
@@ -206,6 +209,9 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
       .catch((err) => {
         console.log(err.code)
         console.log(err.message)
+        errorMessage.innerHTML = 'Please complete all fields'
+
+
       })
 
   }
@@ -247,6 +253,8 @@ document.getElementById('signUpBtn').addEventListener('click', (e) => {
       .catch((err) => {
         console.log(err.code)
         console.log(err.message)
+        errorMessage.innerHTML = 'Please complete all fields'
+
       })
 
   }

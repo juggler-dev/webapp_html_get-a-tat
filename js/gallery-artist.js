@@ -161,6 +161,10 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
     document.querySelector('.addButtons').style.display = 'none';
 }
 
+document.getElementById('addImageArtist').addEventListener('click', function(){
+    const addImageMessage = document.getElementById('addImageMessage');
+addImageMessage.innerHTML = `To add more photos click on "Choose files" and then on "Add to Gallery".`
+})
 
 // Upload an image. Currently one by one
 document.getElementById('addImageToGallery').addEventListener('click', async () => {

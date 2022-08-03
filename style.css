@@ -1267,6 +1267,12 @@ footer .copyright {
   color: #FF9E81;
 }
 
+#errorMessage {
+  color: #FF9E81;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
 /* SIGN UP ================================================= */
 .sign-up-client-main-container h2 {
   font-family: "Righteous", cursive;
@@ -1828,6 +1834,11 @@ footer .copyright {
 }
 .sign-up-client-alt-artist p a {
   color: #FF9E81;
+}
+
+#photoMessage {
+  color: #767676;
+  padding-bottom: 1.5rem;
 }
 
 .sign-up-artist-main-container h2 {
@@ -3913,6 +3924,11 @@ footer .copyright {
   .gallery-list img {
     width: 600px;
   }
+}
+
+#addImageMessage {
+  color: #FF9E81;
+  text-align: center;
 }
 
 /* DROPDOWN MENU ============================================ */

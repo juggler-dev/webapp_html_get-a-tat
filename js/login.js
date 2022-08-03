@@ -106,6 +106,11 @@ document.getElementById('signInBtn').addEventListener('click', () => {
     .catch((err) => {
       console.log(err.code)
       console.log(err.message)
+      
+      const errorMessage = document.getElementById('errorMessage')
+      errorMessage.innerHTML = 'Email/password incorrect. Please try again'
+    
+  
     })
 })
 

@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="manifest" href="manifest.json"> -->
     <script src="./js/swload.js"></script>  
+    <!-- <script type="module" src="./js/tattoo-explorer.js" defer></script> -->
+
+    <!-- <script type="module" src="./js/gallery-artist.js" defer></script> -->
     <script type="module" src="./js/profile-icon-index.js" defer></script>
     <title>Home Page</title>
 </head>
 <body>
-    <header>
+    <header id="back2Top">
         <div class="header-mobile">
             <button id="openMenu" class="mobile-menu"><img src="icons/menu-hamburger-icon.png" alt="menu-icon"></button>
             <a href="index.html"><img src="images/logo-mobile.png" alt="logo-mobile"></a>
@@ -143,7 +146,7 @@
             <div class="home-page-content-container">
                 <div class="hero-content">
                     <h2>Get a Tat</h2>
-                    <p>Let yout skin bold</p>
+                    <p>Let your skin bold</p>
                 </div>
                 <div class="find-studios-artists-container">
                     <label>Find studios and Artists</label>
@@ -153,7 +156,7 @@
                     </select>
                     <div class="discover-container">
                         <p>Discover</p>
-                        <button><a href=""><img src="icons/arrow-down-icon-white.png" alt="arrow down"></a></button>
+                        <button><a href="#tattooExplorerSection"><img src="icons/arrow-down-icon-white.png" alt="arrow down"></a></button>
                     </div>
                 </div>
             </div>
@@ -173,48 +176,54 @@
             </div>
         </div>
         <div class="feature-artists-container">
-            <!-- Feature Artists Gallery-->
-            <!-- Mock Up Content -->
+            <!-- <div class="artist-container" id="featureArtists">
+                <a id="urlFeatureArtist" href=""><img id="photoFeatureArtist" src="" alt=""></a>
+                <h3 id="nameFeatureArtist"></h3>
+                <p id="igFeatureArtist"></p>
+            </div> -->
             <div class="artist-container">
-                <!-- <img src="../integrated_project_team4_summer_2022/getatat-images/artists/pexels-gabriel-lara-3657563.jpeg" alt=""> -->
-                <img src="getatat-images/artists/pexels-gabriel-lara-3657563.jpeg" alt="">
 
-                <!-- <div class="artist-container-image artist-container-image-1"></div> -->
+                <a href="pages/gallery-artist-main.html">
+                    <img src="getatat-images/artists/allan-urbain-profile.jpg" alt="">
+                </a>
                 <h3>Allan Urbain</h3>
                 <p>@allanurbain</p>
             </div>
             <div class="artist-container">
-                <!-- <a href="../integrated_project_team4_summer_2022/pages/gallery-artist-main-mock-up.html"> -->
-                <a href="pages/gallery-artist-main-mock-up.html">
-                <!-- <img src="../integrated_project_team4_summer_2022/getatat-images/artists/allef-vinicius-vKIc4k6dm10-unsplash.jpeg" alt=""></a> -->
-                <img src="getatat-images/artists/allef-vinicius-vKIc4k6dm10-unsplash.jpeg" alt=""></a>
-                <h3>Tony Arthur</h3>
-                <p>@tonyarthurst</p>
+                <!-- <a href="pages/gallery-artist-main.html"> -->
+                <a href="pages/gallery-artist-main.html">
+                    <img src="getatat-images/artists/chloe-parker-profile.jpg" alt="">
+                </a>
+                <h3>Chloe Parker</h3>
+                <p>@chloeparker</p>
             </div>
             <div class="artist-container">
-                <!-- <img src="../integrated_project_team4_summer_2022/getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg" alt=""> -->
-                <img src="getatat-images/artists/kadyn-pierce-hLdPivE3NwM-unsplash.jpeg" alt="">
-                <h3>Edward Yang</h3>
-                <p>@edwardyang</p>
+                <a href="pages/gallery-artist-main.html">
+                    <img src="getatat-images/artists/mary-maud-profile.jpg" alt="">
+                </a>
+                <h3>Mary Maud</h3>
+                <p>@marymaud</p>
             </div>
             <div class="artist-container-grid-1">
-                <!-- <img src="../integrated_project_team4_summer_2022/getatat-images/artists/akram-huseyn-smtP9zIj6qU-unsplash.jpeg " alt=""> -->
-                <img src="getatat-images/artists/akram-huseyn-smtP9zIj6qU-unsplash.jpeg " alt="">
+                <a href="pages/gallery-artist-main.html">
+                    <img src="getatat-images/artists/johnnie-mckean-profile.jpg" alt="">
+                </a>
                 <h3>Johnny McKean</h3>
-                <p>@johnniestattoo</p>
+                <p>@johnniemckean</p>
             </div>
             <div class="artist-container-grid-2">
-                <!-- <img src="../integrated_project_team4_summer_2022/getatat-images/artists/nina-hill-aWVi7wTfLD0-unsplash.jpeg" alt=""> -->
-                <img src="getatat-images/artists/nina-hill-aWVi7wTfLD0-unsplash.jpeg" alt="">
-                <h3>Ruby Pink</h3>
-                <p>@tatrubyross</p>
+              <a href="pages/gallery-artist-main.html">
+                  <img src="getatat-images/artists/mavis-chen-profile.jpg" alt="">
+                </a>
+                <h3>Mavis Chen</h3>
+                <p>@mavistattostudio</p>
             </div>
         </div>
     </section>
 
     <!-- Tattoo Explorer Section-->
 
-    <section class="tattoo-explorer-section">
+    <section class="tattoo-explorer-section" id="tattooExplorerSection">
         <div class="home-tattoo-explorer-container">
             <div class="img-container-wrapper">
                 <div class="home-tattoo-explorer-img-container"></div>
@@ -233,32 +242,32 @@
     
             <div class="classic-americana-style-container style-container">
                 <div class="opacity">
-                    <a href="#">Classic Americana</a>
+                    <a href="../pages/tattoo-explorer-main.html">Classic Americana</a>
                 </div>
             </div>
             <div class="asian-style-container style-container">
                 <div class="opacity">
-                    <a href="#">Asian</a>
+                    <a href="../pages/tattoo-explorer-main.html">Asian</a>
                 </div>
             </div>
             <div class="blackwork-style-container style-container">
                 <div class="opacity">
-                    <a href="#">Blackwork</a>
+                    <a href="../pages/tattoo-explorer-main.html">Blackwork</a>
                 </div>
             </div>
             <div class="black-gray-style-container style-container">
                 <div class="opacity">
-                    <a href="#">Black and Gray</a>
+                    <a href="../pages/tattoo-explorer-main.html">Black and Gray</a>
                 </div>
             </div>
             <div class="lettering-style-container style-container">
                 <div class="opacity">
-                    <a href="#">Lettering</a>
+                    <a href="../pages/tattoo-explorer-main.html">Lettering</a>
                 </div>
             </div>
             <div class="new-school-style-container style-container">
                 <div class="opacity">
-                    <a href="#">New School</a>
+                    <a href="../pages/tattoo-explorer-main.html">New School</a>
                 </div>
             </div>
         </div>
@@ -273,7 +282,7 @@
                 <img src="getatat-images/feature-articles/matheus-ferrero-Aslyu4LksuU-unsplash.jpeg" alt="">
                 <h3>Basic Tattoo Designers</h3>
                 <p>Tribal Tattooing originated thousands of years ago, and it is still being used by various cultures throughout...</p>
-                <button><a href="">Read more</a></button>
+                <button><a href="../pages/article-main.html">Read more</a></button>
             </div>
               
              <div class="article-container">
@@ -282,7 +291,7 @@
                 <img src="getatat-images/feature-articles/jesse-donoghoe-QoUGX2u7kQQ-unsplash.jpeg" alt="">
                 <h3>Post Care For a New Tattoo</h3>
                 <p>You just got tattooed and want to take all the right precautions to make sure it does not get infected, keeps... </p>
-                <button><a href="">Read more</a></button>
+                <button><a href="../pages/article-main.html">Read more</a></button>
             </div>
                 
             <div class="article-container">
@@ -291,7 +300,7 @@
                 <img src="getatat-images/feature-articles/jordan-whitt-3peR38cnx9U-unsplash.jpeg" alt="">
                 <h3>The Tattoo Artist Profession</h3>
                 <p>As tattoos slowly enter the mainstream and the fashionable, and the image of tattooed people...</p>
-                <button><a href="">Read more</a></button>
+                <button><a href="../pages/article-main.html">Read more</a></button>
             </div>
 
             <!-- <div class="more-articles-container"> -->
@@ -348,7 +357,7 @@
             </div>
             <p class="copyright-container">&copy; 2022 - Get a Tat</p>
         </div>
-        <button><img src="icons/arrow-up-icon.png" alt="arrow-up-icon"></button>
+        <button><a href="#back2Top"><img src="icons/arrow-up-icon.png" alt="arrow-up-icon"></a></button>
         <p class="copyright">&copy; 2022 - Get a Tat</p>
     </footer>
 

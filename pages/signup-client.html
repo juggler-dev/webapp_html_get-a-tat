@@ -158,7 +158,7 @@
                 <input type="text" name="user_full_name" id="fName" placeholder="Full Name">
             </div>
             <div class="sign-up-client-city-container">
-                <input type="text" name="user_city" id="city" placeholder="Address">
+                <input type="text" name="user_city" id="city" placeholder="City of residence">
             </div>
             <div class="sign-up-client-postal-code-container">
                 <input type="text" name="user_postal_code" id="postalCode" placeholder="Postal Code">
@@ -168,6 +168,8 @@
                     placeholder="Phone Number">
             </div>
         </div>
+        <p id="errorMessage"></p>
+
         <div class="sign-up-camera-wrapper">
             <div class="sign-up-artist-upload-images-container">
                 <p>Take a picture for your profile</p>
@@ -182,6 +184,7 @@
                 <button type="button" id="takePhotoBtn" style="display: none ;">Take photo</button>
                 <button type="button" id="stopCamBtn" style="display: none;">Close camera</button>
             </div>
+            <p id="photoMessage"></p>
         </div>
         <div id="signUpBtn" class="sign-up-client-button-container">
             <button>Sign Up</button>
