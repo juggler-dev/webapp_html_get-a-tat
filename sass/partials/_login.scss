@@ -125,6 +125,12 @@
       border: 1px solid $primary-red;
 
       &:hover{
+        border: 2px solid $warning;
+        background-color: $warning;
+      }
+
+      &:active{
+        border: 2px solid $primary-red;
         background-color: $neutral-white;
         color: $primary-red;
       }

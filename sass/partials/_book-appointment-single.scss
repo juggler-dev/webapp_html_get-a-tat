@@ -447,11 +447,8 @@
 
         .camera-wrapper{
             display: flex;
-            flex-flow: row nowrap;
+            flex-flow: column nowrap;
 
-            @media screen and (min-width: 900px){
-                flex-flow: column nowrap;
-            }
         }
 
         #takePhoto{
@@ -460,19 +457,16 @@
             width: 200px;
             margin-top: 1rem;
             border-radius: 25px;
+            width: 49%;
+            height: 40px;
             font-family: $font-poppins;
             border: 2px solid $primary-red;
             color: $neutral-white;
             background-color: $primary-red;
             font-size: small;
             font-weight: 600;
-            margin-left: 19%;
+            margin-left: 0%;
 
-            @media screen and (min-width: 900px){
-                width: 49%;
-                margin-left: 0;
-            }
-            
         }
 
         #stopCam{
@@ -480,7 +474,9 @@
             grid-column: 2 / 3;
             width: 200px;
             margin-top: 1rem;
-            margin-right: 19%;
+            width: 49%;
+            height: 40px;
+            margin-right: 0%;
             justify-self: end;
             border-radius: 25px;
             font-family: $font-poppins;
@@ -490,10 +486,6 @@
             font-size: small;
             font-weight: 600;
 
-            @media screen and (min-width: 900px){
-                width: 49%;
-                margin-right: 0;
-            }
         }
 
 

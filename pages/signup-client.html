@@ -148,20 +148,20 @@
             <div class="sign-up-client-email-container">
                 <input type="text" name="user_email" id="emailUser" placeholder="Email">
             </div>
-            <div class="sign-up-client-full-name-container">
-                <input type="text" name="user_full_name" id="fName" placeholder="Full Name">
-            </div>
-            <div class="sign-up-client-postal-code-container">
-                <input type="text" name="user_postal_code" id="postalCode" placeholder="Postal Code">
-            </div>
             <div class="sign-up-client-password-container">
                 <div class="sign-up-client-password-container-child">
                     <input type="password" name="user_password" id="passwordUser" placeholder="Password">
                     <i class="far fa-eye" id="togglePassword"></i>
                 </div>
             </div>
+            <div class="sign-up-client-full-name-container">
+                <input type="text" name="user_full_name" id="fName" placeholder="Full Name">
+            </div>
             <div class="sign-up-client-city-container">
-                <input type="text" name="user_city" id="city" placeholder="City Of Residence">
+                <input type="text" name="user_city" id="city" placeholder="Address">
+            </div>
+            <div class="sign-up-client-postal-code-container">
+                <input type="text" name="user_postal_code" id="postalCode" placeholder="Postal Code">
             </div>
             <div class="sign-up-client-phone-number-container">
                 <input type="tel" id="phoneNumber" name="phone_number" pattern="[0-9]{3} - [0-9]{3} - [0-9]{4}"
@@ -179,8 +179,8 @@
                 <canvas id="canvasElement" width="320" height="250" style="display: none;"></canvas>
             </div>
             <div class="btns-wrapper">
-                <button type="button" id="takePhotoBtn">Take photo</button>
-                <button type="button" id="stopCamBtn">Close camera</button>
+                <button type="button" id="takePhotoBtn" style="display: none ;">Take photo</button>
+                <button type="button" id="stopCamBtn" style="display: none;">Close camera</button>
             </div>
         </div>
         <div id="signUpBtn" class="sign-up-client-button-container">
@@ -193,14 +193,14 @@
         </p>
     </div>
     <div class="sign-up-client-alternative-login">
-        <div>
+        <div class="facebook-button-wrapper">
 
             <button class="loginBtn loginBtn--facebook">
                 Sign up with Facebook
             </button>
 
         </div>
-        <div>
+        <div class="google-button-wrapper">
             <button type="button" class="login-with-google-btn">
                 Sign up with Google
             </button>

@@ -232,14 +232,14 @@
     }
 
     .modal-card-content {
-        background-color: $neutral-light-orange;
+        background-color: $primary-orange-shade;
         border-radius: 1rem;
         display: grid;
         grid-template-columns: .5fr 1.2fr;
         border-radius: 1rem;
 
         .artist-bio-section{
-            background-color: $neutral-light-orange;
+            background-color: $primary-orange-shade;
             padding: 0.5rem;
             display: flex;
             flex-flow: column nowrap;
@@ -291,9 +291,16 @@
                 align-self: center;
 
                 &:hover{
+                    background-color: $warning;
+                    color: $neutral-white;
+                    border: 1px solid $warning;
+                  }
+
+                &:active{
                     background-color: $neutral-white;
                     color: $primary-red;
-                  }
+                    border: 1px solid $primary-red;
+                }  
 
                 @media screen and (min-width: 600px){
                     width: 80%;

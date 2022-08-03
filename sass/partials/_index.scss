@@ -408,9 +408,15 @@
                 padding: .675rem 2rem;  
                 
                 &:hover{
+                    border: 2px solid $warning;
+                    background-color: $warning;
+                }
+
+                &:active{
+                    border: 2px solid $primary-red;
                     background-color: $neutral-white;
                     color: $primary-red;
-                  }
+                }
             }
         }
     }
@@ -757,16 +763,33 @@
                 background-color: $primary-red;
 
                 &:hover{
+                    border: 2px solid $warning;
+                    background-color: $warning;
+                  }
+            
+                  &:active{
+                    border: 2px solid $primary-red;
                     background-color: $neutral-white;
+                    color: $primary-red;
                   }
 
+
                 a{
+                    border: 1px solid $primary-red;
+                    background-color: $primary-red;
                     text-decoration: none;
                     font-family: $font-poppins;
                     font-weight: 600;
                     color: $neutral-white;
 
                     &:hover{
+                        border: 2px solid $warning;
+                        background-color: $warning;
+                      }
+                
+                      &:active{
+                        border: 2px solid $primary-red;
+                        background-color: $neutral-white;
                         color: $primary-red;
                       }
                 }

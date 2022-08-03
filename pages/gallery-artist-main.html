@@ -9,11 +9,12 @@
     <script type="module" src="../js/profile-icon.js" defer></script>
     <title>Artist Gallery Main</title>
     <style>
-        img {
+        /* img {
             max-width: 100%;
-            height: auto;
+            height: 150px;
             border-radius: 5%;
-        }
+            object-fit: cover;
+        } */
 
         #photoGallery {
             display: grid;
@@ -177,8 +178,8 @@
             
 
         <div class="addButtons">
-            <input type="file" id="addImageArtist">
-            <button id="addImageToGallery">Add</button>
+            <label for="addImageArtist">Choose Files<input type="file" id="addImageArtist"></label>
+            <button id="addImageToGallery">Add to Gallery</button>
         </div>
         <div class="gallery-list" id="photoGallery">
             <!-- <table class="gallery-table" id="galleryTable">
