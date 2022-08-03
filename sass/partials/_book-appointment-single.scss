@@ -467,6 +467,18 @@
             font-weight: 600;
             margin-left: 0%;
 
+            &:hover{
+                border: 2px solid $warning;
+                color: $neutral-white;
+                background-color: $warning;
+            }
+
+            &:active{
+                border: 2px solid $primary-red;
+                color: $primary-red;
+                background-color: $neutral-white;
+            }
+
         }
 
         #stopCam{
@@ -485,6 +497,18 @@
             background-color: $neutral-white;
             font-size: small;
             font-weight: 600;
+
+            &:hover{
+                border: 2px solid $primary-red;
+                background-color: $neutral-white;
+                color: $primary-red;
+            }
+
+            &:active{
+                border: 2px solid $warning;
+                background-color: $warning;
+                color: $neutral-white;
+            }
 
         }
 
@@ -516,6 +540,18 @@
             font-weight: 600;
             background-color: $neutral-white;
 
+            &:hover{
+                border: 2px solid $primary-red;
+                color: $primary-red;
+                background-color: $neutral-white;
+            }
+
+            &:active{
+                border: 2px solid $warning;
+                color: $neutral-white;
+                background-color: $warning;
+            }
+
             @media screen and (min-width: 600px){
                 width: 24%;
             }
@@ -543,6 +579,24 @@
             font-family: $font-poppins;
             font-weight: 600;
             background-color: $primary-red;
+
+            &:hover{
+                border: 2px solid $warning;
+                color: $neutral-white;
+                background-color: $warning;
+            }
+
+            &:active{
+                border: 2px solid $primary-red;
+                color: $primary-red;
+                background-color: $neutral-white;
+            }
+
+            // &:hover{
+            //     border: 2px solid $warning;
+            //     background-color: $warning;
+            //     color: $neutral-white;
+            // }
 
             @media screen and (min-width: 600px){
                 width: 24%;

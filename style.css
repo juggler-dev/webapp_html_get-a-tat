@@ -2966,6 +2966,16 @@ footer .copyright {
   font-weight: 600;
   margin-left: 0%;
 }
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #takePhoto:hover {
+  border: 2px solid #FF9E81;
+  color: #FFF;
+  background-color: #FF9E81;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #takePhoto:active {
+  border: 2px solid #FF0000;
+  color: #FF0000;
+  background-color: #FFF;
+}
 .book-appointment-single-main-container .book-appointment-single-upload-image-container #stopCam {
   grid-row: 3/4;
   grid-column: 2/3;
@@ -2982,6 +2992,16 @@ footer .copyright {
   background-color: #FFF;
   font-size: small;
   font-weight: 600;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #stopCam:hover {
+  border: 2px solid #FF0000;
+  background-color: #FFF;
+  color: #FF0000;
+}
+.book-appointment-single-main-container .book-appointment-single-upload-image-container #stopCam:active {
+  border: 2px solid #FF9E81;
+  background-color: #FF9E81;
+  color: #FFF;
 }
 .book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container {
   display: flex;
@@ -3006,6 +3026,16 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   background-color: #FFF;
+}
+.book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .cancel-button:hover {
+  border: 2px solid #FF0000;
+  color: #FF0000;
+  background-color: #FFF;
+}
+.book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .cancel-button:active {
+  border: 2px solid #FF9E81;
+  color: #FFF;
+  background-color: #FF9E81;
 }
 @media screen and (min-width: 600px) {
   .book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .cancel-button {
@@ -3036,6 +3066,16 @@ footer .copyright {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   background-color: #FF0000;
+}
+.book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .confirm-button:hover {
+  border: 2px solid #FF9E81;
+  color: #FFF;
+  background-color: #FF9E81;
+}
+.book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .confirm-button:active {
+  border: 2px solid #FF0000;
+  color: #FF0000;
+  background-color: #FFF;
 }
 @media screen and (min-width: 600px) {
   .book-appointment-single-main-container .book-appointment-single-cancel-update-buttons-container .confirm-button {
