@@ -13,7 +13,7 @@ const uploadedImageArray = [];
 
 const SESSION_USER_KEY_VALUE = "sessionUser";
 
-const ARTISTS_IMG_UPLOADS_COLLECTION_NAME = 'artist_img_uploads';
+const ARTISTS_IMG_UPLOADS_COLLECTION_NAME = 'artist-img-uploads';
 const ARTIST_IMG_UPLOADS_STORAGE_FOLDER = "/artist-img-uploads";
 
 const USER_PROFILE_COLLECTION = "user-profile";
@@ -69,6 +69,7 @@ async function fillImageArray(array) {
   imagesUploadedFromArtist.forEach((doc) => {
     const uploadedImgObject = buildArtistUploadedImageObject(doc);
     array.push(uploadedImgObject);
+    console.log(uploadedImgObject);
   });
 }
 
@@ -89,6 +90,7 @@ function createImageCards(array) {
       })
 
     GALLERY_CONTAINER.appendChild(artistUploadedImageToShowInGallery);
+    console.log(artistUploadedImageToShowInGallery);
   })
 }
 
@@ -174,6 +176,7 @@ function setEventListenerToArtistGalleryButton(artistId) {
 
 /* ////////////////////////// EVENTS    ////////////////////////// */
 await fillImageArray(uploadedImageArray);
+console.log(uploadedImageArray);
 createImageCards(uploadedImageArray);
 await setEventListenerToGalleryContainerForOpenModal();
 setEventListenerToModalCardCloserForCloseModal();
