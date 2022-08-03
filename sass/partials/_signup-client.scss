@@ -448,6 +448,10 @@
         margin-bottom: 2rem;
         font-family: $font-poppins;
 
+        @media screen and (min-width: 900px){
+            width: 30%;
+        }
+
         span{
             background-color: $neutral-white;
             padding: 0 10px;

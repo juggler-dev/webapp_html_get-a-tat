@@ -1703,6 +1703,11 @@ footer .copyright {
   margin-bottom: 2rem;
   font-family: "Poppins", sans-serif;
 }
+@media screen and (min-width: 900px) {
+  .sign-up-client-hr-container .horizontal-line {
+    width: 30%;
+  }
+}
 .sign-up-client-hr-container .horizontal-line span {
   background-color: #FFF;
   padding: 0 10px;
