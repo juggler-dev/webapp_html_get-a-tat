@@ -11,12 +11,6 @@
         }
 
         @media screen and (min-width: 900px){
-            margin-left: 18%;
-            margin-right: 18%;
-            margin-top: 4rem;
-        }
-
-        @media screen and (min-width: 1100px){
             margin-left: 22%;
         }
 
@@ -25,8 +19,10 @@
         }
 
         @media screen and (min-width: 1450px){
-            margin-left: 30%;
+            margin-left: 32%;
         }
+
+        
 
     }
 
@@ -34,6 +30,7 @@
         display: flex;
         flex-flow: column nowrap;
         gap: 2rem;
+        padding: 0;
 
         @media screen and (min-width: 900px){
             display: grid;
@@ -53,7 +50,7 @@
         }
 
         @media screen and (min-width: 1450px){
-            width: 50vh;
+            width: 45vw;
         }
 
 
@@ -386,8 +383,8 @@
         }
 
         @media screen and (min-width: 1450px){
-            width: 50vh;
-            margin-left: 30%;
+            width: 45vh;
+            margin-left: 32%;
         }
 
 
@@ -546,6 +543,8 @@
     }
 
     .sign-up-client-alt-client{
+       margin-bottom: 8rem;
+
         p{
             text-align: center;
             font-family: $font-poppins;
