@@ -1,6 +1,6 @@
 import { db, storage } from "./firebase-init.js";
 import { CLIENTS_COLLECTION_REFERENCE, ARTISTS_COLLECTION_REFERENCE } from "./firestore-references.js";
-import { collection, doc, getDoc, updateDoc, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
+import { collection, doc, getDoc, updateDoc, addDoc, query, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js";
 import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js";
 
 import { readSessionUserData } from "./session-storage.js";
@@ -178,16 +178,44 @@ document.getElementById("modalContentBtnAccept").addEventListener('click', async
 })
 
 
-//Cancel Button
-document.getElementById("modalContentBtnCancel").addEventListener('click', (e) => {
-  modal.style.visibility = "hidden";
-  document.querySelectorAll(".modal-input").forEach((input) => {
-    input.disabled = true;
-    input.classList.remove("modal-input-enabled")
-  })
-})
+// //Cancel Button
+// document.getElementById("modalContentBtnCancel").addEventListener('click', (e) => {
+//   modal.style.visibility = "hidden";
+//   document.querySelectorAll(".modal-input").forEach((input) => {
+//     input.disabled = true;
+//     input.classList.remove("modal-input-enabled")
+//   })
+// })
 
 // ////Move to Create Appointments page
 // document.getElementById('createAppoinmentBtn').addEventListener('click', () => {
 //   window.location.href = "../pages/book-appointment.html";
 // });
+
+////////////// Delete/Cancel Appointment ///////////////////////
+
+// request appointment query
+const appointmentsQuery = query(collection(db, 'request_appointment'), where('artist', '==', readSessionUserData(SESSION_USER_KEY_VALUE).full_name));
+const appointmentsSnapshot = await getDocs(appointmentsQuery);
+console.log(appointmentsSnapshot)
+
+appointmentsSnapshot.forEach((appoDoc) => {
+  // console.log(appoDoc.data())
+  // console.log(appoDoc.id)
+
+  const appointmentDocId = appoDoc.id
+  console.log(appointmentDocId)
+
+  // delete appointment event 
+  document.getElementById('modalContentBtnCancel').addEventListener('click', function(){
+    
+    deleteDoc(doc(db, "request_appointment", appointmentDocId));
+    // window.location.href = "../pages/appointment-management-client.html";
+
+  })
+
+  
+})
+
+/////////////////////////////////////////
+

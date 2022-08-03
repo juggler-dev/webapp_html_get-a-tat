@@ -209,7 +209,40 @@ document.getElementById("modalContentBtnEdit").addEventListener('click', async (
 //   })
 // })
 
-// Delete/Cancel Appointment
+
+
+////////////// Delete/Cancel Appointment ///////////////////////
+
+// request appointment query
+const appointmentsQuery = query(collection(db, 'request_appointment'), where('uid', '==', readSessionUserData(SESSION_USER_KEY_VALUE).uid));
+const appointmentsSnapshot = await getDocs(appointmentsQuery);
+console.log(appointmentsSnapshot)
+
+appointmentsSnapshot.forEach((appoDoc) => {
+  // console.log(appoDoc.data())
+  // console.log(appoDoc.id)
+
+  const appointmentDocId = appoDoc.id
+  console.log(appointmentDocId)
+
+  // delete appointment event 
+  document.getElementById('modalContentBtnCancel').addEventListener('click', function(){
+
+    deleteDoc(doc(db, "request_appointment", appointmentDocId));
+    // window.location.href = "../pages/appointment-management-client.html";
+
+  })
+
+  
+})
+
+/////////////////////////////////////////
+
+
+
+
+
+
 
 
 
