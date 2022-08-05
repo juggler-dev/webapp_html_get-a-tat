@@ -228,9 +228,11 @@ appointmentsSnapshot.forEach((appoDoc) => {
 
   // delete appointment event 
   document.getElementById('modalContentBtnCancel').addEventListener('click', async (e) => {
+    const getAppoDocId = document.querySelector('.modal-content');
+    console.log(getAppoDocId)
+    console.log(getAppoDocId.id)
 
-
-    await deleteDoc(doc(db, "request_appointment", appointmentDocId), {
+    await deleteDoc(doc(db, "request_appointment", getAppoDocId.id), {
     })
     location.reload()
   })

@@ -109,7 +109,7 @@ function drawAppointmentCard(appointmentObject, container) {
       .then((url) => {
         thumbnailElement = `<img src='${url}' class="thumbnail-image"></img>`;
 
-        artistElement = `<p>Client: ${appointmentObject.artist}</p>`;
+        artistElement = `<p>Client: ${appointmentObject.client}</p>`;
         dateElement = `<p>Date: ${appointmentObject.date}</p>`;
         statusElement = `<p>Status: ${appointmentObject.status}</p>`;
 
@@ -208,8 +208,11 @@ appointmentsSnapshot.forEach((appoDoc) => {
 
   // delete appointment event
   document.getElementById('modalContentBtnCancel').addEventListener('click', async (e) => {
+    const getAppoDocId = document.querySelector('.modal-content');
+    console.log(getAppoDocId)
+    console.log(getAppoDocId.id)
 
-    await deleteDoc(doc(db, "request_appointment", appointmentDocId), {
+    await deleteDoc(doc(db, "request_appointment", getAppoDocId.id), {
     })
     location.reload()
   })
