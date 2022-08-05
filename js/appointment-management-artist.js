@@ -206,15 +206,13 @@ appointmentsSnapshot.forEach((appoDoc) => {
   const appointmentDocId = appoDoc.id
   console.log(appointmentDocId)
 
-  // delete appointment event 
-  document.getElementById('modalContentBtnCancel').addEventListener('click', function(){
-    
-    deleteDoc(doc(db, "request_appointment", appointmentDocId));
-    // window.location.href = "../pages/appointment-management-client.html";
+  // delete appointment event
+  document.getElementById('modalContentBtnCancel').addEventListener('click', async (e) => {
 
+    await deleteDoc(doc(db, "request_appointment", appointmentDocId), {
+    })
+    location.reload()
   })
-
-  
 })
 
 /////////////////////////////////////////

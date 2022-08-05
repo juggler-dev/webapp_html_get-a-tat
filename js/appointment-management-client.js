@@ -218,6 +218,7 @@ const appointmentsQuery = query(collection(db, 'request_appointment'), where('ui
 const appointmentsSnapshot = await getDocs(appointmentsQuery);
 console.log(appointmentsSnapshot)
 
+
 appointmentsSnapshot.forEach((appoDoc) => {
   // console.log(appoDoc.data())
   // console.log(appoDoc.id)
@@ -226,14 +227,13 @@ appointmentsSnapshot.forEach((appoDoc) => {
   console.log(appointmentDocId)
 
   // delete appointment event 
-  document.getElementById('modalContentBtnCancel').addEventListener('click', function(){
+  document.getElementById('modalContentBtnCancel').addEventListener('click', async (e) => {
 
-    deleteDoc(doc(db, "request_appointment", appointmentDocId));
-    // window.location.href = "../pages/appointment-management-client.html";
 
+    await deleteDoc(doc(db, "request_appointment", appointmentDocId), {
+    })
+    location.reload()
   })
-
-  
 })
 
 /////////////////////////////////////////
