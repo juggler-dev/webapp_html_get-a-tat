@@ -1193,7 +1193,12 @@ footer .copyright {
   margin-top: 0.5rem;
   margin-right: 1rem;
   font-family: "Righteous", cursive;
+  font-weight: 300;
   color: grey;
+}
+.main-container-login .login-form-container .login-password-container small a {
+  color: #767676;
+  text-decoration: none;
 }
 @media screen and (min-width: 900px) {
   .main-container-login .login-form-container .login-password-container small {
@@ -2810,6 +2815,8 @@ footer .copyright {
   border: 1.5px solid #767676;
   font-family: "Poppins", sans-serif;
   font-size: small;
+  padding: 0.5rem 1.2rem;
+  color: #372019;
 }
 .book-appointment-single-main-container .book-appointment-single-form-container .book-appointment-single-grid-container .book-appointment-single-short-description-container textarea:hover {
   border: 2.5px solid #00B5B2;
@@ -3275,7 +3282,7 @@ footer .copyright {
   .modal .modal-content .modal-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80px 80px 80px 90px 80px;
+    grid-template-rows: 80px 80px 80px 140px 80px;
     gap: 1rem;
   }
   .modal .modal-content .modal-form select {
@@ -3343,10 +3350,11 @@ footer .copyright {
   font-size: small;
   padding: 0.575rem;
 }
-.modal .modal-content .modal-form .appointment-detail-input-wrapper textarea {
+.modal .modal-content .modal-form .appointment-detail-input-wrapper #modalDescriptionInput {
   border-radius: 25px;
   font-family: "Poppins", sans-serif;
   font-size: small;
+  padding: 0.5rem 1rem;
 }
 .modal .modal-content .modal-form .appointment-detail-input-wrapper p {
   font-family: "Righteous", cursive;
@@ -3434,6 +3442,16 @@ footer .copyright {
   border-radius: 25px;
   border: 2px solid #FF0000;
   padding: 0.475rem;
+}
+.modal .modal-content .modal-form .appointment-detail-button-wrapper .appointment-detail__button-accept:hover {
+  border: 2px solid #FF9E81;
+  color: #FFF;
+  background-color: #FF9E81;
+}
+.modal .modal-content .modal-form .appointment-detail-button-wrapper .appointment-detail__button-accept:active {
+  border: 2px solid #FF0000;
+  color: #FF0000;
+  background-color: #FFF;
 }
 
 .appointment-detail-input-wrapper {
@@ -3549,7 +3567,7 @@ footer .copyright {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 0 0.675rem;
+  padding: 0;
   border: 1px solid #372019;
   border-radius: 25px;
 }
@@ -3565,8 +3583,13 @@ footer .copyright {
 }
 .tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-search-container input {
   border: none;
-  flex-basis: 80%;
+  flex-basis: 95%;
+  justify-self: end;
   font-family: "Poppins", sans-serif;
+  border-radius: 25px;
+}
+.tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-search-container input:hover {
+  border: 2px solid #00B5B2;
 }
 .tattoo-explorer-main-container .tattoo-explorer-search-details-container .tattoo-explorer-choose-city-container select {
   border: 1px solid #372019;

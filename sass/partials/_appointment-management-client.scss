@@ -265,7 +265,7 @@
       @media screen and (min-width: 900px){
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 80px 80px 80px 90px 80px;
+        grid-template-rows: 80px 80px 80px 140px 80px;
         gap: 1rem;
 
         select{
@@ -349,10 +349,12 @@
           padding: .575rem;
         }
 
-        textarea{
+        #modalDescriptionInput{
           border-radius: 25px;
           font-family: $font-poppins;
           font-size: small;
+          padding: .5rem 1rem;
+
         }
 
         p{
@@ -452,6 +454,18 @@
           border-radius: 25px;
           border: 2px solid $primary-red;
           padding: .475rem;;
+
+          &:hover{
+            border: 2px solid $warning;
+            color: $neutral-white;
+            background-color: $warning;
+          }
+
+          &:active{
+            border: 2px solid $primary-red;
+            color: $primary-red;
+            background-color: $neutral-white;
+          }
         }
 
 

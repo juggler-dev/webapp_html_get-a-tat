@@ -104,7 +104,13 @@
         margin-top: .5rem;
         margin-right: 1rem;
         font-family: $font-righteous;
+        font-weight: 300;
         color: grey;
+
+        a{
+          color: $neutral-dark-grey;
+          text-decoration: none;
+        }
 
         @media screen and(min-width: 900px){
           display: none;

@@ -25,9 +25,10 @@
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
-            padding: 0 .675rem;
+            padding: 0;
             border: 1px solid $primary-red-shade;
             border-radius: 25px;
+      
 
             @media screen and (min-width: 900px){
                 width: 60%;
@@ -41,8 +42,14 @@
 
             input {
                 border: none;
-                flex-basis: 80%;
+                flex-basis: 95%;
+                justify-self: end;
                 font-family: $font-poppins;
+                border-radius: 25px;
+
+                &:hover{
+                    border: 2px solid $eco-friendly-dark-green;
+                }
 
             }
         }
