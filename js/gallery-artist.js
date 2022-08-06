@@ -142,6 +142,38 @@ else {
 
 
 // ARTIST-CLIENT USER CONDITIONAL
+
+// ////// test
+
+// if (GALLERY_ID_VALUE != readSessionUserData(SESSION_USER_KEY_VALUE).uid || readSessionUserData(SESSION_USER_KEY_VALUE).uid != GALLERY_ID_VALUE) {
+
+//     const artistNameGallery = document.getElementById("btnAppointment");
+//     artistNameGallery.innerHTML = `Book An Appointment`;
+
+//     document.getElementById("btnAppointment").addEventListener('click', () => {
+//         window.location.href = "../pages/book-appointment.html";
+//     });
+
+//     document.querySelector('.addButtons').style.display = 'none';
+
+// } else if (readSessionUserData(SESSION_USER_KEY_VALUE).uid == GALLERY_ID_VALUE) {
+
+//     const artistNameGallery = document.getElementById("btnAppointment");
+//     artistNameGallery.innerHTML = `Manage Bookings`;
+
+//     document.getElementById("btnAppointment").addEventListener('click', () => {
+//         window.location.href = "../pages/appointment-management-artist.html";
+//     });
+// }
+
+// document.getElementById('addImageArtist').addEventListener('click', function(){
+//     const addImageMessage = document.getElementById('addImageMessage');
+// addImageMessage.innerHTML = `To add more photos click on "Choose files" and then on "Add to Gallery".`
+// })
+
+// ///// end test
+
+
 if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
 
     const artistNameGallery = document.getElementById("btnAppointment");
@@ -150,6 +182,7 @@ if (readSessionUserData(SESSION_USER_KEY_VALUE).user_type == USER_TYPE_ARTIST) {
     document.getElementById("btnAppointment").addEventListener('click', () => {
         window.location.href = "../pages/appointment-management-artist.html";
     });
+
 } else {
     const artistNameGallery = document.getElementById("btnAppointment");
     artistNameGallery.innerHTML = `Book An Appointment`;
